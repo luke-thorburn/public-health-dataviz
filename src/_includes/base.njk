@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="UTF-8" />
+	
+	<title>
+        {% block title %}
+            Public Health Visualisation
+        {% endblock %}
+    </title>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- JS -->
+	{% block head %}{% endblock %}
+
+	<!-- Styling -->
+	<script src="https://kit.fontawesome.com/3142a8f83c.js" crossorigin="anonymous" SameSite=Lax></script>
+	<link rel="stylesheet" href="/css/main.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+	<header>
+		VizHub
+	</header>
+
+	<div>
+
+	{% block content %}{% endblock %}
+
+	</div>
+
+	<footer>
+
+		{# <div>Population Interventions Group</div> #}
+
+		<div>Centre for Epidemiology and Biostatistics Research</div>
+
+		{# <div>Melbourne School of Population and Global Health</div> #}
+
+		<div>University of Melbourne</div>
+
+	</footer>
+
+</body>
+
+</html>
