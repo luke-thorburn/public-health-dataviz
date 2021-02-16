@@ -9,29 +9,22 @@ permalink: /{{ post.data.slug }}/
 {% extends 'base.njk' %}
 
 {% block title %}
-	{{ post.data.title }} | Population Interventions | University of Melbourne
+	{{ post.data.title }} | Population Interventions Unit
 {% endblock %}
 
 {% block head %}
 
-	{% if post.data.katex %}
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-	        onload="renderMathInElement(document.body);"></script>
-	{% endif %}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
-	{% if post.data.d3 %}
-		<meta charset="utf-8">
-		<script src="https://d3js.org/d3.v4.min.js"></script>
-	{% endif %}
+	<meta charset="utf-8">
+	{# <script src="https://d3js.org/d3.v4.min.js"></script> #}
 
-	{% if post.data.css %}
-		{% for file in post.data.css %}
-			<link rel="stylesheet" type="text/css" href="/posts/{{ post.data.slug }}/{{ file }}" />
-		{% endfor %}
-	{% endif %}
-
+	<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+	
 	{% if post.data.hidden %}
 		<meta name="robots" content="noindex">
 		<meta name="googlebot" content="noindex">
@@ -43,89 +36,206 @@ permalink: /{{ post.data.slug }}/
 
 {% block content %}
 
-	{% if post.data.hidden %}
-		<div class="banner">
-			This page is a draft.
-		</div>
-	{% endif %}
 
+	<header>
+		{% if post.data.hidden %}
+			<div class="banner">
+				This page is a draft.
+			</div>
+		{% endif %}
+	</header>
+
+	<aside>
+
+		<div class="about">
+			<h1>SARS-CoV-2 Case Modelling</h1>
+
+			<p>This graph shows 100 runs of an epidemiological model that simulates the number of SARS-CoV-2 cases under a range of scenarios. <a href="#">Learn more.</a></p>
+
+			<h1>Explore the data</h1>
+			<p>Use the controls below to interact with the data.</p>
+		</div>
+
+		<div class="toggles">
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+			<div class="toggle-box">
+				<label for="effectiveness-transmission">Vaccine effectiveness at reducing transmission</label>
+				<input type="range" name="effectiveness-transmission" id="effectiveness-transmission" min="1" max="3" step="1" value="2">
+				<output for="effectiveness-transmission"></output>
+			</div>
+
+		</div>
+
+	</aside>
+
+
+	<div class="graph">
+
+		<div id="graph-container"></div>
+
+	</div>
+
+	<script>
+		// Assign the specification to a local variable vlSpec.
+		var vlSpec = {
+			"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+			"width": "container",
+			"height": "container",
+			"config": {
+				"padding": 0
+			},
+
+
+			"description": "Stock prices of 5 Tech Companies over Time.",
+			"data": {"url": "/data/stocks.csv"},
+			"mark": "line",
+			"encoding": {
+			"x": {"field": "date", "type": "temporal"},
+			"y": {"field": "price", "type": "quantitative"},
+			"color": {"field": "symbol", "type": "nominal"}
+			}
+		}
+
+		// Embed the visualization in the container with id `vis`
+		vegaEmbed(
+			'#graph-container',
+			vlSpec,
+			{
+				actions: false
+			}
+		);
+	</script>
+
+
+	{% if false %}
 	<header>
 
 		<h1>{{ post.data.title }}</h1>
 
 		<h2>{{ post.data.description }}</h2>
 
+		<hr />
 
-		{% if not post.data.tags.includes('page') %}
-			<hr />
+		<div class="attributes">
 
-			<div class="attributes">
+			<h3 class="authors">Authors</h3>
 
-				<h3 class="authors">Authors</h3>
-
-				<div class="author-list">
-					{% for a in post.data.authors %}
-						<a {% if a.name.url %}href="{{ a.name.url }}"{% endif %}>{{ a.name.first }} {{ a.name.last }}</a>
-					{% endfor %}
-				</div>
-
-				<h3 class="affiliations">Affiliations</h3>
-
-				<div class="affiliation-list">
-					{% for a in post.data.authors %}
-						<a {% if a.affiliation.url %}href="{{ a.affiliation.url }}"{% endif %}>{{ a.affiliation.text }}</a>
-					{% endfor %}
-				</div>
-
-				<h3 class="published">Published</h3>
-				
-				{% if post.data.hidden %}
-					<time class="published">(still a draft)</time>
-				{% else %}
-					<time class="published">{{ post.data.date | readable_date | safe }}</time>
-				{% endif %}
-
-				{% if post.data.date_updated %}
-
-					<h3 class="updated">Last&nbsp;Updated</h3>
-
-					{% if post.data.hidden %}
-						<time class="updated">(still a draft)</time>
-					{% else %}
-						<time class="updated">{{ post.data.date_updated | readable_date | safe }}</time>
-					{% endif %}
-
-				{% endif %}
-
+			<div class="author-list">
+				{% for a in post.data.authors %}
+					<a {% if a.name.url %}href="{{ a.name.url }}"{% endif %}>{{ a.name.first }} {{ a.name.last }}</a>
+				{% endfor %}
 			</div>
-		{% endif %}
+
+			<h3 class="affiliations">Affiliations</h3>
+
+			<div class="affiliation-list">
+				{% for a in post.data.authors %}
+					<a {% if a.affiliation.url %}href="{{ a.affiliation.url }}"{% endif %}>{{ a.affiliation.text }}</a>
+				{% endfor %}
+			</div>
+
+			<h3 class="published">Published</h3>
+			
+			{% if post.data.hidden %}
+				<time class="published">(still a draft)</time>
+			{% else %}
+				<time class="published">{{ post.data.date | readable_date | safe }}</time>
+			{% endif %}
+
+			{% if post.data.date_updated %}
+
+				<h3 class="updated">Last&nbsp;Updated</h3>
+
+				{% if post.data.hidden %}
+					<time class="updated">(still a draft)</time>
+				{% else %}
+					<time class="updated">{{ post.data.date_updated | readable_date | safe }}</time>
+				{% endif %}
+
+			{% endif %}
+
+		</div>
 
 	</header>
 
 	<article>
 	
-		{% if post.data.noMarkdown %}
-			{{ post.templateContent | safe }}
-		{% else %}
-			{{ post.templateContent | markdown | footnotes_to_sidenotes | safe }}
-		{% endif %}
+		{{ post.templateContent | markdown | safe }}
 
 	</article>
 
-
-	{% if not post.data.tags.includes('page') %}
 	<div class="backmatter">
 
 		{% if post.data.acknowledgements %}
 			<h1>Acknowledgements</h1>
 			{{ post.data.acknowledgements | markdown | safe }}
 		{% endif %}
-
-		<h1>Data + Code</h1>
-		<p>...</p>
-		
-		<h1>Reuse</h1>
-		<p>...</p>
 
 		<h1>Citation</h1>
 		<p>In academic contexts, please cite this work using a citation similar to the following.</p>
@@ -140,8 +250,8 @@ permalink: /{{ post.data.slug }}/
 }</pre>
 
 	</div>
-	{% endif %}
-
+{% endif %}
+	
 	{% if post.data.js %}
 		{% for file in post.data.js %}
 			<script src="/posts/{{ post.data.slug }}/{{ file }}"></script>
