@@ -70,9 +70,11 @@ body.post aside div.toggles {
   grid-row: 2/3;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  border-top: 1px solid #094183;
 }
 body.post aside div.toggles::-webkit-scrollbar {
   width: 5px;
+  background-color: #f2f5f9;
 }
 body.post aside div.toggles::-webkit-scrollbar-thumb {
   background-color: #094183;
