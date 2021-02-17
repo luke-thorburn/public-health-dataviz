@@ -57,7 +57,7 @@ body.post aside {
 }
 body.post aside div.about {
   grid-row: 1/2;
-  padding: 1.4rem 1.4rem 0 1.4rem;
+  padding: 1.4rem 1.4rem 1.4rem 1.4rem;
   font-size: 1.125rem;
 }
 body.post aside div.about h1 {
@@ -70,7 +70,6 @@ body.post aside div.toggles {
   grid-row: 2/3;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  border-top: 1px solid #094183;
 }
 body.post aside div.toggles::-webkit-scrollbar {
   width: 5px;
@@ -80,16 +79,48 @@ body.post aside div.toggles::-webkit-scrollbar-thumb {
   background-color: #094183;
   border-radius: 5px;
 }
-body.post aside div.toggles .toggle-box {
+body.post aside div.toggles .toggle-group {
+  display: block;
+  margin: 0 1.4rem 1.4rem 1.4rem;
+}
+body.post aside div.toggles .toggle-group .group-details {
   background-color: #f2f5f9;
-  padding: 1.4rem;
-  border-top: 1px solid #fff;
+  margin: 0 -1.4rem;
+  padding: 0.7rem 1.4rem;
+}
+body.post aside div.toggles .toggle-group .group-details .group-name {
+  font-size: 1.2rem;
+}
+body.post aside div.toggles .toggle-group .group-contents {
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
+  grid-column-gap: 0.7rem;
+  grid-row-gap: 0.7rem;
+  padding-top: 0.7rem;
+}
+body.post aside div.toggles .toggle-group .group-contents .toggle-box {
+  border-top: 3px solid #f2f5f9;
+  padding-top: 0.7rem;
+  font-size: 0.95rem;
+}
+body.post aside div.toggles .toggle-group .group-contents .toggle-box:nth-child(1), body.post aside div.toggles .toggle-group .group-contents .toggle-box:nth-child(2) {
+  border-top: none;
+  padding-top: 0;
+}
+body.post aside div.toggles .toggle-group .group-contents .toggle-box .name {
+  font-weight: 700;
+  color: #012a58;
+}
+body.post aside div.toggles .toggle-group .group-contents .toggle-box .description {
+  color: #444;
+  margin-bottom: 0.7rem;
+  line-height: 1.1rem;
 }
 body.post div.graph {
   grid-row: graph-start/graph-end;
   grid-column: graph-start/graph-end;
   max-height: 100vh;
-  padding: 2.8rem;
+  padding: 5.6rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;

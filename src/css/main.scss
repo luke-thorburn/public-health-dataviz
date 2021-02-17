@@ -130,7 +130,7 @@ body.post {
 		div.about {
 			grid-row: 1 / 2;
 
-			padding: $p $p 0 $p;
+			padding: $p $p $p $p;
 			
 			font-size: 1.125rem;
 
@@ -147,7 +147,7 @@ body.post {
 			grid-row: 2 / 3;
 			overflow-y: scroll;
 			scroll-behavior: smooth;
-			border-top: 1px solid $c1-dark;
+			// border-top: 1px solid $c1-dark;
 
 			// background-color: $c1-light;
 
@@ -161,11 +161,62 @@ body.post {
 				border-radius: 5px;
 			}
 
-			.toggle-box {
-				background-color: $c1-light;
-				padding: $p;
-				border-top: 1px solid $default-background;
+			.toggle-group {
+				display: block;
+				margin: 0 $p $p $p;
+				// border: 1px solid $c1-dark;
+				// border-radius: $q;
+				
+				.group-details {
+
+					background-color: $c1-light;
+					margin: 0 #{-1 * $p};
+					padding: $h $p;
+
+					.group-name {
+						font-size: 1.2rem;
+						// margin-bottom: $h;
+					}
+				}
+
+				.group-contents {
+					display: grid;
+					grid-template-columns: repeat(2, .5fr);
+					grid-column-gap: $h;
+					grid-row-gap: $h;
+					padding-top: $h;
+					// background-color: $c1-light;
+					// border-top: 2px solid #abbed8;
+					
+
+
+					.toggle-box {
+						// background-color: $c1-light;
+						border-top: 3px solid $c1-light;
+						padding-top: $h;
+
+						&:nth-child(1), &:nth-child(2) {
+							border-top: none;
+							padding-top: 0;
+						}
+
+						font-size: .95rem;
+
+						.name {
+							font-weight: 700;
+							color: $c1-darker;
+						}
+
+						.description {
+							color: #444;
+							margin-bottom: $h;
+							line-height: 1.1rem;
+						}
+					}
+				}
+
 			}
+
 		}
 	}	
 
@@ -175,7 +226,7 @@ body.post {
 		grid-column: graph-start / graph-end;
 		max-height: 100vh;
 
-		padding: #{2 * $p};
+		padding: #{4 * $p};
 
 		display: grid;
 		grid-template-columns: 1fr;
