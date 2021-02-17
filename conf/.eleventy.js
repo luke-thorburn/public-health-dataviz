@@ -1,5 +1,19 @@
 module.exports = function(eleventyConfig) {
 
+	
+	// refs = JSON.parse(refs);
+
+	// Add filter to extract toggle specification from graph specification.
+	const fs = require('fs');
+	eleventyConfig.addFilter("get_toggles", function(postData) {
+
+		let spec = fs.readFileSync(`../src/posts/${postData.slug}/${postData.vega_graph_spec}`).toString(),
+			toggles = JSON.parse(spec)['uom-toggles']['toggle-groups'];
+
+		return toggles;
+
+	})
+
 
 	// Add markdown filter.
 	var options = {

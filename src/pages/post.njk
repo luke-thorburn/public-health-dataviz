@@ -56,209 +56,53 @@ permalink: /{{ post.data.slug }}/
 			<p>Use the controls below to interact with the data.</p> #}
 		</div>
 
+
 		<div class="toggles">
 
-			<div class="toggle-group">
+			{% for toggle_group in post.data | get_toggles %}
 
-				<div class="group-details">
-					
-					<div class="group-name">Transmission Dynamics</div>
+				<div class="toggle-group">
+
+					<div class="group-details">
+						<div class="group-name">{{ toggle_group.name }}</div>
+					</div>
+
+					<div class="group-contents">
+
+						{% for toggle in toggle_group.toggles %}
+							<div class="toggle-box">
+								<div class="name">{{ toggle.name }}</div>
+								<div class="description">{{ toggle.description }}</div>
+
+								{% if toggle.type == "range" %}
+
+									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
+									{# custom input slider: https://codepen.io/trevanhetzel/pen/rOVrGK #}
+
+								{% elif toggle.type == "select" %}
+									
+									<select name="pets" id="pet-select">
+										<option value="">--Please choose an option--</option>
+										<option value="dog">Dog</option>
+										<option value="cat">Cat</option>
+										<option value="hamster">Hamster</option>
+										<option value="parrot">Parrot</option>
+										<option value="spider">Spider</option>
+										<option value="goldfish">Goldfish</option>
+									</select>
+									{# https://joshuajohnson.co.uk/Choices/ #}
+
+								{% endif %}
+
+							</div>
+						{% endfor %}
+
+					</div>
 
 				</div>
-
-				<div class="group-contents">
-
-					<div class="toggle-box">
-						<div class="name">Population Inputs</div>
-						<div class="description">Size of population.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Population Inputs</div>
-						<div class="description">Number of initial infections.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Basic Reproduction Number</div>
-						<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Transmission Times</div>
-						<div class="description">Length of incubation period.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-				</div>
+			{% endfor %}
 
 			</div>
-
-
-
-			<div class="toggle-group">
-				
-				<div class="group-details">
-					
-					<div class="group-name">Clinical Dynamics</div>
-					
-				</div>
-
-				<div class="group-contents">
-
-					<div class="toggle-box">
-						<div class="name">Basic Reproduction Number</div>
-						<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Transmission Times</div>
-						<div class="description">Length of incubation period.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="toggle-group">
-
-				<div class="group-details">
-					
-					<div class="group-name">Transmission Dynamics</div>
-
-				</div>
-
-				<div class="group-contents">
-
-					<div class="toggle-box">
-						<div class="name">Population Inputs</div>
-						<div class="description">Size of population.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Population Inputs</div>
-						<div class="description">Number of initial infections.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Basic Reproduction Number</div>
-						<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Transmission Times</div>
-						<div class="description">Length of incubation period.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-					
-				</div>
-
-			</div>
-
-
-
-			<div class="toggle-group">
-				
-				<div class="group-details">
-					
-					<div class="group-name">Clinical Dynamics</div>
-					
-				</div>
-
-				<div class="group-contents">
-
-					<div class="toggle-box">
-						<div class="name">Basic Reproduction Number</div>
-						<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Transmission Times</div>
-						<div class="description">Length of incubation period.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="toggle-group">
-
-				<div class="group-details">
-					
-					<div class="group-name">Transmission Dynamics</div>
-
-				</div>
-
-				<div class="group-contents">
-
-					<div class="toggle-box">
-						<div class="name">Population Inputs</div>
-						<div class="description">Size of population.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Population Inputs</div>
-						<div class="description">Number of initial infections.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Basic Reproduction Number</div>
-						<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Transmission Times</div>
-						<div class="description">Length of incubation period.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-					
-				</div>
-
-			</div>
-
-
-
-			<div class="toggle-group">
-				
-				<div class="group-details">
-					
-					<div class="group-name">Clinical Dynamics</div>
-					
-				</div>
-
-				<div class="group-contents">
-
-					<div class="toggle-box">
-						<div class="name">Basic Reproduction Number</div>
-						<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-					<div class="toggle-box">
-						<div class="name">Transmission Times</div>
-						<div class="description">Length of incubation period.</div>
-						<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-					</div>
-
-				</div>
-
-			</div>
-
-
-
-			
 
 		</div>
 
@@ -272,120 +116,29 @@ permalink: /{{ post.data.slug }}/
 	</div>
 
 	<script>
-		// Assign the specification to a local variable vlSpec.
-		var vlSpec = {
-			"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-			"width": "container",
-			"height": "container",
-			"config": {
-				"padding": 0
-			},
 
+		// Retrieve graph specification.
+		var graphSpecLoaded = $.get(
+			'/posts/{{ post.data.slug }}/{{ post.data.vega_graph_spec }}',
+			loadGraph
+		)
+		
+		function loadGraph(data, status) {
+				
+			var graphSpec = data;
+				
+			// Embed the visualization in the container with id `graph-container`.
+			vegaEmbed(
+				'#graph-container',
+				graphSpec,
+				{
+					actions: false
+				}
+			);
+				
+		};
 
-			"description": "Stock prices of 5 Tech Companies over Time.",
-			"data": {"url": "/data/stocks.csv"},
-			"mark": "line",
-			"encoding": {
-			"x": {"field": "date", "type": "temporal"},
-			"y": {"field": "price", "type": "quantitative"},
-			"color": {"field": "symbol", "type": "nominal"}
-			}
-		}
-
-		// Embed the visualization in the container with id `vis`
-		vegaEmbed(
-			'#graph-container',
-			vlSpec,
-			{
-				actions: false
-			}
-		);
+	
 	</script>
-
-
-	{% if false %}
-	<header>
-
-		<h1>{{ post.data.title }}</h1>
-
-		<h2>{{ post.data.description }}</h2>
-
-		<hr />
-
-		<div class="attributes">
-
-			<h3 class="authors">Authors</h3>
-
-			<div class="author-list">
-				{% for a in post.data.authors %}
-					<a {% if a.name.url %}href="{{ a.name.url }}"{% endif %}>{{ a.name.first }} {{ a.name.last }}</a>
-				{% endfor %}
-			</div>
-
-			<h3 class="affiliations">Affiliations</h3>
-
-			<div class="affiliation-list">
-				{% for a in post.data.authors %}
-					<a {% if a.affiliation.url %}href="{{ a.affiliation.url }}"{% endif %}>{{ a.affiliation.text }}</a>
-				{% endfor %}
-			</div>
-
-			<h3 class="published">Published</h3>
-			
-			{% if post.data.hidden %}
-				<time class="published">(still a draft)</time>
-			{% else %}
-				<time class="published">{{ post.data.date | readable_date | safe }}</time>
-			{% endif %}
-
-			{% if post.data.date_updated %}
-
-				<h3 class="updated">Last&nbsp;Updated</h3>
-
-				{% if post.data.hidden %}
-					<time class="updated">(still a draft)</time>
-				{% else %}
-					<time class="updated">{{ post.data.date_updated | readable_date | safe }}</time>
-				{% endif %}
-
-			{% endif %}
-
-		</div>
-
-	</header>
-
-	<article>
-	
-		{{ post.templateContent | markdown | safe }}
-
-	</article>
-
-	<div class="backmatter">
-
-		{% if post.data.acknowledgements %}
-			<h1>Acknowledgements</h1>
-			{{ post.data.acknowledgements | markdown | safe }}
-		{% endif %}
-
-		<h1>Citation</h1>
-		<p>In academic contexts, please cite this work using a citation similar to the following.</p>
-		<pre class="wrap">{{ post.data.authors | citation_authors }}, "{{ post.data.title }}", Buckley's Chance, {{ post.data.date | get_year }}.</pre>
-		<p>Here is the BibTeX entry.</p>
-<pre>@article{ {{- post.data.slug }}{{ post.data.date | get_year }},
-  author = { {{- post.data.authors | bibtex_authors -}} },
-  title = { {{- post.data.title -}} },
-  journal = {Buckley's Chance},
-  year = { {{- post.data.date | get_year -}} },
-  url = {https://buckleys.pub/{{ post.data.slug }}}
-}</pre>
-
-	</div>
-{% endif %}
-	
-	{% if post.data.js %}
-		{% for file in post.data.js %}
-			<script src="/posts/{{ post.data.slug }}/{{ file }}"></script>
-		{% endfor %}
-	{% endif %}
 
 {% endblock %}
