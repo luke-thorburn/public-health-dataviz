@@ -4,7 +4,7 @@
 	"templateEngineOverride": false,
 	"tags": ["post"],
 	
-	"title": "Generic template post",
+	"title": "Pandemic Tradeoffs",
 	"date": "2021-01-02",
 	"date_updated": "2021-01-02",
 	"slug": "template",

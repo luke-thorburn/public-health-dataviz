@@ -153,6 +153,7 @@ body.post {
 
 			&::-webkit-scrollbar {
 				width: 5px;
+				height: 5px;
 				background-color: $c1-light;
 			}
 			 
@@ -204,7 +205,9 @@ body.post {
 
 						.name {
 							font-weight: 700;
+							line-height: 1.1rem;
 							color: $c1-darker;
+							margin-bottom: 2px;
 						}
 
 						.description {
@@ -226,7 +229,7 @@ body.post {
 		grid-column: graph-start / graph-end;
 		max-height: 100vh;
 
-		padding: #{4 * $p};
+		padding: 100px;
 
 		display: grid;
 		grid-template-columns: 1fr;

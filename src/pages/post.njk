@@ -19,11 +19,7 @@ permalink: /{{ post.data.slug }}/
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
 	<meta charset="utf-8">
-	{# <script src="https://d3js.org/d3.v4.min.js"></script> #}
-
-	<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 	
 	{% if post.data.hidden %}
 		<meta name="robots" content="noindex">
@@ -48,7 +44,7 @@ permalink: /{{ post.data.slug }}/
 	<aside>
 
 		<div class="about">
-			<h1>SARS-CoV-2 Case Modelling</h1>
+			<h1>{{ post.data | get_graph_title }}</h1>
 
 {# 			<p>This graph shows 100 runs of an epidemiological model that simulates the number of SARS-CoV-2 cases under a range of scenarios. <a href="#">Learn more.</a></p>
 
@@ -59,7 +55,7 @@ permalink: /{{ post.data.slug }}/
 
 		<div class="toggles">
 
-			{% for toggle_group in post.data | get_toggles %}
+			{% for toggle_group in post.data | get_graph_toggles %}
 
 				<div class="toggle-group">
 
@@ -81,14 +77,10 @@ permalink: /{{ post.data.slug }}/
 
 								{% elif toggle.type == "select" %}
 									
-									<select name="pets" id="pet-select">
-										<option value="">--Please choose an option--</option>
-										<option value="dog">Dog</option>
-										<option value="cat">Cat</option>
-										<option value="hamster">Hamster</option>
-										<option value="parrot">Parrot</option>
-										<option value="spider">Spider</option>
-										<option value="goldfish">Goldfish</option>
+									<select name="{{ toggle.name | slug }}" id="select-{{ toggle.name | slug }}">
+										{% for value in toggle.values %}
+											<option value="{{ value }}">{{ value }}</option>	
+										{% endfor %}
 									</select>
 									{# https://joshuajohnson.co.uk/Choices/ #}
 
@@ -115,30 +107,26 @@ permalink: /{{ post.data.slug }}/
 
 	</div>
 
-	<script>
+	<script type="text/javascript">
 
-		// Retrieve graph specification.
-		var graphSpecLoaded = $.get(
-			'/posts/{{ post.data.slug }}/{{ post.data.vega_graph_spec }}',
-			loadGraph
-		)
-		
-		function loadGraph(data, status) {
-				
-			var graphSpec = data;
-				
-			// Embed the visualization in the container with id `graph-container`.
-			vegaEmbed(
-				'#graph-container',
-				graphSpec,
-				{
-					actions: false
-				}
-			);
-				
-		};
+		var view;
 
+		fetch('/posts/{{ post.data.slug }}/{{ post.data.vega_graph_spec }}')
+			.then(res => res.json())
+			.then(spec => render(spec))
+			.catch(err => console.error(err));
+
+		function render(spec) {
+			view = new vega.View(vega.parse(spec), {
+			renderer:  'canvas',  // renderer (canvas or svg)
+			container: '#graph-container',   // parent DOM container
+			hover:     true       // enable hover processing
+			});
+			return view.runAsync();
+		}
 	
 	</script>
+
+	{# TODO - make more responsive: https://bl.ocks.org/donghaoren/023b2246569e8f0615017507b473e55e #}
 
 {% endblock %}

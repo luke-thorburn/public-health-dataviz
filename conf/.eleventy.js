@@ -5,12 +5,21 @@ module.exports = function(eleventyConfig) {
 
 	// Add filter to extract toggle specification from graph specification.
 	const fs = require('fs');
-	eleventyConfig.addFilter("get_toggles", function(postData) {
+	eleventyConfig.addFilter("get_graph_toggles", function(postData) {
 
 		let spec = fs.readFileSync(`../src/posts/${postData.slug}/${postData.vega_graph_spec}`).toString(),
 			toggles = JSON.parse(spec)['uom-toggles']['toggle-groups'];
 
 		return toggles;
+
+	})
+
+	eleventyConfig.addFilter("get_graph_title", function(postData) {
+
+		let spec = fs.readFileSync(`../src/posts/${postData.slug}/${postData.vega_graph_spec}`).toString(),
+			title = JSON.parse(spec)['uom-title'];
+
+		return title;
 
 	})
 

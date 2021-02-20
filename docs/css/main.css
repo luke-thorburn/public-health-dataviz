@@ -73,6 +73,7 @@ body.post aside div.toggles {
 }
 body.post aside div.toggles::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
   background-color: #f2f5f9;
 }
 body.post aside div.toggles::-webkit-scrollbar-thumb {
@@ -109,7 +110,9 @@ body.post aside div.toggles .toggle-group .group-contents .toggle-box:nth-child(
 }
 body.post aside div.toggles .toggle-group .group-contents .toggle-box .name {
   font-weight: 700;
+  line-height: 1.1rem;
   color: #012a58;
+  margin-bottom: 2px;
 }
 body.post aside div.toggles .toggle-group .group-contents .toggle-box .description {
   color: #444;
@@ -120,7 +123,7 @@ body.post div.graph {
   grid-row: graph-start/graph-end;
   grid-column: graph-start/graph-end;
   max-height: 100vh;
-  padding: 5.6rem;
+  padding: 100px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;

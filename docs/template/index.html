@@ -6,7 +6,7 @@
 	
 	<title>
         
-	Generic template post | Population Interventions Unit
+	Pandemic Tradeoffs | Population Interventions Unit
 
     </title>
 	
@@ -20,11 +20,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
 	<meta charset="utf-8">
-	
-
-	<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 	
 	    
 
@@ -69,39 +65,26 @@
 				<div class="toggle-group">
 
 					<div class="group-details">
-						<div class="group-name">Transmission Dynamics</div>
+						<div class="group-name">Vaccine Effectiveness</div>
 					</div>
 
 					<div class="group-contents">
 
 						
 							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Size of population.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Number of initial infections.</div>
+								<div class="name">Pfizer Transmission Reduction</div>
+								<div class="description">Percentage by which the Pfizer vaccine reduces transmission.</div>
 
 								
 									
-									<select name="pets" id="pet-select">
-										<option value="">--Please choose an option--</option>
-										<option value="dog">Dog</option>
-										<option value="cat">Cat</option>
-										<option value="hamster">Hamster</option>
-										<option value="parrot">Parrot</option>
-										<option value="spider">Spider</option>
-										<option value="goldfish">Goldfish</option>
+									<select name="pfizer-transmission-reduction" id="select-pfizer-transmission-reduction">
+										
+											<option value="50">50</option>	
+										
+											<option value="75">75</option>	
+										
+											<option value="90">90</option>	
+										
 									</select>
 									
 
@@ -110,19 +93,93 @@
 							</div>
 						
 							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
+								<div class="name">AstraZeneca Transmission Reduction</div>
+								<div class="description">Percentage by which the Pfizer vaccine reduces transmission.</div>
 
 								
 									
-									<select name="pets" id="pet-select">
-										<option value="">--Please choose an option--</option>
-										<option value="dog">Dog</option>
-										<option value="cat">Cat</option>
-										<option value="hamster">Hamster</option>
-										<option value="parrot">Parrot</option>
-										<option value="spider">Spider</option>
-										<option value="goldfish">Goldfish</option>
+									<select name="astrazeneca-transmission-reduction" id="select-astrazeneca-transmission-reduction">
+										
+											<option value="50">50</option>	
+										
+											<option value="75">75</option>	
+										
+											<option value="90">90</option>	
+										
+									</select>
+									
+
+								
+
+							</div>
+						
+
+					</div>
+
+				</div>
+			
+
+				<div class="toggle-group">
+
+					<div class="group-details">
+						<div class="group-name">Public Response</div>
+					</div>
+
+					<div class="group-contents">
+
+						
+							<div class="toggle-box">
+								<div class="name">Vaccine Uptake</div>
+								<div class="description">Percentage of people who accept vaccination when available.</div>
+
+								
+									
+									<select name="vaccine-uptake" id="select-vaccine-uptake">
+										
+											<option value="60">60</option>	
+										
+											<option value="75">75</option>	
+										
+											<option value="90">90</option>	
+										
+									</select>
+									
+
+								
+
+							</div>
+						
+
+					</div>
+
+				</div>
+			
+
+				<div class="toggle-group">
+
+					<div class="group-details">
+						<div class="group-name">Government Response</div>
+					</div>
+
+					<div class="group-contents">
+
+						
+							<div class="toggle-box">
+								<div class="name">Strategy</div>
+								<div class="description">Government strategy for moving between different levels of restrictions.</div>
+
+								
+									
+									<select name="strategy" id="select-strategy">
+										
+											<option value="Aggressive Elimination">Aggressive Elimination</option>	
+										
+											<option value="Moderate Elimination">Moderate Elimination</option>	
+										
+											<option value="Tight Suppression">Tight Suppression</option>	
+										
+											<option value="Loose Suppression">Loose Suppression</option>	
+										
 									</select>
 									
 
@@ -131,377 +188,18 @@
 							</div>
 						
 							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
+								<div class="name">Strategy Relaxation</div>
+								<div class="description">Relax the triggers for each strategy as vaccinations progress?</div>
 
 								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
 									
-
-								
-
-							</div>
-						
-
-					</div>
-
-				</div>
-			
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">Clinical Dynamics</div>
-					</div>
-
-					<div class="group-contents">
-
-						
-							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-
-					</div>
-
-				</div>
-			
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">Transmission Dynamics</div>
-					</div>
-
-					<div class="group-contents">
-
-						
-							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Size of population.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Number of initial infections.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-
-					</div>
-
-				</div>
-			
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">Clinical Dynamics</div>
-					</div>
-
-					<div class="group-contents">
-
-						
-							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-
-					</div>
-
-				</div>
-			
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">Transmission Dynamics</div>
-					</div>
-
-					<div class="group-contents">
-
-						
-							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Size of population.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Number of initial infections.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-
-					</div>
-
-				</div>
-			
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">Clinical Dynamics</div>
-					</div>
-
-					<div class="group-contents">
-
-						
-							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-
-					</div>
-
-				</div>
-			
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">Transmission Dynamics</div>
-					</div>
-
-					<div class="group-contents">
-
-						
-							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Size of population.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Population Inputs</div>
-								<div class="description">Number of initial infections.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-
-					</div>
-
-				</div>
-			
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">Clinical Dynamics</div>
-					</div>
-
-					<div class="group-contents">
-
-						
-							<div class="toggle-box">
-								<div class="name">Basic Reproduction Number</div>
-								<div class="description">Measure of contagiousness: the number of secondary infections each infected individual produces.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									
-
-								
-
-							</div>
-						
-							<div class="toggle-box">
-								<div class="name">Transmission Times</div>
-								<div class="description">Length of incubation period.</div>
-
-								
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
+									<select name="strategy-relaxation" id="select-strategy-relaxation">
+										
+											<option value="No">No</option>	
+										
+											<option value="Yes">Yes</option>	
+										
+									</select>
 									
 
 								
@@ -527,31 +225,27 @@
 
 	</div>
 
-	<script>
+	<script type="text/javascript">
 
-		// Retrieve graph specification.
-		var graphSpecLoaded = $.get(
-			'/posts/template/graph.json',
-			loadGraph
-		)
-		
-		function loadGraph(data, status) {
-				
-			var graphSpec = data;
-				
-			// Embed the visualization in the container with id `graph-container`.
-			vegaEmbed(
-				'#graph-container',
-				graphSpec,
-				{
-					actions: false
-				}
-			);
-				
-		};
+		var view;
 
+		fetch('/posts/template/graph.json')
+			.then(res => res.json())
+			.then(spec => render(spec))
+			.catch(err => console.error(err));
+
+		function render(spec) {
+			view = new vega.View(vega.parse(spec), {
+			renderer:  'canvas',  // renderer (canvas or svg)
+			container: '#graph-container',   // parent DOM container
+			hover:     true       // enable hover processing
+			});
+			return view.runAsync();
+		}
 	
 	</script>
+
+	
 
 
 
