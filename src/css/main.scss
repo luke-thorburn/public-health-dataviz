@@ -106,146 +106,371 @@ div.banner {
 // POST ========================================================================= //
 // ============================================================================== //
 
-body.post {
-	display: grid;
-	grid-template-rows: [header-start] auto [header-end graph-start] 1fr [graph-end footer-start] auto [footer-end];
-	grid-template-columns: [toggles-start left-edge] 30% [toggles-end graph-start] 1fr [graph-end right-edge];
+body.post article {
 
-	header {
-		grid-row: header-start / header-end;
-		grid-column: left-edge / right-edge;
+	margin: 6rem 0;
+
+	h1, h2, h3, h4, h5, h6,
+	p,
+	blockquote,
+	figure,
+	ul, ol, dl,
+	pre,
+	div.attributes {
+		display: block;
+		width: 700px;
+		max-width: calc(100% - #{1 * $p});
+		@include mpb(0 auto #{1 * $p} auto);
 	}
 
-	aside {
-		grid-row: graph-start / graph-end;
-		grid-column: toggles-start / toggles-end;
-		max-height: 100vh;
-
-		border-right: 1px solid $c1-dark;
-		
-		display: grid;
-		grid-template-rows: auto 1fr;
-		grid-template-columns: auto;
-
-		div.about {
-			grid-row: 1 / 2;
-
-			padding: $p $p $p $p;
-			
-			font-size: 1.125rem;
-
-			h1 {
-				display: block;
-				margin: 0;
-				color: $c1-darker;
-				font-size: 1.5rem;
-			}
-		}
-
-		div.toggles {
-
-			grid-row: 2 / 3;
-			overflow-y: scroll;
-			scroll-behavior: smooth;
-			// border-top: 1px solid $c1-dark;
-
-			// background-color: $c1-light;
-
-			&::-webkit-scrollbar {
-				width: 5px;
-				height: 5px;
-				background-color: $c1-light;
-			}
-			 
-			&::-webkit-scrollbar-thumb {
-				background-color: $c1-dark;
-				border-radius: 5px;
-			}
-
-			.toggle-group {
-				display: block;
-				margin: 0 $p $p $p;
-				// border: 1px solid $c1-dark;
-				// border-radius: $q;
-				
-				.group-details {
-
-					background-color: $c1-light;
-					margin: 0 #{-1 * $p};
-					padding: $h $p;
-
-					.group-name {
-						font-size: 1.2rem;
-						// margin-bottom: $h;
-					}
-				}
-
-				.group-contents {
-					display: grid;
-					grid-template-columns: repeat(2, .5fr);
-					grid-column-gap: $h;
-					grid-row-gap: $h;
-					padding-top: $h;
-					// background-color: $c1-light;
-					// border-top: 2px solid #abbed8;
-					
-
-
-					.toggle-box {
-						// background-color: $c1-light;
-						border-top: 3px solid $c1-light;
-						padding-top: $h;
-
-						&:nth-child(1), &:nth-child(2) {
-							border-top: none;
-							padding-top: 0;
-						}
-
-						font-size: .95rem;
-
-						.name {
-							font-weight: 700;
-							line-height: 1.1rem;
-							color: $c1-darker;
-							margin-bottom: 2px;
-						}
-
-						.description {
-							color: #444;
-							margin-bottom: $h;
-							line-height: 1.1rem;
-						}
-					}
-				}
-
-			}
-
-		}
-	}	
-
-
-	div.graph {
-		grid-row: graph-start / graph-end;
-		grid-column: graph-start / graph-end;
-		max-height: 100vh;
-
-		padding: 100px;
-
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
-
-		#graph-container {
-			width: 100%;
-			height: 100%;
-		}
+	p {
+		font-size: 1.125rem;
 	}
 
-	footer {
-		grid-row: footer-start / footer-end;
-		grid-column: left-edge / right-edge;
-
+	hr {
+		display: block;
+		border: 0;
+		height: 1px;
+		margin: #{3 * $p} 0 #{4 * $p} 0;
 		background-color: $c1-dark;
+	}
+
+	h1 {
+		font-size: 1.6rem;
+		font-weight: 300;
+		color: $c1-dark;
+		text-transform: capitalize;
+	}
+
+	h2 {
+		font-size: 1.3rem;
+		font-weight: 300;
+		font-style: italic;
+		color: $c1-dark;
+	}
+
+	h3 {
+		font-size: 1rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: $c1-dark;
+	}
+
+	a {
+		color: $c1-dark;
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	ul {
+		list-style: none;
+
+		li {
+			position: relative;
+			padding: 0 0 #{$h} #{1.5 * $p};
+
+			&::before {
+				content: '\2022';
+				position: absolute;
+				left: 0;
+				color: $c1-dark;
+			}
+		}
+	}
+
+	ol {
+		list-style: none;
+		counter-reset: list_item;
+
+		li {
+			position: relative;
+			padding: 0 0 #{$h} #{1.5 * $p};
+
+			&::before {
+				counter-increment: list_item;
+				content: counter(list_item);
+				font-weight: 500;
+				position: absolute;
+				left: 0;
+				color: $c1-dark;
+			}
+		}
+	}
+
+	.fig {
+		@include mpb(0 auto #{1 * $p} auto);
+		max-width: calc(100% - #{1.5 * $p});
+
+		&.inset {
+			width: 600px;
+		}
+
+		&.outset-1 {
+			width: calc(600px + #{4 * $p});
+		}
+		
+		&.outset-2 {
+			width: calc(600px + #{8 * $p});
+		}
+		
+		&.outset-3 {
+			width: calc(600px + #{16 * $p});
+		}
+
+		&.outset-4 {
+			width: calc(600px + #{32 * $p});
+		}
+
+		&.full-width {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		&.full-width-inset {
+			width: 100%;
+		}
+
+		&.side-1 {
+			clear: both;
+			float: right;
+			margin-left: $p;
+			margin-right: calc((100% - 600px) / 2);
+			width: 200px;
+		}
+
+		&.side-2 {
+			clear: both;
+			float: right;
+			margin-left: $p;
+			margin-right: calc((100% - 600px) / 2 - 100px);
+			width: 300px;
+		}
+
+		&.side-3 {
+			clear: both;
+			float: right;
+			margin-left: $p;
+			margin-right: calc((100% - 600px) / 2 - 200px);
+			width: 400px;
+		}
+
+		&.more-margin-1 {
+			margin-top: #{2 * $p};
+			margin-bottom: #{2 * $p};
+		}
+
+		&.more-margin-2 {
+			margin-top: #{4 * $p};
+			margin-bottom: #{4 * $p};
+		}
+
+		&.more-margin-3 {
+			margin-top: #{8 * $p};
+			margin-bottom: #{8 * $p};
+		}
+
+		img {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		svg {
+			width: 100%;
+			overflow: visible;
+
+			// background-color: #fedb4a;
+
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			text-align: left;
+
+
+			--bcol: #{$c1-dark};
+			
+			// font-family: $monospace-stack;
+			font-size: .9rem;
+
+			tr {
+
+				border-bottom: 1px solid $c1-light;
+
+				td, th {
+					border-right: 1px solid var(--bcol);
+					padding: calc(#{$q} / 2) $q;
+
+					&:first-of-type {
+						// padding-left: 0;
+					}
+
+					&:last-of-type {
+						border: none;
+						// padding-right: 0;
+					}
+
+					&.shade {
+						background-color: $c1-light;
+					}
+				}
+			}
+
+			thead {
+				border-top: 3px double var(--bcol);
+				border-bottom: 3px double var(--bcol);
+
+				color: $c1-dark;
+			}
+
+			tbody {
+				border-top: 3px double var(--bcol);
+				border-bottom: 3px double var(--bcol);
+				
+			}
+		}
+	}
+
+	.graph-with-toggles {
+		display: grid;
+		grid-template-rows: [graph-start] 1fr [graph-end];
+		grid-template-columns: [toggles-start left-edge] 30% [toggles-end graph-start] 1fr [graph-end right-edge];
+
+		border-top: 1px solid $c1-dark;
+		border-bottom: 1px solid $c1-dark;
+		min-height: 80vh;
+		max-height: 100vh;
+		margin: 4.5rem 0 6rem 0;
+
+		aside {
+			grid-row: graph-start / graph-end;
+			grid-column: toggles-start / toggles-end;
+			max-height: 100vh;
+
+			border-right: 1px solid $c1-dark;
+			
+			display: grid;
+			grid-template-rows: auto 1fr;
+			grid-template-columns: auto;
+
+			div.about {
+				grid-row: 1 / 2;
+
+				padding: $p $p $p $p;
+				
+				font-size: 1.125rem;
+
+				h1 {
+					display: block;
+					width: auto;
+					margin: 0;
+					color: $c1-darker;
+					font-size: 1.5rem;
+				}
+			}
+
+			div.toggles {
+
+				grid-row: 2 / 3;
+				overflow-y: scroll;
+				scroll-behavior: smooth;
+				// border-top: 1px solid $c1-dark;
+
+				// background-color: $c1-light;
+
+				&::-webkit-scrollbar {
+					width: 5px;
+					height: 5px;
+					background-color: $c1-light;
+				}
+				 
+				&::-webkit-scrollbar-thumb {
+					background-color: $c1-dark;
+					border-radius: 5px;
+				}
+
+				.toggle-group {
+					display: block;
+					margin: 0 $p $p $p;
+					// border: 1px solid $c1-dark;
+					// border-radius: $q;
+					
+					.group-details {
+
+						background-color: $c1-light;
+						margin: 0 #{-1 * $p};
+						padding: $h $p;
+
+						.group-name {
+							font-size: 1.2rem;
+							// margin-bottom: $h;
+						}
+					}
+
+					.group-contents {
+						display: grid;
+						grid-template-columns: repeat(2, .5fr);
+						grid-column-gap: $h;
+						grid-row-gap: $h;
+						padding-top: $h;
+						// background-color: $c1-light;
+						// border-top: 2px solid #abbed8;
+						
+
+
+						.toggle-box {
+							// background-color: $c1-light;
+							border-top: 3px solid $c1-light;
+							padding-top: $h;
+
+							&:nth-child(1), &:nth-child(2) {
+								border-top: none;
+								padding-top: 0;
+							}
+
+							font-size: .95rem;
+
+							.name {
+								font-weight: 700;
+								line-height: 1.1rem;
+								color: $c1-darker;
+								margin-bottom: 2px;
+							}
+
+							.description {
+								color: #444;
+								margin-bottom: $h;
+								line-height: 1.1rem;
+							}
+						}
+					}
+
+				}
+
+			}
+		}	
+	
+		div.graph {
+			grid-row: graph-start / graph-end;
+			grid-column: graph-start / graph-end;
+			max-height: 100vh;
+
+			padding: 100px;
+
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+
+			#graph-container {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	
 	}
 }
 

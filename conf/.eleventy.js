@@ -1,27 +1,99 @@
 module.exports = function(eleventyConfig) {
 
+	// Add stringify filter.
 	
-	// refs = JSON.parse(refs);
+	eleventyConfig.addFilter("stringify", function(obj) {
+		return JSON.stringify(obj);
+	})
 
 	// Add filter to extract toggle specification from graph specification.
+	
 	const fs = require('fs');
-	eleventyConfig.addFilter("get_graph_toggles", function(postData) {
+	eleventyConfig.addFilter("get_graph_toggles", function(name, vega_graph_specs, slug) {
 
-		let spec = fs.readFileSync(`../src/posts/${postData.slug}/${postData.vega_graph_spec}`).toString(),
+		let spec = fs.readFileSync(`../src/posts/${slug}/${vega_graph_specs[name]}`).toString(),
 			toggles = JSON.parse(spec)['uom-toggles']['toggle-groups'];
 
 		return toggles;
 
 	})
 
-	eleventyConfig.addFilter("get_graph_title", function(postData) {
+	eleventyConfig.addFilter("get_graph_title", function(name, vega_graph_specs, slug) {
 
-		let spec = fs.readFileSync(`../src/posts/${postData.slug}/${postData.vega_graph_spec}`).toString(),
+		let spec = fs.readFileSync(`../src/posts/${slug}/${vega_graph_specs[name]}`).toString(),
 			title = JSON.parse(spec)['uom-title'];
 
 		return title;
 
 	})
+
+
+	// Add shortcode to generate dashboard-style graphs.
+
+	eleventyConfig.addShortcode("graph_with_toggles", function(name, vega_graph_specs, slug) {
+		
+
+		let title = `${eleventyConfig.getFilter("get_graph_title")(name, vega_graph_specs, slug)}`;
+
+		let toggle_specs = eleventyConfig.getFilter("get_graph_toggles")(name, vega_graph_specs, slug),
+			toggles = ``;
+
+		for (let toggle_group of toggle_specs) {
+			
+			let toggle_group_contents = ``;
+			for (let toggle of toggle_group.toggles) {
+
+				toggle_group_contents += `<div class="toggle-box">
+					<div class="name">${ toggle.name }</div>
+					<div class="description">${ toggle.description }</div>`;
+							
+				if (toggle.type == "range") {
+					
+					toggle_group_contents += `<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">`;
+					// custom input slider: https://codepen.io/trevanhetzel/pen/rOVrGK
+
+				} else if (toggle.type == "select") {
+					
+					let slug = eleventyConfig.getFilter('slug');
+
+					toggle_group_contents += `<select name="${ slug(toggle.name) }" id="select-${name}-${ slug(toggle.name) }">
+						${toggle.values.map(value => `<option value="${value}">${value}</option>`).join('\n')}
+					</select>`
+					// https://joshuajohnson.co.uk/Choices/
+
+				}
+
+				toggle_group_contents += `</div>`;
+
+			}
+
+			toggles += `<div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">${toggle_group.name}</div>
+				</div>
+				<div class="group-contents">
+					${toggle_group_contents}
+				</div>
+			</div>`;
+		}
+
+		return `<div class="graph-with-toggles">
+			<aside>
+				<div class="about">
+					<h1>${title}</h1>
+				</div>
+				<div class="toggles">
+					${toggles}
+				</div>
+			</aside>
+			<div class="graph">
+				<div id="graph-container-${name}"></div>
+			</div>
+		</div>`;
+	});
+	
+
+	
 
 
 	// Add markdown filter.
@@ -85,35 +157,6 @@ module.exports = function(eleventyConfig) {
 		var d = (new Date(value));
 
 		return(`${d.getFullYear()}`);
-	});
-
-	// Add filter to format authors for BibTeX.
-	eleventyConfig.addFilter("bibtex_authors", function(authors) {
-		if (authors === undefined) {
-			return '';
-		}
-
-		return authors
-			.map(a => `${a.name.last}, ${a.name.first}`)
-			.join(' and ');
-	});
-
-	eleventyConfig.addFilter("homepage_authors", function(authors) {
-		if (authors === undefined) {
-			return '';
-		}
-
-		let txt = '';
-		for (let k = 0; k < authors.length; k++) {
-			if (k < authors.length - 2) {
-				txt += `${authors[k].name.first}&nbsp;${authors[k].name.last}, `;
-			} else if (k == authors.length - 2) {
-				txt += `${authors[k].name.first}&nbsp;${authors[k].name.last} &amp; `;
-			} else if (k == authors.length - 1) {
-				txt += `${authors[k].name.first}&nbsp;${authors[k].name.last}`;
-			}
-		}
-		return txt;
 	});
 
 	// Add markdown filter.
@@ -200,24 +243,6 @@ module.exports = function(eleventyConfig) {
 		return authors
 			.map(a => `${a.name.last}, ${a.name.first}`)
 			.join(' and ');
-	});
-
-	eleventyConfig.addFilter("citation_authors", function(authors) {
-		if (authors === undefined) {
-			return '';
-		}
-
-		let txt = '';
-		for (let k = 0; k < authors.length; k++) {
-			if (k < authors.length - 2) {
-				txt += `${authors[k].name.last}, `;
-			} else if (k == authors.length - 2) {
-				txt += `${authors[k].name.last} and `;
-			} else if (k == authors.length - 1) {
-				txt += `${authors[k].name.last}`;
-			}
-		}
-		return txt;
 	});
 
 	// Add plugins to markdown processor.

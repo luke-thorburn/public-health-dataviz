@@ -32,97 +32,33 @@ permalink: /{{ post.data.slug }}/
 
 {% block content %}
 
+	<article>
 
-	<header>
-		{% if post.data.hidden %}
-			<div class="banner">
-				This page is a draft.
-			</div>
-		{% endif %}
-	</header>
+	{{ post.templateContent | markdown | safe }}
 
-	<aside>
-
-		<div class="about">
-			<h1>{{ post.data | get_graph_title }}</h1>
-
-{# 			<p>This graph shows 100 runs of an epidemiological model that simulates the number of SARS-CoV-2 cases under a range of scenarios. <a href="#">Learn more.</a></p>
-
-			<h1>Explore the data</h1>
-			<p>Use the controls below to interact with the data.</p> #}
-		</div>
-
-
-		<div class="toggles">
-
-			{% for toggle_group in post.data | get_graph_toggles %}
-
-				<div class="toggle-group">
-
-					<div class="group-details">
-						<div class="group-name">{{ toggle_group.name }}</div>
-					</div>
-
-					<div class="group-contents">
-
-						{% for toggle in toggle_group.toggles %}
-							<div class="toggle-box">
-								<div class="name">{{ toggle.name }}</div>
-								<div class="description">{{ toggle.description }}</div>
-
-								{% if toggle.type == "range" %}
-
-									<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">
-									{# custom input slider: https://codepen.io/trevanhetzel/pen/rOVrGK #}
-
-								{% elif toggle.type == "select" %}
-									
-									<select name="{{ toggle.name | slug }}" id="select-{{ toggle.name | slug }}">
-										{% for value in toggle.values %}
-											<option value="{{ value }}">{{ value }}</option>	
-										{% endfor %}
-									</select>
-									{# https://joshuajohnson.co.uk/Choices/ #}
-
-								{% endif %}
-
-							</div>
-						{% endfor %}
-
-					</div>
-
-				</div>
-			{% endfor %}
-
-			</div>
-
-		</div>
-
-	</aside>
-
-
-	<div class="graph">
-
-		<div id="graph-container"></div>
-
-	</div>
+	</article>
 
 	<script type="text/javascript">
 
-		var view;
+		var vega_graph_specs = {{ post.data.vega_graph_specs | stringify | safe }},
+			views = {};
 
-		fetch('/posts/{{ post.data.slug }}/{{ post.data.vega_graph_spec }}')
-			.then(res => res.json())
-			.then(spec => render(spec))
-			.catch(err => console.error(err));
+		for (let key of Object.keys(vega_graph_specs)) {
+		
+			fetch('/posts/{{ post.data.slug }}/' + vega_graph_specs[key])
+				.then(res => res.json())
+				.then(spec => render(key, spec))
+				.catch(err => console.error(err));
 
-		function render(spec) {
-			view = new vega.View(vega.parse(spec), {
-			renderer:  'canvas',  // renderer (canvas or svg)
-			container: '#graph-container',   // parent DOM container
-			hover:     true       // enable hover processing
+		}
+
+		function render(key, spec) {
+			views[key] = new vega.View(vega.parse(spec), {
+				renderer: 'canvas',  			// renderer (canvas or svg)
+				container: `#graph-container-${key}`,  // parent DOM container
+				hover: true       				// enable hover processing
 			});
-			return view.runAsync();
+			return views[key].runAsync();
 		}
 	
 	</script>
