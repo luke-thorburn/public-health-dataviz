@@ -4,9 +4,13 @@
 
 {% block content %}
 
-	<main class="home">
+	<article>
 
-	{% if false %}
+		<h1>Population Interventions Unit</h1>
+
+		<p>This site contains interactive data visualisations of the research conducted by the Population Interventions Unit at the University of Melbourne.</p>
+
+		<h2>Visualisations</h2>
 
 		{% for post in collections.post | removeHiddenPostsAndPages | reverse %}
 		
@@ -20,24 +24,15 @@
 				</div>
 
 				<div class="metadata">
-					{{ post.data.authors | homepage_authors | safe }}&nbsp;&bull;&nbsp;{{ post.data.date | readable_date | safe }}
+					Last Updated {{ post.data.date | readable_date | safe }}
 				</div>
 				
-				{% if post.data.flag %}
-					<div class="flag">{{ post.data.flag }}</div>
-				{% endif %}
 			</div>
-
-
-			
-			{# <img src="{{ post.data.cover }}" /> #}
 
 		</a>
 
 		{% endfor %}
 
-	{% endif %}
-
-	</main>
+	</article>
 
 {% endblock %}

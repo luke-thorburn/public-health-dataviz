@@ -8,16 +8,7 @@
 	"date": "2021-01-02",
 	"date_updated": "2021-01-02",
 	"slug": "SARS-CoV-2",
-	"description": "This is a template post, with which to refine the stylesheets for posts in general.",
-	"authors": [
-		{
-			"name": { "first": "Luke", "last": "Thorburn", "url": "https://lukethorburn.com" },
-			"affiliation": { "text": "University of Melbourne", "url": "https://unimelb.edu.au" }
-		}
-	],
-	
-	"acknowledgements": "Thanks to Joe Blow and Mary Doe.",
-	
+	"description": "Balancing the benefits and harms of government restrictions as the vaccines are rolled out.",
 	"katex": true,
 	"hidden": false,
 	"vega_graph_specs": {
