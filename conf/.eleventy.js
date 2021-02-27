@@ -93,9 +93,6 @@ module.exports = function(eleventyConfig) {
 	});
 	
 
-	
-
-
 	// Add markdown filter.
 	var options = {
 		html: true,
@@ -119,6 +116,41 @@ module.exports = function(eleventyConfig) {
 		}
 		return rval;
 	});
+
+	// Add filter to group posts by section.
+	eleventyConfig.addFilter("groupBySection", function(collection) {
+		let rval = [],
+			sections = [...new Set(collection.map(post => post.data.section))];
+
+		sections.forEach(function(section, idx) {
+			rval.push({
+				name: section,
+				index: idx + 1,
+				posts: collection.filter(d => d.data.section == section)
+			})
+		})
+
+		return rval;
+	})
+
+	// Add filter to group posts by tag.
+	eleventyConfig.addFilter("groupByType", function(collection) {
+		let rval = [],
+			types = [...new Set(collection.map(post => post.data.type))];
+
+		let colours = ["green", "bronze", "silver", "blue", "yellow"];
+
+		types.forEach(function(type, idx) {
+			rval.push({
+				name: type,
+				index: idx + 1,
+				colour: colours[idx % colours.length],
+				posts: collection.filter(d => d.data.type == type)
+			})
+		})
+
+		return rval;
+	})
 
 
 	// Add date format filter.

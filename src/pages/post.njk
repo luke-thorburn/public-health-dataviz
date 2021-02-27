@@ -28,15 +28,33 @@ permalink: /{{ post.data.slug }}/
 
 {% endblock %}
 
-{% block body_class %}post{% endblock %}
+{% block breadcrumb %}
+	<li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+		<a href="/{{ post.data.slug }}" title="{{ post.data.title }}" itemprop="item">
+			<span itemprop="name">{{ post.data.title }}</span>
+		</a>
+		<meta content="2" itemprop="position" />
+	</li>
+{% endblock %}
 
 {% block content %}
 
-	<article>
+	{% if post.data.hidden %}
+		<div class="flash flash--warning flash--center">
+			<p>
+				<strong>This page is a draft.</strong> All content is provisional.
+			</p>
+		</div>
+	{% endif %}
+
+	<h1 class="aligned-title">{{ post.data.title }}</h1>
+
+	<section class="lead left">
+		<p>{{ post.data.description}}</p>
+	</section>
 
 	{{ post.templateContent | markdown | safe }}
 
-	</article>
 
 	<script type="text/javascript">
 

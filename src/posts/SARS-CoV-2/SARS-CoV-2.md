@@ -4,6 +4,9 @@
 	"templateEngineOverride": "njk",
 	"tags": ["post"],
 	
+	"section": "Coronavirus",
+	"type": "Interactive",
+	
 	"title": "Pandemic Tradeoffs",
 	"date": "2021-01-02",
 	"date_updated": "2021-01-02",
@@ -23,7 +26,28 @@ List side-effects of restrictions, to make concrete. Both negative and positive.
 
 ---
 
-# Stages and Strategies
+## Stages and Strategies
+
+<table class="zebra">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Stage 1</th>
+			<th>Stage 2</th>
+			<th>Stage 3</th>
+			<th>Stage 4</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
 
 Maybe change this graph so that all 4 strategies are visible at once.
 
@@ -33,13 +57,13 @@ Maybe change this graph so that all 4 strategies are visible at once.
 
 
 
-# What non-COVID consequences are included in the model? How are they quantified?
+## What non-COVID consequences are included in the model? How are they quantified?
 
 Briefly describe which consequences are included.
 
 Introduce the concept of HALYs/DALYs, and how they are estimated.
 
-# Main tool
+## Main tool
 
 Provide dropdowns/sliders for key assumptions:
 
@@ -58,15 +82,15 @@ As assumptions are updated, update main graph of the probability each policy sce
 	<img src="/img/lockdown2.png" />
 </div>
 
-# Thorny Questions
+### Thorny Questions
 
 - What monetary value should be placed on a HALY?
 
-# Important considerations
+### Important considerations
 
 - Regardless of policy response, there is still a pandemic. Need to compare each scenario to other ways of responding to the pandemic, not to the pre-pandemic world.
 
-# Limitations
+### Limitations
 
 - Difficulty in estimating impacts of different restriction levels.
 - This is just one way of approaching decision-making. Implies a particular ethical framework (\~utilitarianism), which may not be correct.

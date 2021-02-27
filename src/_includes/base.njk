@@ -1,8 +1,10 @@
  <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
 	
-	<meta charset="UTF-8" />
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 	
 	<title>
         {% block title %}
@@ -10,7 +12,8 @@
         {% endblock %}
     </title>
 	
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://dds-gen3.web.unimelb.edu.au/v8.1.6/uom.css">
+	<script src="https://dds-gen3.web.unimelb.edu.au/v8.1.6/uom.js"></script>
 
 	<!-- JS -->
 	{% block head %}{% endblock %}
@@ -21,31 +24,61 @@
 		crossorigin="anonymous"></script>
 
 	<!-- Styling -->
-	<script src="https://kit.fontawesome.com/3142a8f83c.js" crossorigin="anonymous" SameSite=Lax></script>
 	<link rel="stylesheet" href="/css/main.css">
-
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://dds-gen3.web.unimelb.edu.au/v8.1.6/uom.css">
-	<script src="https://dds-gen3.web.unimelb.edu.au/v8.1.6/uom.js"></script>
 	
 	<meta name="robots" content="noindex">
 	<meta name="googlebot" content="noindex">
 
 </head>
 
-<body class="{% block body_class %}{% endblock %}">
+<body>
 
-	{% block content %}{% endblock %}
+	<div class="uomcontent">
+		<div class="page-inner">
 
-	{# <footer>
+			<ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+				<li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<a href="/" title="Population Interventions Unit" itemprop="item">
+						<span itemprop="name">Population Interventions Unit</span>
+					</a>
+					<meta content="1" itemprop="position" />
+				</li>
+				{% block breadcrumb %}{% endblock %}
+			</ol>
 
-		<div>Centre for Epidemiology and Biostatistics Research</div>
 
-		<div>University of Melbourne</div>
+			<div role="main">
 
-	</footer> #}
+				<div class="headerless"></div>
+
+				{% block content %}{% endblock %}
+			</div>
+
+			<div id="sitemap" role="navigation">
+				<h2>Home</h2>
+				<ul>
+					{% for section in collections.post | removeHiddenPostsAndPages | groupBySection %}
+						<li>
+							<a href="/">{{ section.name }}</a>
+							<div class="inner">
+								<ul>
+									{% for post in section.posts %}
+										<li>
+											<a href="/{{ post.data.slug }}">{{ post.data.title }}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</li>
+					{% endfor %}
+					<li>
+						<a href="https://mspgh.unimelb.edu.au/research-groups/centre-for-epidemiology-and-biostatistics-research/population-interventions" target="_blank" rel="noopener noreferrer">About the Population Interventions Unit</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
 
 </body>
 
