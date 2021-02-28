@@ -123,6 +123,10 @@ html {
 		flex-direction: column;
 		justify-content: space-between;
 
+		strong {
+			margin: 0 0 .25rem 0;
+		}
+
 		span.date {
 			display: block;
 			text-align: right;
@@ -142,6 +146,76 @@ html {
 
 
 .fig {
+	@include mpb(0 auto #{1 * $p} auto);
+	max-width: calc(100% - #{1.5 * $p});
+
+	&.inset {
+		width: 600px;
+	}
+
+	&.outset-1 {
+		width: calc(600px + #{4 * $p});
+	}
+	
+	&.outset-2 {
+		width: calc(600px + #{8 * $p});
+	}
+	
+	&.outset-3 {
+		width: calc(600px + #{16 * $p});
+	}
+
+	&.outset-4 {
+		width: calc(600px + #{32 * $p});
+	}
+
+	&.full-width {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&.full-width-inset {
+		width: 100%;
+	}
+
+	&.side-1 {
+		clear: both;
+		float: right;
+		margin-left: $p;
+		margin-right: calc((100% - 600px) / 2);
+		width: 200px;
+	}
+
+	&.side-2 {
+		clear: both;
+		float: right;
+		margin-left: $p;
+		margin-right: calc((100% - 600px) / 2 - 100px);
+		width: 300px;
+	}
+
+	&.side-3 {
+		clear: both;
+		float: right;
+		margin-left: $p;
+		margin-right: calc((100% - 600px) / 2 - 200px);
+		width: 400px;
+	}
+
+	&.more-margin-1 {
+		margin-top: #{2 * $p};
+		margin-bottom: #{2 * $p};
+	}
+
+	&.more-margin-2 {
+		margin-top: #{4 * $p};
+		margin-bottom: #{4 * $p};
+	}
+
+	&.more-margin-3 {
+		margin-top: #{8 * $p};
+		margin-bottom: #{8 * $p};
+	}
 
 	img {
 		width: 100%;

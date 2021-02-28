@@ -45,6 +45,9 @@ html {
   flex-direction: column;
   justify-content: space-between;
 }
+.uomcontent .filtered-listing-grid .filtered-listing-item a strong {
+  margin: 0 0 0.25rem 0;
+}
 .uomcontent .filtered-listing-grid .filtered-listing-item a span.date {
   display: block;
   text-align: right;
@@ -56,6 +59,67 @@ html {
   font-weight: 400;
 }
 
+.fig {
+  margin: 0 auto 1.4rem auto;
+  padding: 0;
+  border: 0;
+  max-width: calc(100% - 2.1rem);
+}
+.fig.inset {
+  width: 600px;
+}
+.fig.outset-1 {
+  width: calc(600px + 5.6rem);
+}
+.fig.outset-2 {
+  width: calc(600px + 11.2rem);
+}
+.fig.outset-3 {
+  width: calc(600px + 22.4rem);
+}
+.fig.outset-4 {
+  width: calc(600px + 44.8rem);
+}
+.fig.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+.fig.full-width-inset {
+  width: 100%;
+}
+.fig.side-1 {
+  clear: both;
+  float: right;
+  margin-left: 1.4rem;
+  margin-right: calc((100% - 600px) / 2);
+  width: 200px;
+}
+.fig.side-2 {
+  clear: both;
+  float: right;
+  margin-left: 1.4rem;
+  margin-right: calc((100% - 600px) / 2 - 100px);
+  width: 300px;
+}
+.fig.side-3 {
+  clear: both;
+  float: right;
+  margin-left: 1.4rem;
+  margin-right: calc((100% - 600px) / 2 - 200px);
+  width: 400px;
+}
+.fig.more-margin-1 {
+  margin-top: 2.8rem;
+  margin-bottom: 2.8rem;
+}
+.fig.more-margin-2 {
+  margin-top: 5.6rem;
+  margin-bottom: 5.6rem;
+}
+.fig.more-margin-3 {
+  margin-top: 11.2rem;
+  margin-bottom: 11.2rem;
+}
 .fig img {
   width: 100%;
   max-width: 100%;

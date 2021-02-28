@@ -9,18 +9,18 @@ module.exports = function(eleventyConfig) {
 	// Add filter to extract toggle specification from graph specification.
 	
 	const fs = require('fs');
-	eleventyConfig.addFilter("get_graph_toggles", function(name, vega_graph_specs, slug) {
+	eleventyConfig.addFilter("get_graph_toggles", function(name, slug) {
 
-		let spec = fs.readFileSync(`../src/posts/${slug}/${vega_graph_specs[name]}`).toString(),
+		let spec = fs.readFileSync(`../src/posts/${slug}/graph-${name}.json`).toString(),
 			toggles = JSON.parse(spec)['uom-toggles']['toggle-groups'];
 
 		return toggles;
 
 	})
 
-	eleventyConfig.addFilter("get_graph_title", function(name, vega_graph_specs, slug) {
+	eleventyConfig.addFilter("get_graph_title", function(name, slug) {
 
-		let spec = fs.readFileSync(`../src/posts/${slug}/${vega_graph_specs[name]}`).toString(),
+		let spec = fs.readFileSync(`../src/posts/${slug}/graph-${name}.json`).toString(),
 			title = JSON.parse(spec)['uom-title'];
 
 		return title;
@@ -28,14 +28,44 @@ module.exports = function(eleventyConfig) {
 	})
 
 
-	// Add shortcode to generate dashboard-style graphs.
+	// Add shortcode to import custom elements (d3 graphs, tables etc.).
+	eleventyConfig.addShortcode("import_content", function(name, slug) {
 
-	eleventyConfig.addShortcode("graph_with_toggles", function(name, vega_graph_specs, slug) {
+		let html = fs.readFileSync(`../src/posts/${slug}/${name}.html`).toString();
+
+		// Load CSS, if it exists.
+		try {
+			if (fs.existsSync(`../src/posts/${slug}/${name}.css`)) {
+				html += `<script type="text/javascript">
+					loadCSS("/posts/${slug}/${name}.css");
+				</script>`;
+			}
+		} catch(error) {
+			console.error(error);
+		}
+
+		// Load javascript, if it exists.
+		try {
+			if (fs.existsSync(`../src/posts/${slug}/${name}.js`)) {
+				html += `<script src="/posts/${ slug }/${ name }.js"></script>`
+			}
+		} catch(error) {
+			console.error(error);
+		}
+
+		return html;
+
+	})
+
+
+	// Add shortcode to generate Vega dashboard-style graphs.
+
+	eleventyConfig.addShortcode("import_graph", function(name, slug) {
 		
 
-		let title = `${eleventyConfig.getFilter("get_graph_title")(name, vega_graph_specs, slug)}`;
+		let title = `${eleventyConfig.getFilter("get_graph_title")(name, slug)}`;
 
-		let toggle_specs = eleventyConfig.getFilter("get_graph_toggles")(name, vega_graph_specs, slug),
+		let toggle_specs = eleventyConfig.getFilter("get_graph_toggles")(name, slug),
 			toggles = ``;
 
 		for (let toggle_group of toggle_specs) {
@@ -89,7 +119,11 @@ module.exports = function(eleventyConfig) {
 			<div class="graph">
 				<div id="graph-container-${name}"></div>
 			</div>
-		</div>`;
+		</div>
+		<script type="text/javascript">
+			graphs.push("${name}")
+		</script>
+		`;
 	});
 	
 

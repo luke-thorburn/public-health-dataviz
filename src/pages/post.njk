@@ -20,6 +20,22 @@ permalink: /{{ post.data.slug }}/
 
 	<meta charset="utf-8">
 	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+
+	{% if post.data.d3 %}
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+	{% endif %}
+
+	<script type="text/javascript">
+		function loadCSS(path) { 
+			let file = document.createElement("link");
+			file.setAttribute("rel", "stylesheet");
+			file.setAttribute("type", "text/css");
+			file.setAttribute("href", path);
+			document.head.appendChild(file);
+		}
+
+		var graphs = [];
+	</script>					
 	
 	{# {% if post.data.hidden %} #}
 		<meta name="robots" content="noindex">
@@ -58,12 +74,11 @@ permalink: /{{ post.data.slug }}/
 
 	<script type="text/javascript">
 
-		var vega_graph_specs = {{ post.data.vega_graph_specs | stringify | safe }},
-			views = {};
+		var views = {};
 
-		for (let key of Object.keys(vega_graph_specs)) {
+		for (let key of graphs) {
 		
-			fetch('/posts/{{ post.data.slug }}/' + vega_graph_specs[key])
+			fetch('/posts/{{ post.data.slug }}/graph-' + key + '.json')
 				.then(res => res.json())
 				.then(spec => render(key, spec))
 				.catch(err => console.error(err));
