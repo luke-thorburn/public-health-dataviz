@@ -198,11 +198,11 @@ var xScale, yScale;
 // As.pop();
 
 var stageCols = {
-	"1": 	"#ebf0e9",
-	"1b": 	"#d6e1d2",
-	"2": 	"#c2d2bc",
-	"3": 	"#adc3a5",
-	"4": 	"#99b48f",
+	"1": 	"#f0f9e8",
+	"1b": 	"#bae4bc",
+	"2": 	"#7bccc4",
+	"3": 	"#43a2ca",
+	"4": 	"#0868ac",
 	"TRIGGER": "transparent"
 }
 
@@ -319,21 +319,21 @@ function draw() {
 	bracketL = svg.append("path")
 		.attr("class", "alt-view")
 		.attr("d", `M ${l1} ${b} L ${l1} ${t} L ${r1} ${t} L ${r1} ${b}`)
-		.attr("stroke", "#33691e")
+		.attr("stroke", "#000000")
 		.attr("fill", "transparent")
 		.attr("opacity", show1 ? 1 : 0);
 
 	bracketM = svg.append("path")
 		.attr("class", "alt-view")
 		.attr("d", `M ${l2} ${b} L ${l2} ${t} L ${r2} ${t} L ${r2} ${b}`)
-		.attr("stroke", "#33691e")
+		.attr("stroke", "#000000")
 		.attr("fill", "transparent")
 		.attr("opacity", show2 ? 1 : 0);
 
 	bracketR = svg.append("path")
 		.attr("class", "alt-view")
 		.attr("d", `M ${l3} ${b} L ${l3} ${t} L ${r3} ${t} L ${r3} ${b}`)
-		.attr("stroke", "#33691e")
+		.attr("stroke", "#000000")
 		.attr("fill", "transparent")
 		.attr("opacity", show3 ? 1 : 0);
 
@@ -356,7 +356,7 @@ function draw() {
 		.text("TIGHTENING")
 		.attr("alignment-baseline", "middle")
 		.attr("text-anchor", "middle")
-		.attr("fill", "#33691e")
+		.attr("fill", "#000000")
 		.attr("opacity", show1 ? 1 : 0);
 
 	bracketTextBackgroundM = svg.append("text")
@@ -378,7 +378,7 @@ function draw() {
 		.text("EASING")
 		.attr("alignment-baseline", "middle")
 		.attr("text-anchor", "middle")
-		.attr("fill", "#33691e")
+		.attr("fill", "#000")
 		.attr("opacity", show2 ? 1 : 0);
 
 	bracketTextBackgroundR = svg.append("text")
@@ -400,7 +400,7 @@ function draw() {
 		.text("NO CHANGE")
 		.attr("alignment-baseline", "middle")
 		.attr("text-anchor", "middle")
-		.attr("fill", "#33691e")
+		.attr("fill", "#000")
 		.attr("opacity", show3 ? 1 : 0);
 
 	// Draw washed-out background rows.
@@ -421,6 +421,32 @@ function draw() {
 		})
 		.attr("fill", d => stageCols[d])
 		.attr("opacity", 0.2);
+
+	// Draw white boundary lines between triggers.
+	boundaries = svg.append("g")
+		.attr("class", "boundaries alt-view")
+		.selectAll("path");
+	boundaries
+		.data([...Array(10).keys()])
+		.enter()
+		.append("path")
+		.attr("class", "alt-view")
+		.attr("d", (d, i) => {
+			let x;
+			if (i < transitions.length - 1) {
+				d = transitions[i];
+				x = xScale(d.id) + bw + xScale.step()*xScale.paddingInner()*.5;
+			} else {
+				x = xScale.range()[1];
+			}
+			return `M ${x} ${yScale("1")} L ${x} ${yScale("4") + ybw}`;
+		})
+		.attr("stroke", "#fff")
+		.attr("fill", "transparent")
+		.attr("stroke-width", 4)
+		.attr("opacity", (d, i) => {
+			return (i < transitions.length - 1) ? 1 : 0
+		});
 
 	// Draw currently active path.
 
@@ -533,7 +559,7 @@ function draw() {
 		.attr("y", d => yScale(d.from) + yScale.bandwidth() / 2)
 		.text(d => `Current Stage ${d.from}`)
 		.attr("alignment-baseline", "central")
-		.attr("fill", "#33691e");
+		.attr("fill", "#000");
 	
 	// Draw signpost arrows.
 
@@ -638,6 +664,26 @@ function update(currentFromChanged = false) {
 
 	xScale.domain(transitions.map(d => d.id));
 	bw = xScale.bandwidth();
+
+	// Update white boundary lines.
+
+	boundaries = svg.selectAll("g.boundaries path");
+	boundaries
+		.data([...Array(10).keys()])
+		.transition()
+		.attr("d", (d, i) => {
+			let x;
+			if (i < transitions.length - 1) {
+				d = transitions[i];
+				x = xScale(d.id) + bw + xScale.step()*xScale.paddingInner()*.5;
+			} else {
+				x = xScale.range()[1];
+			}
+			return `M ${x} ${yScale("1")} L ${x} ${yScale("4") + ybw}`;
+		})
+		.attr("opacity", (d, i) => {
+			return (i < transitions.length - 1) ? 1 : 0
+		});
 
 	// Update TIGHTENING / EASING brackets.
 
