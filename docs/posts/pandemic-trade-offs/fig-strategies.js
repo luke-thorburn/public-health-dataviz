@@ -107,7 +107,7 @@ var strategies = {
 	},
 	stages = ["TRIGGER", "1", "1b", "2", "3", "4"],
 	currentStrategy = "Aggressive Elimination",
-	currentFrom = "2",
+	currentFrom = "1",
 	currentTo = "4",
 	currentX, currentY,
 	currentTheta = Math.PI/2;
@@ -635,7 +635,7 @@ function draw() {
 		});
 
 
-	// Draw triggers.
+	// Draw triggers and annotations.
 
 	triggers = svg.append("g")
 		.attr("class","triggers alt-view")
@@ -644,12 +644,109 @@ function draw() {
 		.data(transitions)
 		.enter()
 		.append("text")
-		.attr("class","alt-view")
+		.attr("class", d => {
+			let ids = transitions.map(t => t.id);
+			if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
+				return 'alt-view false';
+			} else {
+				return 'alt-view';
+			}
+		})
 		.attr("x", d => xScale(d.id) + bw/2)
 		.attr("y", yScale("TRIGGER") + ybw/2)
 		.text(d => d.trigger)
 		.attr("alignment-baseline", "central")
 		.attr("text-anchor", "middle");
+
+	logic = svg.append("g")
+		.attr("class", "logic", "alt-view")
+		.selectAll("text");
+	logic
+		.data([...Array(10).keys()])
+		.enter()
+		.append("text")
+		.attr("x", (d,i) => {
+			if (i < transitions.length) {
+				return xScale(transitions[i].id) + bw/2;
+			} else {
+				return xScale.range()[1];
+			}
+		})
+		.attr("y", (d,i) => {
+			if (i < transitions.length) {
+				d = transitions[i];
+				if (d.to == d.from) {
+					return yScale("TRIGGER") + ybw/4;
+				} else {
+					return yScale("TRIGGER");
+				}
+			} else {
+				return yScale("TRIGGER") + ybw/4;
+			}
+		})
+		.text((d, i) => {
+			if (i < transitions.length) {
+				d = transitions[i];
+				if (i == 0) {
+					return 'IF';
+				} else if (d.from == d.to) {
+					return 'ELSE';
+				} else {
+					return 'ELSE IF';
+				}
+			} else {
+				return '';
+			}
+		})
+		.attr("alignment-baseline", "central")
+		.attr("text-anchor", "middle")
+		.attr("fill", stageCols["4"])
+		.attr("font-weight", 700)
+		.attr("class", (d,i) => {
+			if (i < transitions.length) {
+				d = transitions[i];
+				let ids = transitions.map(t => t.id);
+				if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
+					return 'alt-view false';
+				} else {
+					return 'alt-view';
+				}
+			} else {
+				return 'alt-view';
+			}
+		});
+
+	toText = svg.append("g")
+		.attr("class", "to-text alt-view")
+		.selectAll("text");
+	toText
+		.data(transitions.filter(d => d.from == currentFrom & d.to == currentTo))
+		.enter()
+		.append("text")
+		.text(d => {
+			if (d.from == d.to) {
+				return `Stay on Stage ${d.from}`;
+			} else {
+				return `Go to Stage ${d.to}`;
+			}
+		})
+		.attr("x", d => {
+			if (d.from == d.to) {
+				return xScale.range()[1] + ybw/2;
+			} else {
+				return xScale(d.id) + bw/2 + ybw/2;
+			}
+		})
+		.attr("y", d => yScale(d.to) + ybw/2)
+		.attr("alignment-baseline", "central")
+		.attr("text-anchor", "left")
+		.attr("fill", d => {
+			if (stages.indexOf(d.to) > 3 && d.from != d.to) {
+				return "#fff";
+			} else {
+				return "#000";
+			}
+		});
 }
 
 draw();
@@ -878,13 +975,100 @@ function update(currentFromChanged = false) {
 			});
 	}
 
-	// Update triggers.
+	// Update triggers and annotations.
+
 	triggers = svg.selectAll("g.triggers text");
 	triggers
 		.data(transitions)
 		.transition()
 		.attr("x", d => xScale(d.id) + bw/2)
-		.text(d => d.trigger);
+		.text(d => d.trigger)
+		.attr("class", d => {
+			let ids = transitions.map(t => t.id);
+			if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
+				return 'alt-view false';
+			} else {
+				return 'alt-view';
+			}
+		});
+
+	logic = svg.selectAll("g.logic text");
+	logic
+		.data([...Array(10).keys()])
+		.transition()
+		.attr("x", (d,i) => {
+			if (i < transitions.length) {
+				return xScale(transitions[i].id) + bw/2;
+			} else {
+				return xScale.range()[1];
+			}
+		})
+		.attr("y", (d,i) => {
+			if (i < transitions.length) {
+				d = transitions[i];
+				if (d.to == d.from) {
+					return yScale("TRIGGER") + ybw/4;
+				} else {
+					return yScale("TRIGGER");
+				}
+			} else {
+				return yScale("TRIGGER") + ybw/4;
+			}
+		})
+		.text((d, i) => {
+			if (i < transitions.length) {
+				d = transitions[i];
+				if (i == 0) {
+					return 'IF';
+				} else if (d.from == d.to) {
+					return 'ELSE';
+				} else {
+					return 'ELSE IF';
+				}
+			} else {
+				return '';
+			}
+		})
+		.attr("class", (d,i) => {
+			if (i < transitions.length) {
+				d = transitions[i];
+				let ids = transitions.map(t => t.id);
+				if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
+					return 'alt-view false';
+				} else {
+					return 'alt-view';
+				}
+			} else {
+				return 'alt-view';
+			}
+		});
+
+	toText = svg.selectAll("g.to-text text");
+	toText
+		.data(transitions.filter(d => d.from == currentFrom & d.to == currentTo))
+		.transition()
+		.text(d => {
+			if (d.from == d.to) {
+				return `Stay on Stage ${d.from}`;
+			} else {
+				return `Go to Stage ${d.to}`;
+			}
+		})
+		.attr("x", d => {
+			if (d.from == d.to) {
+				return xScale.range()[1] + ybw/2;
+			} else {
+				return xScale(d.id) + bw/2 + ybw/2;
+			}
+		})
+		.attr("y", d => yScale(d.to) + ybw/2)
+		.attr("fill", d => {
+			if (stages.indexOf(d.to) > 3 && d.from != d.to) {
+				return "#fff";
+			} else {
+				return "#000";
+			}
+		});
 
 }
 
