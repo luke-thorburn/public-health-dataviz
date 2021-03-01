@@ -18,7 +18,7 @@
 }
 ---
 
-Introduce the research.
+(Introduce the research)
 
 List side-effects of restrictions, to make concrete. Both negative and positive. Lost revenue, unemployment, depression, anxiety, suicide, domestic violence, alcohol consumption, road traffic crashes, work-life balance, lost education, deferred medical treatment / screening, family time, access to green space, ...
 

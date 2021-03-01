@@ -18,15 +18,6 @@ module.exports = function(eleventyConfig) {
 
 	})
 
-	eleventyConfig.addFilter("get_graph_title", function(name, slug) {
-
-		let spec = fs.readFileSync(`../src/posts/${slug}/graph-${name}.json`).toString(),
-			title = JSON.parse(spec)['uom-title'];
-
-		return title;
-
-	})
-
 
 	// Add shortcode to import custom elements (d3 graphs, tables etc.).
 	eleventyConfig.addShortcode("import_content", function(name, slug) {
@@ -62,8 +53,6 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addShortcode("import_graph", function(name, slug) {
 		
-
-		let title = `${eleventyConfig.getFilter("get_graph_title")(name, slug)}`;
 
 		let toggle_specs = eleventyConfig.getFilter("get_graph_toggles")(name, slug),
 			toggles = ``;
@@ -109,9 +98,6 @@ module.exports = function(eleventyConfig) {
 
 		return `<div class="graph-with-toggles">
 			<aside>
-				<div class="about">
-					<h1>${title}</h1>
-				</div>
 				<div class="toggles">
 					${toggles}
 				</div>

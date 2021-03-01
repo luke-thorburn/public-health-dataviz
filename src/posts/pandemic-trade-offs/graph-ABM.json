@@ -16,15 +16,30 @@
 		},
 		"title": {
 			"font": "Source Sans Pro, sans-serif",
-			"subtitleFont": "Source Sans Pro, sans-serif"
+			"subtitleFont": "Source Sans Pro, sans-serif",
+			"anchor": "start",
+			"color": "#012a58",
+			"fontSize": 28,
+			"fontWeight": 700,
+			"subtitleColor": "#000000",
+			"subtitleFontSize": "20",
+			"subtitleFontWeight": "400",
+			"subtitlePadding": 10,
+			"offset": 20,
+			"dx": 70
 		}
+	},
+
+	"title": {
+		"text": "SARS-CoV-2 Case Modelling",
+		"subtitle": "This is a subtitle."
 	},
 
 	"description": "New cases from ABM.",
 	"data": {
 		"name": "main",
 		"format": {"type": "csv", "parse": "auto"},
-		"url": "/posts/SARS-CoV-2/dummy_ABM_data.csv",
+		"url": "/posts/pandemic-trade-offs/dummy_ABM_data.csv",
 		"transform": [
 			{ "type": "filter", "expr": "datum.vaccine_uptake === VaccineUptake" },
 			{ "type": "filter", "expr": "datum.v1_transmission_effectiveness === PfizerTransmissionReduction" },
@@ -130,7 +145,7 @@
 			"name": "x",
 			"type": "linear",
 			"range": "width",
-			"domain": [0, 365]
+			"domain": [0, 51]
 		},
 		{
 			"name": "y",
@@ -144,13 +159,13 @@
 		{
 			"orient": "bottom",
 			"scale": "x",
-			"title": "Days since start of simulation",
+			"title": "Weeks since start of simulation",
 			"titleY": 50
 		},
 		{
 			"orient": "left",
 			"scale": "y",
-			"title": "New cases each day",
+			"title": "New cases each day (7-day average)",
 			"titleX": -50
 		}
 	],
@@ -171,7 +186,7 @@
 					"from": {"data": "series"},
 					"encode": {
 						"enter": {
-							"x": {"scale": "x", "field": "day"},
+							"x": {"scale": "x", "field": "week"},
 							"y": {"scale": "y", "field": "new_cases"},
 							"strokeWidth": {"value": 1}
 						}
@@ -180,8 +195,6 @@
 			]
 		}
 	],
-
-	"uom-title": "SARS-CoV-2 Case Modelling",
 
 	"uom-toggles": {
 		"toggle-groups": [

@@ -87,7 +87,7 @@ permalink: /{{ post.data.slug }}/
 
 		function render(key, spec) {
 			views[key] = new vega.View(vega.parse(spec), {
-				renderer: 'canvas',  			// renderer (canvas or svg)
+				renderer: 'svg',  			// renderer (canvas or svg)
 				container: `#graph-container-${key}`,  // parent DOM container
 				hover: true       				// enable hover processing
 			});
