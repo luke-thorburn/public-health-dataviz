@@ -12,61 +12,64 @@ svg g.logic text.false, svg g.triggers text.false {
 	opacity: .4;
 }
 
-.uomcontent nav.strategies {
-	display: flex;
-	justify-content: center;
-	margin-bottom: calc(3*var(--p));
+svg g.logic text.upcoming, svg g.triggers text.upcoming {
+	opacity: .4;
 }
 
-.uomcontent nav.strategies span {
-	color: var(--c1-dark);
-	font-weight: 600;
+nav.strategies {
+	display: grid;
+	grid-template-columns: repeat(4, .25fr);
+	grid-column-gap: 10px;
+	width: calc(100% - 240px);
+	margin: 0 auto 20px auto;
 }
 
-.uomcontent nav.strategies button {
-	display: flex;
-	flex-direction: column;
-	width: 250px;
-	margin-left: var(--h);
-	border: 0;
-	padding: 0 var(--q);
-	font-size: 1rem;
+nav.strategies > div {
 	background-color: #f6f6f6;
-	border: 1px solid #f6f6f6;
+	border: 1px solid var(--c1-light);
+	padding: 10px;
+	transition: border-color .25s;
 	cursor: pointer;
-	box-sizing: border-box;
 }
 
-.uomcontent body.post nav.strategies button h1, body.post nav.strategies button p {
-	width: auto;
-	min-width: auto;
+nav.strategies > div:hover {
+	/*background-color: var(--c1-light);*/
+	border: 1px solid var(--c1-dark);
+}
 
-	font-size: .9rem;
+nav.strategies > div.active {
+	border: 1px solid var(--c1-dark);
+}
+
+nav.strategies > div .button-title {
+	color: var(--c1-darker);
+	font-weight: 600;
+	margin-bottom: 5px;
+	line-height: 1.1rem;
+}
+
+nav.strategies > div .button-description {
+	color: #000;
+	font-weight: 400;
+	line-height: 1.1rem;
 	margin: 0;
-	padding: 0;
-	text-align: left;
-	color: var(--default-text);
-	font-family: Roboto;
 }
 
-.uomcontent body.post nav.strategies button h1 {
-	padding-top: var(--q);
-	font-weight: 500;
+div.graph-title, div.graph-subtitle {
+	width: calc(600px + 44.8rem - 240px);
+	margin: 0 auto;
 }
 
-.uomcontent body.post nav.strategies button p {
-	padding: var(--q) 0;
-	font-weight: 300;
+div.graph-title {
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--c1-darker);
+	margin-bottom: 0px;
 }
 
-.uomcontent nav.strategies button.active, nav.strategies button:hover {
-	border: 1px solid #bcbcbc;
-}
-
-.uomcontent nav.strategies button:focus {
-	outline: none;
-}
-
-.uomcontent #fig-strategies {
-	/*background-color: red;*/
+div.graph-subtitle {
+	font-size: 20px;
+	color: #000;
+	font-weight: 400;
+	margin-bottom: 20px;
 }

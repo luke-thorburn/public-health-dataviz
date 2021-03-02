@@ -12,7 +12,22 @@
 		},
 		"legend": {
 			"labelFont": "Source Sans Pro, sans-serif",
-			"titleFont": "Source Sans Pro, sans-serif"
+			"titleFont": "Source Sans Pro, sans-serif",
+			"labelFontSize": 18,
+			"labelColor": "#000000",
+			"titlePadding": 15,
+			"titleFontSize": 20,
+			"titleColor": "#012a58",
+			"symbolSize": 360,
+			"labelSeparation": 10,
+			"labelOffset": 10,
+			"offset": 20,
+			"titleFontWeight": 400,
+			"layout": {
+				"right": {
+					"anchor": "start"
+				}
+			}
 		},
 		"title": {
 			"font": "Source Sans Pro, sans-serif",
@@ -152,6 +167,20 @@
 			"type": "linear",
 			"range": "height",
 			"domain": [0, 1200]
+		},
+		{
+			"name": "colour",
+			"type": "ordinal",
+			"domain": ["1", "1b", "2", "3", "4"],
+			"range": ["#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac"]
+		}
+	],
+
+	"legends": [
+		{
+			"direction": "vertical",
+			"fill": "colour",
+			"title": "Stages"
 		}
 	],
 
@@ -177,7 +206,7 @@
 				"facet": {
 					"name": "series",
 					"data": "main",
-					"groupby": ["trace", "condition_set"]
+					"groupby": ["trace", "condition_set", "stage"]
 				}
 			},
 			"marks": [
@@ -188,6 +217,7 @@
 						"enter": {
 							"x": {"scale": "x", "field": "week"},
 							"y": {"scale": "y", "field": "new_cases"},
+							"stroke": {"scale": "colour", "field": "stage"},
 							"strokeWidth": {"value": 1}
 						}
 					}
@@ -205,13 +235,21 @@
 						"name": "Pfizer Transmission Reduction",
 						"description": "Percentage by which the Pfizer vaccine reduces transmission.",
 						"type": "select",
-						"values": [50, 75, 90]
+						"options": [
+							{ "value": 50, "label": "50%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
+						]
 					},
 					{
 						"name": "AstraZeneca Transmission Reduction",
 						"description": "Percentage by which the Pfizer vaccine reduces transmission.",
 						"type": "select",
-						"values": [50, 75, 90]
+						"options": [
+							{ "value": 50, "label": "50%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
+						]
 					}
 				]
 			},
@@ -222,7 +260,11 @@
 						"name": "Vaccine Uptake",
 						"description": "Percentage of people who accept vaccination when available.",
 						"type": "select",
-						"values": [60, 75, 90]
+						"options": [
+							{ "value": 60, "label": "60%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
+						]
 					}
 				]
 			},
@@ -233,20 +275,20 @@
 						"name": "Strategy",
 						"description": "Government strategy for moving between different levels of restrictions.",
 						"type": "select",
-						"values": [
-							"Aggressive Elimination",
-							"Moderate Elimination",
-							"Tight Suppression",
-							"Loose Suppression"
+						"options": [
+							{ "value": "Aggressive Elimination" },
+							{ "value": "Moderate Elimination" },
+							{ "value": "Tight Suppression" },
+							{ "value": "Loose Suppression" }
 						]
 					},
 					{
 						"name": "Strategy Relaxation",
 						"description": "Relax the triggers for each strategy as vaccinations progress?",
 						"type": "select",
-						"values": [
-							"No",
-							"Yes"
+						"options": [
+							{ "value": "No" },
+							{ "value": "Yes" }
 						]
 					}
 				]

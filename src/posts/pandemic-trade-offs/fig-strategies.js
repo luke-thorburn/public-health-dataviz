@@ -33,20 +33,20 @@ var strategies = {
 			name: "Moderate Elimination",
 			description: "Aim for no community transmission, less quickly.",
 			transitions: [
-				{ from: "1",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "1b",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "2",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "3",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "1",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "1b",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "2",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "1",		to: "2", 	trigger: "2+ cases in last 14 days" },
-				{ from: "1b",		to: "2", 	trigger: "2+ cases in last 14 days" },
-				{ from: "1",		to: "1b", 	trigger: "any new case" },
-				{ from: "4",		to: "3", 	trigger: "7-day average < 5" },
-				{ from: "3",		to: "2", 	trigger: "7-day average < 1" },
-				{ from: "2",		to: "1b", 	trigger: "no cases in 7 days" },
-				{ from: "1b",		to: "1", 	trigger: "no cases in 28 days" },
+				{ from: "1",		to: "4", 	trigger: "7-day average > 30" },
+				{ from: "1b",		to: "4", 	trigger: "7-day average > 30" },
+				{ from: "2",		to: "4", 	trigger: "7-day average > 30" },
+				{ from: "3",		to: "4", 	trigger: "7-day average > 30" },
+				{ from: "1",		to: "3", 	trigger: "7-day average > 6" },
+				{ from: "1b",		to: "3", 	trigger: "7-day average > 6" },
+				{ from: "2",		to: "3", 	trigger: "7-day average > 6" },
+				{ from: "1",		to: "2", 	trigger: "5+ cases in last 14 days" },
+				{ from: "1b",		to: "2", 	trigger: "5+ cases in last 14 days" },
+				{ from: "1",		to: "1b", 	trigger: "2+ cases in last 14 days" },
+				{ from: "4",		to: "3", 	trigger: "7-day average < 20" },
+				{ from: "3",		to: "2", 	trigger: "7-day average < 5" },
+				{ from: "2",		to: "1b", 	trigger: "7-day average < 1" },
+				{ from: "1b",		to: "1", 	trigger: "no cases in 7 days" },
 				{ from: "1",		to: "1", 	trigger: "" },
 				{ from: "1b",		to: "1b", 	trigger: "" },
 				{ from: "2",		to: "2", 	trigger: "" },
@@ -58,20 +58,20 @@ var strategies = {
 			name: "Tight Suppression",
 			description: "Aim for 1-5 new cases per million people per day.",
 			transitions: [
-				{ from: "1",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "1b",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "2",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "3",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "1",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "1b",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "2",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "1",		to: "2", 	trigger: "2+ cases in last 14 days" },
-				{ from: "1b",		to: "2", 	trigger: "2+ cases in last 14 days" },
-				{ from: "1",		to: "1b", 	trigger: "any new case" },
-				{ from: "4",		to: "3", 	trigger: "7-day average < 5" },
-				{ from: "3",		to: "2", 	trigger: "7-day average < 1" },
-				{ from: "2",		to: "1b", 	trigger: "no cases in 7 days" },
-				{ from: "1b",		to: "1", 	trigger: "no cases in 28 days" },
+				{ from: "1",		to: "4", 	trigger: "7-day average > 20/mill." },
+				{ from: "1b",		to: "4", 	trigger: "7-day average > 20/mill." },
+				{ from: "2",		to: "4", 	trigger: "7-day average > 20/mill." },
+				{ from: "3",		to: "4", 	trigger: "7-day average > 20/mill." },
+				{ from: "1",		to: "3", 	trigger: "7-day average > 10/mill." },
+				{ from: "1b",		to: "3", 	trigger: "7-day average > 10/mill." },
+				{ from: "2",		to: "3", 	trigger: "7-day average > 10/mill." },
+				{ from: "1",		to: "1b", 	trigger: "7-day average > 5/mill." },
+				{ from: "1b",		to: "2", 	trigger: "7-day average > 5/mill." },
+				// { from: "2",		to: "3", 	trigger: "7-day average > 5/mill." },
+				{ from: "4",		to: "3", 	trigger: "7-day average < 2.5/mill." },
+				{ from: "3",		to: "2", 	trigger: "7-day average < 2.5/mill." },
+				{ from: "2",		to: "1b", 	trigger: "7-day average < 2.5/mill." },
+				{ from: "1b",		to: "1", 	trigger: "7-day average < 2.5/mill." },
 				{ from: "1",		to: "1", 	trigger: "" },
 				{ from: "1b",		to: "1b", 	trigger: "" },
 				{ from: "2",		to: "2", 	trigger: "" },
@@ -83,20 +83,20 @@ var strategies = {
 			name: "Loose Suppression",
 			description: "Aim for 5-25 new cases per million people per day.",
 			transitions: [
-				{ from: "1",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "1b",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "2",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "3",		to: "4", 	trigger: "7-day average > 7.5" },
-				{ from: "1",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "1b",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "2",		to: "3", 	trigger: "7-day average > 1.5" },
-				{ from: "1",		to: "2", 	trigger: "2+ cases in last 14 days" },
-				{ from: "1b",		to: "2", 	trigger: "2+ cases in last 14 days" },
-				{ from: "1",		to: "1b", 	trigger: "any new case" },
-				{ from: "4",		to: "3", 	trigger: "7-day average < 5" },
-				{ from: "3",		to: "2", 	trigger: "7-day average < 1" },
-				{ from: "2",		to: "1b", 	trigger: "no cases in 7 days" },
-				{ from: "1b",		to: "1", 	trigger: "no cases in 28 days" },
+				{ from: "1",		to: "4", 	trigger: "7-day average > 100/mill." },
+				{ from: "1b",		to: "4", 	trigger: "7-day average > 100/mill." },
+				{ from: "2",		to: "4", 	trigger: "7-day average > 100/mill." },
+				{ from: "3",		to: "4", 	trigger: "7-day average > 100/mill." },
+				{ from: "1",		to: "3", 	trigger: "7-day average > 50/mill." },
+				{ from: "1b",		to: "3", 	trigger: "7-day average > 50/mill." },
+				{ from: "2",		to: "3", 	trigger: "7-day average > 50/mill." },
+				{ from: "1",		to: "1b", 	trigger: "7-day average > 25/mill." },
+				{ from: "1b",		to: "2", 	trigger: "7-day average > 25/mill." },
+				// { from: "2",		to: "3", 	trigger: "7-day average > 25/mill." },
+				{ from: "4",		to: "3", 	trigger: "7-day average < 12.5/mill." },
+				{ from: "3",		to: "2", 	trigger: "7-day average < 12.5/mill." },
+				{ from: "2",		to: "1b", 	trigger: "7-day average < 12.5/mill." },
+				{ from: "1b",		to: "1", 	trigger: "7-day average < 12.5/mill." },
 				{ from: "1",		to: "1", 	trigger: "" },
 				{ from: "1b",		to: "1b", 	trigger: "" },
 				{ from: "2",		to: "2", 	trigger: "" },
@@ -134,9 +134,8 @@ for (let strategy of Object.keys(strategies)) {
 // ============================================================================== //
 
 var width = document.querySelector("#fig-strategies").clientWidth,
-	ratio = .75,
-	height = 300, //ratio * width,
-	m = [0, 120, 40, 120],
+	height = 300,
+	m = [20, 120, 40, 120],
 	w = width - m[1] - m[3],
 	h = height - m[0] - m[2],
 
@@ -162,7 +161,6 @@ d3.select(window)
 	.on("resize", function() {
 		
 		width = document.querySelector("#fig-strategies").clientWidth;
-		// height = 600, // ratio * width;
 		w = width - m[1] - m[3];
 		h = height - m[0] - m[2];
 		
@@ -291,7 +289,7 @@ function draw() {
 
 	xScale = d3.scaleBand()
 		.domain(transitions.map(d => d.id))
-		.range([m[3], width - yScale.bandwidth()/2 - m[1]])
+		.range([m[3], width - m[1]])
 		.paddingInner(.1)
 		.paddingOuter(.1)
 
@@ -300,7 +298,6 @@ function draw() {
 
 	currentX = xScale(`${currentFrom}-${currentTo}`) + bw/2;
 	currentY = yScale(currentFrom);
-
 
 	// Draw TIGHTENING / EASING brackets.
 
@@ -314,28 +311,29 @@ function draw() {
 		r2 = show2 ? xScale(transitions.filter(d => d.direction == 'ease').slice(-1)[0].id) + bw : 0,
 		show3 = transitions.map(d => d.direction).includes('none'),
 		l3 = show3 ? xScale(transitions.filter(d => d.direction == 'none')[0].id) : 0,
-		r3 = show3 ? xScale(transitions.filter(d => d.direction == 'none').slice(-1)[0].id) + bw : 0;
+		r3 = show3 ? xScale(transitions.filter(d => d.direction == 'none').slice(-1)[0].id) + bw : 0,
+		dCurr = transitions.filter(d => d.from == currentFrom & d.to == currentTo)[0];
 
 	bracketL = svg.append("path")
 		.attr("class", "alt-view")
 		.attr("d", `M ${l1} ${b} L ${l1} ${t} L ${r1} ${t} L ${r1} ${b}`)
 		.attr("stroke", "#000000")
 		.attr("fill", "transparent")
-		.attr("opacity", show1 ? 1 : 0);
+		.attr("opacity", show1 ? (dCurr.direction == "tighten" ? 1 : .4) : 0);
 
 	bracketM = svg.append("path")
 		.attr("class", "alt-view")
 		.attr("d", `M ${l2} ${b} L ${l2} ${t} L ${r2} ${t} L ${r2} ${b}`)
 		.attr("stroke", "#000000")
 		.attr("fill", "transparent")
-		.attr("opacity", show2 ? 1 : 0);
+		.attr("opacity", show2 ? (dCurr.direction == "ease" ? 1 : .4) : 0);
 
 	bracketR = svg.append("path")
 		.attr("class", "alt-view")
 		.attr("d", `M ${l3} ${b} L ${l3} ${t} L ${r3} ${t} L ${r3} ${b}`)
 		.attr("stroke", "#000000")
 		.attr("fill", "transparent")
-		.attr("opacity", show3 ? 1 : 0);
+		.attr("opacity", show3 ? (dCurr.direction == "none" ? 1 : .4) : 0);
 
 	bracketTextBackgroundL = svg.append("text")
 		.attr("class","alt-view")
@@ -357,7 +355,7 @@ function draw() {
 		.attr("alignment-baseline", "middle")
 		.attr("text-anchor", "middle")
 		.attr("fill", "#000000")
-		.attr("opacity", show1 ? 1 : 0);
+		.attr("opacity", show1 ? (dCurr.direction == "tighten" ? 1 : .4) : 0);
 
 	bracketTextBackgroundM = svg.append("text")
 		.attr("class","alt-view")
@@ -379,7 +377,7 @@ function draw() {
 		.attr("alignment-baseline", "middle")
 		.attr("text-anchor", "middle")
 		.attr("fill", "#000")
-		.attr("opacity", show2 ? 1 : 0);
+		.attr("opacity", show2 ? (dCurr.direction == "ease" ? 1 : .4) : 0);
 
 	bracketTextBackgroundR = svg.append("text")
 		.attr("class","alt-view")
@@ -401,7 +399,7 @@ function draw() {
 		.attr("alignment-baseline", "middle")
 		.attr("text-anchor", "middle")
 		.attr("fill", "#000")
-		.attr("opacity", show3 ? 1 : 0);
+		.attr("opacity", show3 ? (dCurr.direction == "none" ? 1 : .4) : 0);
 
 	// Draw washed-out background rows.
 
@@ -557,7 +555,7 @@ function draw() {
 		.attr("class","alt-view")
 		.attr("x", 0)
 		.attr("y", d => yScale(d.from) + yScale.bandwidth() / 2)
-		.text(d => `Current Stage ${d.from}`)
+		.text(d => `Current Stage: ${d.from}`)
 		.attr("alignment-baseline", "central")
 		.attr("fill", "#000");
 	
@@ -648,6 +646,8 @@ function draw() {
 			let ids = transitions.map(t => t.id);
 			if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
 				return 'alt-view false';
+			} else if (ids.indexOf(d.id) > ids.indexOf(`${currentFrom}-${currentTo}`)) {
+				return 'alt-view upcoming';
 			} else {
 				return 'alt-view';
 			}
@@ -708,6 +708,8 @@ function draw() {
 				let ids = transitions.map(t => t.id);
 				if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
 					return 'alt-view false';
+				} else if (ids.indexOf(d.id) > ids.indexOf(`${currentFrom}-${currentTo}`)) {
+					return 'alt-view upcoming';
 				} else {
 					return 'alt-view';
 				}
@@ -794,22 +796,23 @@ function update(currentFromChanged = false) {
 		r2 = show2 ? xScale(transitions.filter(d => d.direction == 'ease').slice(-1)[0].id) + bw : 0,
 		show3 = transitions.map(d => d.direction).includes('none'),
 		l3 = show3 ? xScale(transitions.filter(d => d.direction == 'none')[0].id) : 0,
-		r3 = show3 ? xScale(transitions.filter(d => d.direction == 'none').slice(-1)[0].id) + bw : 0;
+		r3 = show3 ? xScale(transitions.filter(d => d.direction == 'none').slice(-1)[0].id) + bw : 0,
+		dCurr = transitions.filter(d => d.from == currentFrom & d.to == currentTo)[0];
 
 	bracketL
 		.transition()
 		.attr("d", `M ${l1} ${b} L ${l1} ${t} L ${r1} ${t} L ${r1} ${b}`)
-		.attr("opacity", show1 ? 1 : 0);
+		.attr("opacity", show1 ? (dCurr.direction == "tighten" ? 1 : .4) : 0);
 
 	bracketM
 		.transition()
 		.attr("d", `M ${l2} ${b} L ${l2} ${t} L ${r2} ${t} L ${r2} ${b}`)
-		.attr("opacity", show2 ? 1 : 0);
+		.attr("opacity", show2 ? (dCurr.direction == "ease" ? 1 : .4) : 0);
 
 	bracketR
 		.transition()
 		.attr("d", `M ${l3} ${b} L ${l3} ${t} L ${r3} ${t} L ${r3} ${b}`)
-		.attr("opacity", show3 ? 1 : 0);
+		.attr("opacity", show3 ? (dCurr.direction == "none" ? 1 : .4) : 0);
 
 	bracketTextBackgroundL
 		.transition()
@@ -819,7 +822,7 @@ function update(currentFromChanged = false) {
 	bracketTextL
 		.transition()
 		.attr("x", (l1+r1)/2)
-		.attr("opacity", show1 ? 1 : 0);
+		.attr("opacity", show1 ? (dCurr.direction == "tighten" ? 1 : .4) : 0);
 
 	bracketTextBackgroundM
 		.transition()
@@ -829,7 +832,7 @@ function update(currentFromChanged = false) {
 	bracketTextM
 		.transition()
 		.attr("x", (l2+r2)/2)
-		.attr("opacity", show2 ? 1 : 0);
+		.attr("opacity", show2 ? (dCurr.direction == "ease" ? 1 : .4) : 0);
 
 	bracketTextBackgroundR
 		.transition()
@@ -839,7 +842,7 @@ function update(currentFromChanged = false) {
 	bracketTextR
 		.transition()
 		.attr("x", (l3+r3)/2)
-		.attr("opacity", show3 ? 1 : 0);
+		.attr("opacity", show3 ? (dCurr.direction == "none" ? 1 : .4) : 0);
 
 	// Update active path.
 
@@ -933,7 +936,7 @@ function update(currentFromChanged = false) {
 		.data([{ from: currentFrom }])
 		.transition()
 		.attr("y", d => yScale(d.from) + yScale.bandwidth() / 2)
-		.text(d => `Current Stage ${d.from}`);
+		.text(d => `Current Stage: ${d.from}`);
 
 	// Redraw hover targets.
 
@@ -985,11 +988,13 @@ function update(currentFromChanged = false) {
 		.text(d => d.trigger)
 		.attr("class", d => {
 			let ids = transitions.map(t => t.id);
-			if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
-				return 'alt-view false';
-			} else {
-				return 'alt-view';
-			}
+				if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
+					return 'alt-view false';
+				} else if (ids.indexOf(d.id) > ids.indexOf(`${currentFrom}-${currentTo}`)) {
+					return 'alt-view upcoming';
+				} else {
+					return 'alt-view';
+				}
 		});
 
 	logic = svg.selectAll("g.logic text");
@@ -1035,6 +1040,8 @@ function update(currentFromChanged = false) {
 				let ids = transitions.map(t => t.id);
 				if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
 					return 'alt-view false';
+				} else if (ids.indexOf(d.id) > ids.indexOf(`${currentFrom}-${currentTo}`)) {
+					return 'alt-view upcoming';
 				} else {
 					return 'alt-view';
 				}
@@ -1069,6 +1076,36 @@ function update(currentFromChanged = false) {
 				return "#000";
 			}
 		});
+
+}
+
+function updateStrategy(button) {
+
+	var buttons = document.querySelectorAll('nav.strategies > div'), i;
+	for (i = 0; i < buttons.length; ++i) {
+		buttons[i].classList.remove("active");
+	}
+	button.classList.add('active');
+
+	currentStrategy = button.getAttribute('data-value');
+	let transitions = strategies[currentStrategy].transitions;
+
+	if (transitions.map(d => d.id).includes(`${currentFrom}-${currentTo}`)) {
+		update(true);
+	} else if (transitions.map(d => d.from).includes(currentFrom)) {
+		transitions = transitions.filter(d => d.from == currentFrom);
+		currentTo = transitions[0].to;
+		update(true);
+	} else {
+		currentFrom = "1";
+		transitions = transitions.filter(d => d.from == currentFrom);
+		currentTo = transitions[0].to;
+		update(true);
+	}
+
+			
+
+
 
 }
 

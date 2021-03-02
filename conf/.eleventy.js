@@ -76,7 +76,7 @@ module.exports = function(eleventyConfig) {
 					let slug = eleventyConfig.getFilter('slug');
 
 					toggle_group_contents += `<select name="${ slug(toggle.name) }" id="select-${name}-${ slug(toggle.name) }">
-						${toggle.values.map(value => `<option value="${value}">${value}</option>`).join('\n')}
+						${toggle.options.map(option => `<option value="${option.value}">${option.label ? option.label : option.value}</option>`).join('\n')}
 					</select>`
 					// https://joshuajohnson.co.uk/Choices/
 

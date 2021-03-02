@@ -35,6 +35,8 @@
 
 	
 
+	
+
 	<script type="text/javascript">
 		function loadCSS(path) { 
 			let file = document.createElement("link");
@@ -102,7 +104,48 @@
 
 	<script type="text/javascript">
 
-		var views = {};
+		var views = {},
+			choices = {};
+
+		function slugify(text) {
+			return text.toString().toLowerCase()
+				.replace(/\s+/g, '-')           // Replace spaces with -
+				.replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+				.replace(/\-\-+/g, '-')         // Replace multiple - with single -
+				.replace(/^-+/, '')             // Trim - from start of text
+				.replace(/-+$/, '');            // Trim - from end of text
+		}
+
+		function render(key, spec) {
+			
+			views[key] = new vega.View(vega.parse(spec), {
+				renderer: 'svg',  			// renderer (canvas or svg)
+				container: `#graph-container-${key}`,  // parent DOM container
+				hover: true       				// enable hover processing
+			});
+			
+			// Initialise Choices.js on toggles.
+			// if (spec.hasOwnProperty('uom-toggles')) {
+			// 	for (let toggleGroup of spec['uom-toggles']['toggle-groups']) {
+			// 		for (let toggle of toggleGroup.toggles) {
+			// 			if (toggle.type == 'select') {
+
+			// 				let select = document.querySelector(`#select-${key}-${slugify(toggle.name)}`);
+			// 				select.parentNode.classList.remove('styled-select');
+			// 				select.removeAttribute('data-bound-fancyselect');
+			// 				// console.log();
+			// 				choices[`${key}-${slugify(toggle.name)}`] = new Choices(select, {
+			// 					searchEnabled: false
+			// 				});
+
+			// 			}
+			// 		}
+			// 	}
+			// }
+
+			return views[key].runAsync();
+
+		}
 
 		for (let key of graphs) {
 		
@@ -111,15 +154,6 @@
 				.then(spec => render(key, spec))
 				.catch(err => console.error(err));
 
-		}
-
-		function render(key, spec) {
-			views[key] = new vega.View(vega.parse(spec), {
-				renderer: 'svg',  			// renderer (canvas or svg)
-				container: `#graph-container-${key}`,  // parent DOM container
-				hover: true       				// enable hover processing
-			});
-			return views[key].runAsync();
 		}
 	
 	</script>
