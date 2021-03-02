@@ -46,8 +46,8 @@
 	},
 
 	"title": {
-		"text": "SARS-CoV-2 Case Modelling",
-		"subtitle": "This is a subtitle."
+		"text": "Simulated COVID-19 case numbers",
+		"subtitle": "100 runs of the model, using the selected parameters."
 	},
 
 	"description": "New cases from ABM.",
