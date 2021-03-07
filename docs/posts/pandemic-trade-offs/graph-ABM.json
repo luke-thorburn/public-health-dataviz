@@ -81,7 +81,7 @@
 			"on": [
 				{
 					"events": {
-						"source": "#select-phase-1-transmission-reduction",
+						"source": "#select-ABM-phase-1-transmission-reduction",
 						"type": "change"
 					},
 					"update": "toNumber(event.target.value)"
@@ -94,7 +94,7 @@
 			"on": [
 				{
 					"events": {
-						"source": "#select-phase-2+-transmission-reduction",
+						"source": "#select-ABM-phase-2+-transmission-reduction",
 						"type": "change"
 					},
 					"update": "toNumber(event.target.value)"
