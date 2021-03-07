@@ -81,7 +81,7 @@
 			"on": [
 				{
 					"events": {
-						"source": "#select-ABM-pfizer-transmission-reduction",
+						"source": "#select-phase-1-transmission-reduction",
 						"type": "change"
 					},
 					"update": "toNumber(event.target.value)"
@@ -94,7 +94,7 @@
 			"on": [
 				{
 					"events": {
-						"source": "#select-ABM-astrazeneca-transmission-reduction",
+						"source": "#select-phase-2+-transmission-reduction",
 						"type": "change"
 					},
 					"update": "toNumber(event.target.value)"
