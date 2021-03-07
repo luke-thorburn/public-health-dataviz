@@ -37,6 +37,8 @@ Note: triggers on the following graph are currently not-quite accurate.
 
 ### Case numbers by strategy
 
+Add vaccine phases to graph.
+
 {% import_graph "ABM", slug %}
 
 

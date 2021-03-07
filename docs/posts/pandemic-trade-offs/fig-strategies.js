@@ -196,7 +196,7 @@ var xScale, yScale;
 // As.pop();
 
 var stageCols = {
-	"1": 	"#f0f9e8",
+	"1": 	"#e8f7b0",
 	"1b": 	"#bae4bc",
 	"2": 	"#7bccc4",
 	"3": 	"#43a2ca",
