@@ -7,7 +7,7 @@
 	"section": "Coronavirus",
 	"type": "Interactive",
 	
-	"title": "Pandemic Tradeoffs",
+	"title": "Pandemic Trade-offs",
 	"date": "2021-01-02",
 	"date_updated": "2021-01-02",
 	"slug": "pandemic-trade-offs",
