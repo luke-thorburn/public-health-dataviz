@@ -221,8 +221,8 @@
 				"name": "Vaccine Effectiveness",
 				"toggles": [
 					{
-						"name": "Pfizer Transmission Reduction",
-						"description": "Percentage by which the Pfizer vaccine reduces transmission.",
+						"name": "Phase 1 Transmission Reduction",
+						"description": "Percentage by which the vaccines administered in Phase 1 reduce transmission.",
 						"type": "select",
 						"options": [
 							{ "value": 50, "label": "50%" },
@@ -231,8 +231,8 @@
 						]
 					},
 					{
-						"name": "AstraZeneca Transmission Reduction",
-						"description": "Percentage by which the Pfizer vaccine reduces transmission.",
+						"name": "Phase 2+ Transmission Reduction",
+						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.",
 						"type": "select",
 						"options": [
 							{ "value": 50, "label": "50%" },
