@@ -94,7 +94,7 @@
 			"on": [
 				{
 					"events": {
-						"source": "#select-ABM-phase-2+-transmission-reduction",
+						"source": "#select-ABM-phase-2-transmission-reduction",
 						"type": "change"
 					},
 					"update": "toNumber(event.target.value)"
@@ -231,7 +231,7 @@
 						]
 					},
 					{
-						"name": "Phase 2+ Transmission Reduction",
+						"name": "Phase 2 Transmission Reduction",
 						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.",
 						"type": "select",
 						"options": [
