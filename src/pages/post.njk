@@ -48,10 +48,16 @@ permalink: /{{ post.data.slug }}/
 
 {% block breadcrumb %}
 	<li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+		<a href="/" title="{{ post.data.section }}" itemprop="item">
+			<span itemprop="name">{{ post.data.section }}</span>
+		</a>
+		<meta content="2" itemprop="position" />
+	</li>
+	<li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 		<a href="/{{ post.data.slug }}" title="{{ post.data.title }}" itemprop="item">
 			<span itemprop="name">{{ post.data.title }}</span>
 		</a>
-		<meta content="2" itemprop="position" />
+		<meta content="3" itemprop="position" />
 	</li>
 {% endblock %}
 
@@ -65,14 +71,39 @@ permalink: /{{ post.data.slug }}/
 		</div>
 	{% endif %}
 
+	<div class="jumpnav"></div>
+	{# In-page navigation - will only be activated if h2's have IDs #}
+
+	{{ post | get_skip_to_links | safe }}
+
 	<h1 class="aligned-title">{{ post.data.title }}</h1>
 
-	<section class="lead left">
-		<p>{{ post.data.description}}</p>
-	</section>
+	{% if post.data.description %}
+		<section class="lead left">
+			<p>{{ post.data.description | safe }}</p>
+		</section>
+	{% endif %}
+
 
 	{{ post.templateContent | markdown | safe }}
 
+
+	<section class="endmatter">
+		{% if post.data.contributors %}
+			<h4>Contributors</h4>
+			<p>{{ post.data.contributors | contributor_links | safe }}</p>
+		{% endif %}
+
+		<h4>Media Enquiries</h4>
+		<p><a href="https://about.unimelb.edu.au/newsroom">University of Melbourne Newsroom</a></p>
+		<dl>
+			<dt>Phone</dt>
+			<dd>+61 3 8344 4123</dd>
+			
+			<dt>Email</dt>
+			<dd><a href="mailto:news@media.unimelb.edu.au?subject=covid19forecast.science.unimelb.edu.au">news@media.unimelb.edu.au</a></dd>
+		</dl>
+	</section>
 
 	<script type="text/javascript">
 

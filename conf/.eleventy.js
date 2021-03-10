@@ -6,6 +6,32 @@ module.exports = function(eleventyConfig) {
 		return JSON.stringify(obj);
 	})
 
+	// Add filter to generate 'jump to' links with image previews.
+	
+	eleventyConfig.addFilter("get_skip_to_links", function(post) {
+
+		// Return nothing if no links.
+		if (!post.data.skipToLinks || post.data.skipToLinks.length == 0) {
+			return '';
+		}
+
+		let html = `<ul class="jump-navigation fixed headless skip-to">` +
+			`<li>Skip to</li>`;
+
+
+		for (let link of post.data.skipToLinks) {
+			html += `<li><a href="#` + link.targetID + `">` +
+				`<div class="img-wrap"><img src="/posts/` + post.data.slug + `/` + link.image + `" /></div>` +
+				link.text +
+			`</a></li>`;
+		}
+
+		html += `</ul>`;
+
+		return html;
+
+	})
+
 	// Add filter to extract toggle specification from graph specification.
 	
 	const fs = require('fs');
@@ -65,6 +91,7 @@ module.exports = function(eleventyConfig) {
 				toggle_group_contents += `<div class="toggle-box">
 					<div class="name">${ toggle.name }</div>
 					<div class="description">${ toggle.description }</div>`;
+
 							
 				if (toggle.type == "range") {
 					
@@ -81,6 +108,10 @@ module.exports = function(eleventyConfig) {
 					// https://joshuajohnson.co.uk/Choices/
 
 				}
+				
+				if (toggle.hasOwnProperty('detailLink')) {
+					toggle_group_contents += `<a href="` + toggle.detailLink + `" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a>`;
+				}
 
 				toggle_group_contents += `</div>`;
 
@@ -96,14 +127,14 @@ module.exports = function(eleventyConfig) {
 			</div>`;
 		}
 
-		return `<div class="graph-with-toggles">
+		return `<div class="graph-with-toggles" id="graph-` + name + `">
 			<aside>
 				<div class="toggles">
 					${toggles}
 				</div>
 			</aside>
 			<div class="graph">
-				<div id="graph-container-${name}"></div>
+				<div id="graph-container-${name}" class="graph-container"></div>
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -112,6 +143,27 @@ module.exports = function(eleventyConfig) {
 		`;
 	});
 	
+	// Add filter to generate contributor links.
+	eleventyConfig.addFilter("contributor_links", function(contributors) {
+		let html = ``;
+
+		contributors.forEach(function(d,i) {
+			let name = d.name.replace(' ', '&nbsp;');
+
+			if (i > 0) {
+				html += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;`;
+			}
+
+			if (d.hasOwnProperty('link')) {
+				html += `<a href="${d.link}" target="_blank" rel="noopener noreferrer">${name}</a>`;
+			} else {
+				html += `${name}`
+			}
+		})
+
+		return html;
+	});
+
 
 	// Add markdown filter.
 	var options = {
@@ -137,6 +189,14 @@ module.exports = function(eleventyConfig) {
 		return rval;
 	});
 
+	function sortByDate(a, b) {
+
+		aDate = new Date(a.date);
+		bDate = new Date(b.date);
+		return aDate - bDate;
+
+	}
+
 	// Add filter to group posts by section.
 	eleventyConfig.addFilter("groupBySection", function(collection) {
 		let rval = [],
@@ -146,7 +206,9 @@ module.exports = function(eleventyConfig) {
 			rval.push({
 				name: section,
 				index: idx + 1,
-				posts: collection.filter(d => d.data.section == section)
+				posts: collection.filter(d => d.data.section == section).sort((a, b) => {
+					return sortByDate(a.data, b.data);
+				})
 			})
 		})
 

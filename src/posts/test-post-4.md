@@ -13,7 +13,7 @@
 	"slug": "test-4",
 	"description": "This is a description for a test post.",
 	"katex": false,
-	"hidden": false
+	"hidden": true
 }
 ---
 

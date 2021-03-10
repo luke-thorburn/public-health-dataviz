@@ -29,9 +29,6 @@ html {
   display: none !important;
 }
 
-.uomcontent div[role=main] {
-  padding-bottom: 4.5rem;
-}
 .uomcontent h1.aligned-title {
   padding-bottom: 1.5rem;
 }
@@ -45,6 +42,60 @@ html {
   content: "";
   display: block;
   margin-left: 0;
+}
+.uomcontent ul.jump-navigation.skip-to {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.uomcontent ul.jump-navigation.skip-to li:first-child {
+  width: 100%;
+  max-width: 100%;
+}
+.uomcontent ul.jump-navigation.skip-to li {
+  max-width: 100%;
+  width: 200px;
+  margin: 0 1rem 1rem 0;
+  display: grid;
+}
+.uomcontent ul.jump-navigation.skip-to li a {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr auto;
+  padding: 0.75rem;
+  border: 1px solid #f2f5f9;
+  font-weight: 600;
+  color: #094183;
+}
+.uomcontent ul.jump-navigation.skip-to li a:hover {
+  background-color: #f2f5f9;
+}
+.uomcontent ul.jump-navigation.skip-to li a .img-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-bottom: 0.5rem;
+}
+.uomcontent section.endmatter {
+  margin-top: 4.5rem;
+  background-color: #f2f5f9;
+}
+.uomcontent dl {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 0 1.5rem 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: 1.125rem;
+}
+.uomcontent dl dt, .uomcontent dl dd {
+  display: block;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
 }
 .uomcontent hr {
   margin: 3rem 0 4.5rem 0;
@@ -145,13 +196,13 @@ html {
   border-top: 1px solid #094183;
   border-bottom: 1px solid #094183;
   min-height: 80vh;
-  max-height: 100vh;
+  max-height: 80vh;
   margin: 4.5rem 0 6rem 0;
 }
 .graph-with-toggles aside {
   grid-row: graph-start/graph-end;
   grid-column: toggles-start/toggles-end;
-  max-height: 100vh;
+  max-height: calc(80vh - 2px);
   border-right: 1px solid #094183;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -222,18 +273,37 @@ html {
   margin-bottom: 0.7rem;
   line-height: 1.1rem;
 }
+.graph-with-toggles aside div.toggles .toggle-group .group-contents .toggle-box .detail-link {
+  display: block;
+  margin-top: 0.35rem;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #444;
+  text-align: right;
+  text-decoration: none;
+}
+.graph-with-toggles aside div.toggles .toggle-group .group-contents .toggle-box .detail-link span {
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+}
+.graph-with-toggles aside div.toggles .toggle-group .group-contents .toggle-box .detail-link:hover span {
+  text-decoration: underline;
+  text-decoration-color: #444;
+}
 .graph-with-toggles div.graph {
   grid-row: graph-start/graph-end;
   grid-column: graph-start/graph-end;
-  max-height: 100vh;
-  padding: 100px 100px 80px 100px;
+  max-height: 80vh;
+  padding: 100px 100px 100px 100px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
-.graph-with-toggles div.graph #graph-container {
+.graph-with-toggles div.graph .graph-container {
   width: 100%;
   height: 100%;
+  max-height: calc(80vh - 200px);
 }
 
 .choices {

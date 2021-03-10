@@ -103,10 +103,6 @@ html {
 
 .uomcontent {
 
-	div[role=main] {
-		padding-bottom: 4.5rem;
-	}
-
 	h1.aligned-title {
 		padding-bottom: 1.5rem;
 
@@ -114,6 +110,10 @@ html {
 			display: none;
 		}
 	}
+
+  section.lead.left * {
+    // font-size: 1.25rem;
+  }
 
 	section.lead.left:after {
 		margin-top: 2.25rem;
@@ -123,6 +123,78 @@ html {
 		display: block;
 		margin-left: 0;
 	}
+
+  ul.jump-navigation.skip-to {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    // margin: 0 auto;
+    // padding-bottom: 1.5rem;
+  }
+
+  ul.jump-navigation.skip-to li:first-child {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  ul.jump-navigation.skip-to li {
+    max-width: 100%;
+    width: 200px;
+    margin: 0 1rem 1rem 0;
+    display: grid;
+  }
+
+  ul.jump-navigation.skip-to li a {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
+    padding: .75rem;
+    border: 1px solid $c1-light;
+    font-weight: 600;
+    color: $c1-dark;
+  }
+
+  ul.jump-navigation.skip-to li a:hover {
+    background-color: $c1-light;
+  }
+
+  ul.jump-navigation.skip-to li a .img-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-bottom: .5rem;
+  }
+
+  section.endmatter {
+    margin-top: 4.5rem;
+    background-color: $c1-light;
+  }
+
+  dl {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 0 1.5rem 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-size: 1.125rem;
+
+    dt, dd {
+      display: block;
+      margin: 0 0 .5rem 0;
+      padding: 0;
+    }
+  }
+
+  // nav.jump-to-links a {
+  //   display: block;
+  //   padding: 1rem;
+  //   background-color: #fedb4a;
+  //   margin-right: 1.5rem;
+  // }
 
 	hr {
 		margin: 3rem 0 4.5rem 0;
@@ -248,13 +320,13 @@ html {
 	border-top: 1px solid $c1-dark;
 	border-bottom: 1px solid $c1-dark;
 	min-height: 80vh;
-	max-height: 100vh;
+	max-height: 80vh;
 	margin: 4.5rem 0 6rem 0;
 
 	aside {
 		grid-row: graph-start / graph-end;
 		grid-column: toggles-start / toggles-end;
-		max-height: 100vh;
+		max-height: calc(80vh - 2px);
 
 		border-right: 1px solid $c1-dark;
 		
@@ -351,6 +423,29 @@ html {
 							margin-bottom: $h;
 							line-height: 1.1rem;
 						}
+
+            .detail-link {
+              display: block;
+              margin-top: #{$q};
+              margin-bottom: $h;
+              text-transform: uppercase;
+              font-size: .9rem;
+              color: #444;
+              text-align: right;
+              text-decoration: none;
+
+              span {
+                text-decoration: underline;
+                text-decoration-color: #ccc;
+              }
+
+              &:hover {
+                span {
+                  text-decoration: underline;
+                  text-decoration-color: #444;
+                }
+              }
+            }
 					}
 				}
 
@@ -362,17 +457,19 @@ html {
 	div.graph {
 		grid-row: graph-start / graph-end;
 		grid-column: graph-start / graph-end;
-		max-height: 100vh;
+		max-height: 80vh;
 
-		padding: 100px 100px 80px 100px;
+		padding: 100px 100px 100px 100px;
 
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
 
-		#graph-container {
+		.graph-container {
 			width: 100%;
 			height: 100%;
+
+      max-height: calc(80vh - 200px);
 		}
 	}
 

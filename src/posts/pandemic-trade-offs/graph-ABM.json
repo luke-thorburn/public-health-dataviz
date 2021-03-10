@@ -49,20 +49,31 @@
 		"text": "Simulated COVID-19 case numbers",
 		"subtitle": "100 runs of the model, using the selected parameters."
 	},
-
 	"description": "New cases from ABM.",
-	"data": {
-		"name": "main",
-		"format": {"type": "csv", "parse": "auto"},
-		"url": "/posts/pandemic-trade-offs/ABM_data.csv",
-		"transform": [
-			{ "type": "filter", "expr": "datum.vaccine_uptake === VaccineUptake" },
-			{ "type": "filter", "expr": "datum.v1_transmission_effectiveness === PfizerTransmissionReduction" },
-			{ "type": "filter", "expr": "datum.v2_transmission_effectiveness === AstraZenecaTransmissionReduction" },
-			{ "type": "filter", "expr": "datum.strategy === Strategy" },
-			{ "type": "filter", "expr": "datum.relax_triggers === StrategyRelaxation" }
-		]
-	},
+
+	"data": [
+		{
+			"name": "main",
+			"format": {"type": "csv", "parse": "auto"},
+			"url": "/posts/pandemic-trade-offs/ABM_data.csv",
+			"transform": [
+				{ "type": "filter", "expr": "datum.vaccine_uptake === VaccineUptake" },
+				{ "type": "filter", "expr": "datum.v1_transmission_effectiveness === PfizerTransmissionReduction" },
+				{ "type": "filter", "expr": "datum.v2_transmission_effectiveness === AstraZenecaTransmissionReduction" },
+				{ "type": "filter", "expr": "datum.strategy === Strategy" },
+				{ "type": "filter", "expr": "datum.relax_triggers === StrategyRelaxation" }
+			]
+		},
+		{
+			"name": "vaccine-phases",
+			"values": [
+				{ "phase": "1", "startDay": 0 },
+				{ "phase": "2a", "startDay": 91 },
+				{ "phase": "2b", "startDay": 182 },
+				{ "phase": "3", "startDay": 273 }
+			]
+		}
+	],
 
 	"signals": [
 		{
@@ -116,7 +127,7 @@
 		},
 		{
 			"name": "Strategy",
-			"update": "'Aggressive Elimination'",
+			"update": "'Loose Suppression'",
 			"on": [
 				{
 					"events": {
@@ -139,6 +150,23 @@
 					"update": "event.target.value"
 				}
 			]
+		},
+		{
+			"name": "VerticalScale",
+			"update": "0.45",
+			"on": [
+				{
+					"events": {
+						"source": "#select-ABM-scale",
+						"type": "change"
+					},
+					"update": "event.target.value"
+				}
+			]
+		},
+		{
+			"name": "VerticalScaleBins",
+			"update": "VerticalScale == 0.45 ? [0,1,5,10,25,50,100,250,500,1000,2500,5000] : [0,500,1000,1500,2000,2500,3000,3500,4000,4500,5000]"
 		}
 	],
 
@@ -154,8 +182,8 @@
 			"type": "pow",
 			"range": "height",
 			"domain": [0, 5000],
-			"exponent": 0.25,
-			"bins": [0,1,5,10,25,50,100,250,500,1000,2500,5000]
+			"exponent": { "signal": "VerticalScale" },
+			"bins": { "signal": "VerticalScaleBins" }
 		},
 		{
 			"name": "colour",
@@ -178,17 +206,48 @@
 			"orient": "bottom",
 			"scale": "x",
 			"title": "Weeks since start of simulation",
-			"titleY": 50
+			"titleY": 50,
+			"zindex": 100
 		},
 		{
 			"orient": "left",
 			"scale": "y",
 			"title": "New cases each day (7-day average)",
-			"titleX": -50
+			"titleX": -50,
+			"zindex": 100
 		}
 	],
 
 	"marks": [
+		{
+			"type": "rule",
+			"from": { "data": "vaccine-phases" },
+			"encode": {
+				"enter": {
+					"x": {"scale": "x", "signal": "datum.startDay / 7"},
+					"x2": {"scale": "x", "signal": "datum.startDay / 7"},
+					"y": {"scale": "y", "value": 0},
+					"y2": {"scale": "y", "value": 5000},
+					"strokeOpacity": {"signal": "datum.startDay > 0 ? .1 : 0"},
+					"strokeWidth": {"value": 1},
+					"stroke": {"value": "#012a58"}
+				}
+			}
+		},
+		{
+			"type": "text",
+			"from": { "data": "vaccine-phases" },
+			"encode": {
+				"enter": {
+					"x": {"scale": "x", "signal": "datum.startDay / 7"},
+					"y": {"scale": "y", "value": 5000},
+					"text": {"signal": "'Phase ' + datum.phase"},
+					"baseline": {"value": "top"},
+					"dx": {"value": 7.5},
+					"fill": {"value": "#012a58"}
+				}
+			}
+		},
 		{
 			"type": "group",
 			"from": {
@@ -202,12 +261,16 @@
 				{
 					"type": "line",
 					"from": {"data": "series"},
+					"zindex": 0,
 					"encode": {
 						"enter": {
 							"x": {"scale": "x", "field": "week"},
 							"y": {"scale": "y", "field": "new_cases"},
 							"stroke": {"scale": "colour", "field": "stage"},
 							"strokeWidth": {"value": 1}
+						},
+						"update": {
+							"y": {"scale": "y", "field": "new_cases"}
 						}
 					}
 				}
@@ -218,26 +281,28 @@
 	"uom-toggles": {
 		"toggle-groups": [
 			{
-				"name": "Vaccine Effectiveness",
+				"name": "Government Response",
 				"toggles": [
 					{
-						"name": "Phase 1 Transmission Reduction",
-						"description": "Percentage by which the vaccines administered in Phase 1 reduce transmission.",
+						"name": "Strategy",
+						"description": "Government strategy for moving between different levels of restrictions.",
+						"detailLink": "/pandemic-trade-offs-detail/#strategies",
 						"type": "select",
 						"options": [
-							{ "value": 50, "label": "50%" },
-							{ "value": 75, "label": "75%" },
-							{ "value": 90, "label": "90%" }
+							{ "value": "Loose Suppression" },
+							{ "value": "Tight Suppression" },
+							{ "value": "Moderate Elimination" },
+							{ "value": "Aggressive Elimination" }
 						]
 					},
 					{
-						"name": "Phase 2 Transmission Reduction",
-						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.",
+						"name": "Strategy Relaxation",
+						"description": "Relax the triggers for each strategy as vaccinations progress?",
+						"detailLink": "/pandemic-trade-offs-detail/#strategy-relaxation",
 						"type": "select",
 						"options": [
-							{ "value": 50, "label": "50%" },
-							{ "value": 75, "label": "75%" },
-							{ "value": 90, "label": "90%" }
+							{ "value": "No", "label": "Off" },
+							{ "value": "Yes", "label": "On" }
 						]
 					}
 				]
@@ -247,7 +312,7 @@
 				"toggles": [
 					{
 						"name": "Vaccine Uptake",
-						"description": "Percentage of people who accept vaccination when available.",
+						"description": "Percentage of people who accept vaccination when they are offered it.",
 						"type": "select",
 						"options": [
 							{ "value": 60, "label": "60%" },
@@ -258,26 +323,42 @@
 				]
 			},
 			{
-				"name": "Government Response",
+				"name": "Vaccine Effectiveness",
 				"toggles": [
 					{
-						"name": "Strategy",
-						"description": "Government strategy for moving between different levels of restrictions.",
+						"name": "Phase 1 Transmission Reduction",
+						"description": "Percentage by which the vaccines administered in Phase 1 reduce transmission.",
+						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
 						"type": "select",
 						"options": [
-							{ "value": "Aggressive Elimination" },
-							{ "value": "Moderate Elimination" },
-							{ "value": "Tight Suppression" },
-							{ "value": "Loose Suppression" }
+							{ "value": 50, "label": "50%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
 						]
 					},
 					{
-						"name": "Strategy Relaxation",
-						"description": "Relax the triggers for each strategy as vaccinations progress?",
+						"name": "Phase 2 Transmission Reduction",
+						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.",
+						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
 						"type": "select",
 						"options": [
-							{ "value": "No" },
-							{ "value": "Yes" }
+							{ "value": 50, "label": "50%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
+						]
+					}
+				]
+			},
+			{
+				"name": "Graph Options",
+				"toggles": [
+					{
+						"name": "Scale",
+						"description": "Which type of scale to use on the vertical axis.",
+						"type": "select",
+						"options": [
+							{ "value": "0.45", "label": "Exponential" },
+							{ "value": "1", "label": "Linear" }
 						]
 					}
 				]

@@ -77,10 +77,16 @@
 				</li>
 				
 	<li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+		<a href="/" title="COVID-19 Pandemic" itemprop="item">
+			<span itemprop="name">COVID-19 Pandemic</span>
+		</a>
+		<meta content="2" itemprop="position" />
+	</li>
+	<li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 		<a href="/pandemic-trade-offs" title="Pandemic Trade-offs" itemprop="item">
 			<span itemprop="name">Pandemic Trade-offs</span>
 		</a>
-		<meta content="2" itemprop="position" />
+		<meta content="3" itemprop="position" />
 	</li>
 
 			</ol>
@@ -94,70 +100,64 @@
 
 	
 
+	<div class="jumpnav"></div>
+	
+
+	<ul class="jump-navigation fixed headless skip-to"><li>Skip to</li><li><a href="#graph-ABM"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-ABM.svg" /></div>Infections</a></li><li><a href="#graph-ABM"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-example.svg" /></div>Overall costs</a></li><li><a href="#graph-ABM"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-example2.svg" /></div>PMSLT</a></li></ul>
+
 	<h1 class="aligned-title">Pandemic Trade-offs</h1>
 
-	<section class="lead left">
-		<p>Balancing the benefits and harms of government restrictions as the vaccines are rolled out.</p>
-	</section>
+	
+		<section class="lead left">
+			<p>A tool for exploring the costs and benefits of policy decisions in the context of the SARS-CoV-2 vaccine rollout.</p>
+		</section>
+	
 
-	<p>Introduce the research.</p>
+
+	<p>This webpage allows you to compare COVID-19 policy responses (e.g. vaccination coverage and effectiveness, impacts of lockdowns on conditions other than SARS-CoV-2 infection rates).  We have run 600+ scenarios, 100 iterations each, through an agent-based model to estimate SARS-CoV-2 infection rates, then run each of these scenarios and iterations through an integrated epidemiological and economic model to estimate health loss (in health adjusted life years; HALYs; coming soon), health expenditure and GDP costs – with the proportion of times each scenario is optimal from either a health or partial societal perspective (including GDP).</p>
+<p><a href="/pandemic-trade-offs-detail/" class="button-small with-arrow" target="_blank" rel="noopener noreferrer">View modelling details</a></p>
+<hr>
+<p>Introduce the research.</p>
 <p>List side-effects of restrictions, to make concrete. Both negative and positive. Lost revenue, unemployment, depression, anxiety, suicide, domestic violence, alcohol consumption, road traffic crashes, work-life balance, lost education, deferred medical treatment / screening, family time, access to green space, …</p>
 <hr>
-<h3>Stages and Strategies</h3>
-<table class="zebra">
-	<thead>
-		<tr>
-			<th></th>
-			<th>Stage 1</th>
-			<th>Stage 2</th>
-			<th>Stage 3</th>
-			<th>Stage 4</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</tbody>
-</table>
-<p>Note: triggers on the following graph are currently not-quite accurate.</p>
-<div class="fig outset-4 more-margin-3">
-	<div class="graph-title">Strategies</div>
-	<div class="graph-subtitle">Choose a strategy, then hover over the graph to explore the rules for when to tighten or ease restrictions.</div>
-	<nav class="strategies">
-		<div class="active" data-value="Aggressive Elimination" onmouseenter="updateStrategy(this)">
-			<div class="button-title">Aggressive Elimination</div>
-			<div class="button-description">Aim for no community transmission, quickly.</div>
-		</div>
-		<div data-value="Moderate Elimination" onmouseenter="updateStrategy(this)">
-			<div class="button-title">Moderate Elimination</div>
-			<div class="button-description">Aim for no community transmission, less quickly.</div>
-		</div>
-		<div data-value="Tight Suppression" onmouseenter="updateStrategy(this)">
-			<div class="button-title">Tight Suppression</div>
-			<div class="button-description">Aim for 1-5 new cases per million people per day.</div>
-		</div>
-		<div data-value="Loose Suppression" onmouseenter="updateStrategy(this)">
-			<div class="button-title">Loose Suppression</div>
-			<div class="button-description">Aim for 5-25 new cases per million people per day.</div>
-		</div>
-	</nav>
-	<svg id="fig-strategies">
-	</svg>
-</div><script type="text/javascript">
-					loadCSS("/posts/pandemic-trade-offs/fig-strategies.css");
-				</script><script src="/posts/pandemic-trade-offs/fig-strategies.js"></script>
-<hr>
-<h3>Case numbers by strategy</h3>
+<h2>Case numbers by strategy</h2>
 <p>Add vaccine phases to graph.</p>
-<div class="graph-with-toggles">
+<div class="graph-with-toggles" id="graph-ABM">
 			<aside>
 				<div class="toggles">
 					<div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Government Response</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Strategy</div>
+					<div class="description">Government strategy for moving between different levels of restrictions.</div><select name="strategy" id="select-ABM-strategy">
+						<option value="Loose Suppression">Loose Suppression</option>
+<option value="Tight Suppression">Tight Suppression</option>
+<option value="Moderate Elimination">Moderate Elimination</option>
+<option value="Aggressive Elimination">Aggressive Elimination</option>
+					</select><a href="/pandemic-trade-offs-detail/#strategies" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div><div class="toggle-box">
+					<div class="name">Strategy Relaxation</div>
+					<div class="description">Relax the triggers for each strategy as vaccinations progress?</div><select name="strategy-relaxation" id="select-ABM-strategy-relaxation">
+						<option value="No">Off</option>
+<option value="Yes">On</option>
+					</select><a href="/pandemic-trade-offs-detail/#strategy-relaxation" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div>
+				</div>
+			</div><div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Public Response</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Vaccine Uptake</div>
+					<div class="description">Percentage of people who accept vaccination when they are offered it.</div><select name="vaccine-uptake" id="select-ABM-vaccine-uptake">
+						<option value="60">60%</option>
+<option value="75">75%</option>
+<option value="90">90%</option>
+					</select></div>
+				</div>
+			</div><div class="toggle-group">
 				<div class="group-details">
 					<div class="group-name">Vaccine Effectiveness</div>
 				</div>
@@ -168,58 +168,38 @@
 						<option value="50">50%</option>
 <option value="75">75%</option>
 <option value="90">90%</option>
-					</select></div><div class="toggle-box">
+					</select><a href="/pandemic-trade-offs-detail/#effectiveness" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div><div class="toggle-box">
 					<div class="name">Phase 2 Transmission Reduction</div>
 					<div class="description">Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.</div><select name="phase-2-transmission-reduction" id="select-ABM-phase-2-transmission-reduction">
 						<option value="50">50%</option>
 <option value="75">75%</option>
 <option value="90">90%</option>
-					</select></div>
+					</select><a href="/pandemic-trade-offs-detail/#effectiveness" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div>
 				</div>
 			</div><div class="toggle-group">
 				<div class="group-details">
-					<div class="group-name">Public Response</div>
+					<div class="group-name">Graph Options</div>
 				</div>
 				<div class="group-contents">
 					<div class="toggle-box">
-					<div class="name">Vaccine Uptake</div>
-					<div class="description">Percentage of people who accept vaccination when available.</div><select name="vaccine-uptake" id="select-ABM-vaccine-uptake">
-						<option value="60">60%</option>
-<option value="75">75%</option>
-<option value="90">90%</option>
-					</select></div>
-				</div>
-			</div><div class="toggle-group">
-				<div class="group-details">
-					<div class="group-name">Government Response</div>
-				</div>
-				<div class="group-contents">
-					<div class="toggle-box">
-					<div class="name">Strategy</div>
-					<div class="description">Government strategy for moving between different levels of restrictions.</div><select name="strategy" id="select-ABM-strategy">
-						<option value="Aggressive Elimination">Aggressive Elimination</option>
-<option value="Moderate Elimination">Moderate Elimination</option>
-<option value="Tight Suppression">Tight Suppression</option>
-<option value="Loose Suppression">Loose Suppression</option>
-					</select></div><div class="toggle-box">
-					<div class="name">Strategy Relaxation</div>
-					<div class="description">Relax the triggers for each strategy as vaccinations progress?</div><select name="strategy-relaxation" id="select-ABM-strategy-relaxation">
-						<option value="No">No</option>
-<option value="Yes">Yes</option>
+					<div class="name">Scale</div>
+					<div class="description">Which type of scale to use on the vertical axis.</div><select name="scale" id="select-ABM-scale">
+						<option value="0.45">Exponential</option>
+<option value="1">Linear</option>
 					</select></div>
 				</div>
 			</div>
 				</div>
 			</aside>
 			<div class="graph">
-				<div id="graph-container-ABM"></div>
+				<div id="graph-container-ABM" class="graph-container"></div>
 			</div>
 		</div>
 		<script type="text/javascript">
 			graphs.push("ABM")
 		</script>
 <hr>
-<h3>Overall cost by strategy</h3>
+<h2>Unintended consequences</h2>
 <h4>HALYS/DALYS</h4>
 <p>Briefly describe which consequences are included.</p>
 <p>Introduce the concept of HALYs/DALYs, and how they are estimated.</p>
@@ -235,13 +215,32 @@
 <li>Regardless of policy response, there is still a pandemic. Need to compare each scenario to other ways of responding to the pandemic, not to the pre-pandemic world.</li>
 </ul>
 <hr>
-<h3>Limitations</h3>
+<h2>Limitations</h2>
 <ul>
 <li>Difficulty in estimating impacts of different restriction levels.</li>
 <li>This is just one way of approaching decision-making. Implies a particular ethical framework (~utilitarianism), which may not be correct.</li>
 </ul>
+<hr>
+<p>Add links to papers/preprints.</p>
 
 
+
+	<section class="endmatter">
+		
+			<h4>Contributors</h4>
+			<p>Patrick&nbsp;Abraham&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Driss&nbsp;Ait Ouakrim&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Laxman&nbsp;Bablani&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Tony&nbsp;Blakely&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Grace&nbsp;Dong&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Nathan&nbsp;Grills&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Ameera&nbsp;Katar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Melissa&nbsp;Makin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;<a href="https://lukethorburn.com" target="_blank" rel="noopener noreferrer">Luke&nbsp;Thorburn</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull;&emsp;Tim&nbsp;Wilson</p>
+		
+
+		<h4>Media Enquiries</h4>
+		<p><a href="https://about.unimelb.edu.au/newsroom">University of Melbourne Newsroom</a></p>
+		<dl>
+			<dt>Phone</dt>
+			<dd>+61 3 8344 4123</dd>
+			
+			<dt>Email</dt>
+			<dd><a href="mailto:news@media.unimelb.edu.au?subject=covid19forecast.science.unimelb.edu.au">news@media.unimelb.edu.au</a></dd>
+		</dl>
+	</section>
 
 	<script type="text/javascript">
 
@@ -309,7 +308,7 @@
 				<ul>
 					
 						<li>
-							<a href="/">Coronavirus</a>
+							<a href="/">COVID-19 Pandemic</a>
 							<div class="inner">
 								<ul>
 									
@@ -318,32 +317,7 @@
 										</li>
 									
 										<li>
-											<a href="/test-1">Test Post 1</a>
-										</li>
-									
-										<li>
-											<a href="/test-2">Test Post 2</a>
-										</li>
-									
-										<li>
-											<a href="/test-3">Test Post 3</a>
-										</li>
-									
-								</ul>
-							</div>
-						</li>
-					
-						<li>
-							<a href="/">Public Health</a>
-							<div class="inner">
-								<ul>
-									
-										<li>
-											<a href="/test-4">Test Post 4</a>
-										</li>
-									
-										<li>
-											<a href="/test-5">Test Post 5</a>
+											<a href="/pandemic-trade-offs-detail">Model Details</a>
 										</li>
 									
 								</ul>
