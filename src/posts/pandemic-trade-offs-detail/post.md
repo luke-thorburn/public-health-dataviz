@@ -13,7 +13,7 @@
 	"slug": "pandemic-trade-offs-detail",
 	"description": "This page describes the details of the modelling that is presented on the <a href='/pandemic-trade-offs' target='_blank' rel='noopener noreferrer'>Pandemic Trade-offs</a> page.",
 	"katex": true,
-	"hidden": false,
+	"hidden": true,
 	"d3": true
 }
 ---

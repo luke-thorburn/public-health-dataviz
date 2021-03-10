@@ -13,7 +13,7 @@
 	"date_updated": "2021-03-12",
 	"slug": "pandemic-trade-offs",
 	"katex": true,
-	"hidden": false,
+	"hidden": true,
 	"d3": true,
 
 	"skipToLinks": [
