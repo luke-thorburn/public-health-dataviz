@@ -1,0 +1,274 @@
+{
+	"$schema": "https://vega.github.io/schema/vega/v5.json",
+	"autosize": { "type": "fit", "contains": "padding" },
+	"padding": 0,
+	"config": {
+		"axis": {
+			"labelFont": "Source Sans Pro, sans-serif",
+			"titleFont": "Source Sans Pro, sans-serif",
+			"titleFontSize": 20,
+			"titleColor": "#012a58",
+			"titleFontWeight": 400
+		},
+		"legend": {
+			"labelFont": "Source Sans Pro, sans-serif",
+			"titleFont": "Source Sans Pro, sans-serif",
+			"labelFontSize": 18,
+			"labelColor": "#000000",
+			"titlePadding": 15,
+			"titleFontSize": 20,
+			"titleColor": "#012a58",
+			"symbolSize": 360,
+			"labelSeparation": 10,
+			"labelOffset": 10,
+			"offset": 20,
+			"titleFontWeight": 400,
+			"layout": {
+				"right": {
+					"anchor": "start"
+				}
+			}
+		},
+		"title": {
+			"font": "Source Sans Pro, sans-serif",
+			"subtitleFont": "Source Sans Pro, sans-serif",
+			"anchor": "start",
+			"color": "#012a58",
+			"fontSize": 28,
+			"fontWeight": 700,
+			"subtitleColor": "#000000",
+			"subtitleFontSize": "20",
+			"subtitleFontWeight": "400",
+			"subtitlePadding": 10,
+			"offset": 20,
+			"dx": 70
+		}
+	},
+
+	"title": {
+		"text": "Health outcomes by strategy",
+		"subtitle": "Average HALYs gained relative to the no-COVID scenario, for each strategy."
+	},
+	"description": "Average HALYs gained or lost for each strategy.",
+
+	"data": [
+		{
+			"name": "main",
+			"format": {"type": "csv", "parse": "auto"},
+			"url": "/posts/pandemic-trade-offs/dummy_PMSLT_data.csv",
+			"transform": [
+				{ "type": "filter", "expr": "datum.vUptake === VaccineUptake" },
+				{ "type": "filter", "expr": "datum.v1trans === PfizerTransmissionReduction" },
+				{ "type": "filter", "expr": "datum.v2trans === AstraZenecaTransmissionReduction" },
+				{ "type": "filter", "expr": "datum.relax === StrategyRelaxation" },
+				{
+					"type": "stack",
+					"groupby": ["strategy"],
+					"field": "HALY"
+				}
+			]
+		}
+	],
+
+	"signals": [
+		{
+			"name": "width",
+			"init": "containerSize()[0]",
+			"on": [{ "events": "window:resize", "update": "containerSize()[0]" }]
+		},
+		{
+			"name": "height",
+			"init": "containerSize()[1]",
+			"on": [{ "events": "window:resize", "update": "containerSize()[1]" }]
+		},
+		{
+			"name": "PfizerTransmissionReduction",
+			"update": "50",
+			"on": [
+				{
+					"events": {
+						"source": "#select-PMSLT-HALY-phase-1-transmission-reduction",
+						"type": "change"
+					},
+					"update": "toNumber(event.target.value)"
+				}
+			]
+		},
+		{
+			"name": "AstraZenecaTransmissionReduction",
+			"update": "50",
+			"on": [
+				{
+					"events": {
+						"source": "#select-PMSLT-HALY-phase-2-transmission-reduction",
+						"type": "change"
+					},
+					"update": "toNumber(event.target.value)"
+				}
+			]
+		},
+		{
+			"name": "VaccineUptake",
+			"update": "60",
+			"on": [
+				{
+					"events": {
+						"source": "#select-PMSLT-HALY-vaccine-uptake",
+						"type": "change"
+					},
+					"update": "toNumber(event.target.value)"
+				}
+			]
+		},
+		{
+			"name": "StrategyRelaxation",
+			"update": "'No'",
+			"on": [
+				{
+					"events": {
+						"source": "#select-PMSLT-HALY-strategy-relaxation",
+						"type": "change"
+					},
+					"update": "event.target.value"
+				}
+			]
+		}
+	],
+
+	"scales": [
+		{
+			"name": "x",
+			"type": "band",
+			"range": "width",
+			"domain": ["Aggressive Elimination", "Moderate Elimination", "Tight Suppression", "Loose Suppression"],
+			"padding": 0.25
+		},
+		{
+			"name": "y",
+			"type": "linear",
+			"range": "height",
+			"domain": [-3000, 1000]
+		},
+		{
+			"name": "colour",
+			"type": "ordinal",
+			"range": {"scheme": "spectral"},
+			"domain": {"data": "main", "field": "effect"}
+		}
+	],
+
+	"axes": [
+		{
+			"orient": "bottom",
+			"scale": "x",
+			"title": "Strategy",
+			"titleY": 50,
+			"zindex": 100
+		},
+		{
+			"orient": "left",
+			"scale": "y",
+			"title": "HALYs gained",
+			"titleX": -50,
+				"grid": true,
+			"gridColor": "#012a58",
+			"gridWidth": 1,
+			"gridOpacity": 0.1,
+			"zindex": 0
+		}
+	],
+
+	"legends": [
+		{
+			"direction": "vertical",
+			"fill": "colour",
+			"title": "Effects"
+		}
+	],
+
+	"marks": [
+		{
+			"type": "rect",
+			"from": {"data": "main"},
+			"encode" : {
+				"enter": {
+					"x": {"scale": "x", "field": "strategy"},
+					"width": {"scale": "x", "band": 1, "offset": -1},
+					"y": {"scale": "y", "field": "y0"},
+					"y2": {"scale": "y", "field": "y1"},
+					"fill": {"scale": "colour", "field": "effect"},
+					"zindex": 10,
+					"tooltip": { "signal": "datum.effect" }
+				},
+				"update": {
+					"fillOpacity": {"value": 1}
+				},
+				"hover": {
+					"fillOpacity": {"value": 0.5}
+				}
+			}
+		}
+	],
+
+	"uom-toggles": {
+		"toggle-groups": [
+			{
+				"name": "Government Response",
+				"toggles": [
+					{
+						"name": "Strategy Relaxation",
+						"description": "Relax the triggers for each strategy as vaccinations progress?",
+						"detailLink": "/pandemic-trade-offs-detail/#strategy-relaxation",
+						"type": "select",
+						"options": [
+							{ "value": "No", "label": "Off" },
+							{ "value": "Yes", "label": "On" }
+						]
+					}
+				]
+			},
+			{
+				"name": "Public Response",
+				"toggles": [
+					{
+						"name": "Vaccine Uptake",
+						"description": "Percentage of people who accept vaccination when they are offered it.",
+						"type": "select",
+						"options": [
+							{ "value": 60, "label": "60%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
+						]
+					}
+				]
+			},
+			{
+				"name": "Vaccine Effectiveness",
+				"toggles": [
+					{
+						"name": "Phase 1 Transmission Reduction",
+						"description": "Percentage by which the vaccines administered in Phase 1 reduce transmission.",
+						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
+						"type": "select",
+						"options": [
+							{ "value": 50, "label": "50%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
+						]
+					},
+					{
+						"name": "Phase 2 Transmission Reduction",
+						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.",
+						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
+						"type": "select",
+						"options": [
+							{ "value": 50, "label": "50%" },
+							{ "value": 75, "label": "75%" },
+							{ "value": 90, "label": "90%" }
+						]
+					}
+				]
+			}
+		]
+	}
+}

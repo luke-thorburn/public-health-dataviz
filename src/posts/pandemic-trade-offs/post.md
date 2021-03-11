@@ -23,14 +23,14 @@
 			"image": "preview-ABM.svg"
 		},
 		{
-			"targetID": "graph-ABM",
-			"text": "Overall costs",
-			"image": "preview-example.svg"
+			"targetID": "graph-PMSLT-HALY",
+			"text": "Health outcomes",
+			"image": "preview-PMSLT-HALY.svg"
 		},
 		{
-			"targetID": "graph-ABM",
-			"text": "PMSLT",
-			"image": "preview-example2.svg"
+			"targetID": "graph-PMSLT-prob",
+			"text": "Minimising harms",
+			"image": "preview-PMSLT-prob.svg"
 		}
 	],
 
@@ -78,9 +78,9 @@ Briefly describe which consequences are included.
 
 Introduce the concept of HALYs/DALYs, and how they are estimated.
 
-<div class="fig outset-1">
-	<img src="/img/lockdown2.png" />
-</div>
+{% import_graph "PMSLT-HALY", slug %}
+
+{% import_graph "PMSLT-prob", slug %}
 
 #### Thorny Questions
 

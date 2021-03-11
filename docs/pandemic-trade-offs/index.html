@@ -32,6 +32,7 @@
 
 	<meta charset="utf-8">
 	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-tooltip@latest"></script>
 
 	
 		<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -109,7 +110,7 @@
 	<div class="jumpnav"></div>
 	
 
-	<ul class="jump-navigation fixed headless skip-to"><li>Skip to</li><li><a href="#graph-ABM"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-ABM.svg" /></div>Infections</a></li><li><a href="#graph-ABM"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-example.svg" /></div>Overall costs</a></li><li><a href="#graph-ABM"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-example2.svg" /></div>PMSLT</a></li></ul>
+	<ul class="jump-navigation fixed headless skip-to"><li>Skip to</li><li><a href="#graph-ABM"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-ABM.svg" /></div>Infections</a></li><li><a href="#graph-PMSLT-HALY"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-PMSLT-HALY.svg" /></div>Health outcomes</a></li><li><a href="#graph-PMSLT-prob"><div class="img-wrap"><img src="/posts/pandemic-trade-offs/preview-PMSLT-prob.svg" /></div>Minimising harms</a></li></ul>
 
 	<h1 class="aligned-title">Pandemic Trade-offs</h1>
 
@@ -209,9 +210,120 @@
 <h4>HALYS/DALYS</h4>
 <p>Briefly describe which consequences are included.</p>
 <p>Introduce the concept of HALYs/DALYs, and how they are estimated.</p>
-<div class="fig outset-1">
-	<img src="/img/lockdown2.png" />
-</div>
+<div class="graph-with-toggles" id="graph-PMSLT-HALY">
+			<aside>
+				<div class="toggles">
+					<div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Government Response</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Strategy Relaxation</div>
+					<div class="description">Relax the triggers for each strategy as vaccinations progress?</div><select name="strategy-relaxation" id="select-PMSLT-HALY-strategy-relaxation">
+						<option value="No">Off</option>
+<option value="Yes">On</option>
+					</select><a href="/pandemic-trade-offs-detail/#strategy-relaxation" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div>
+				</div>
+			</div><div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Public Response</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Vaccine Uptake</div>
+					<div class="description">Percentage of people who accept vaccination when they are offered it.</div><select name="vaccine-uptake" id="select-PMSLT-HALY-vaccine-uptake">
+						<option value="60">60%</option>
+<option value="75">75%</option>
+<option value="90">90%</option>
+					</select></div>
+				</div>
+			</div><div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Vaccine Effectiveness</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Phase 1 Transmission Reduction</div>
+					<div class="description">Percentage by which the vaccines administered in Phase 1 reduce transmission.</div><select name="phase-1-transmission-reduction" id="select-PMSLT-HALY-phase-1-transmission-reduction">
+						<option value="50">50%</option>
+<option value="75">75%</option>
+<option value="90">90%</option>
+					</select><a href="/pandemic-trade-offs-detail/#effectiveness" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div><div class="toggle-box">
+					<div class="name">Phase 2 Transmission Reduction</div>
+					<div class="description">Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.</div><select name="phase-2-transmission-reduction" id="select-PMSLT-HALY-phase-2-transmission-reduction">
+						<option value="50">50%</option>
+<option value="75">75%</option>
+<option value="90">90%</option>
+					</select><a href="/pandemic-trade-offs-detail/#effectiveness" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div>
+				</div>
+			</div>
+				</div>
+			</aside>
+			<div class="graph">
+				<div id="graph-container-PMSLT-HALY" class="graph-container"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			graphs.push("PMSLT-HALY")
+		</script>
+<div class="graph-with-toggles" id="graph-PMSLT-prob">
+			<aside>
+				<div class="toggles">
+					<div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Government Response</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Strategy Relaxation</div>
+					<div class="description">Relax the triggers for each strategy as vaccinations progress?</div><select name="strategy-relaxation" id="select-PMSLT-prob-strategy-relaxation">
+						<option value="No">Off</option>
+<option value="Yes">On</option>
+					</select><a href="/pandemic-trade-offs-detail/#strategy-relaxation" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div>
+				</div>
+			</div><div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Public Response</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Vaccine Uptake</div>
+					<div class="description">Percentage of people who accept vaccination when they are offered it.</div><select name="vaccine-uptake" id="select-PMSLT-prob-vaccine-uptake">
+						<option value="60">60%</option>
+<option value="75">75%</option>
+<option value="90">90%</option>
+					</select></div>
+				</div>
+			</div><div class="toggle-group">
+				<div class="group-details">
+					<div class="group-name">Vaccine Effectiveness</div>
+				</div>
+				<div class="group-contents">
+					<div class="toggle-box">
+					<div class="name">Phase 1 Transmission Reduction</div>
+					<div class="description">Percentage by which the vaccines administered in Phase 1 reduce transmission.</div><select name="phase-1-transmission-reduction" id="select-PMSLT-prob-phase-1-transmission-reduction">
+						<option value="50">50%</option>
+<option value="75">75%</option>
+<option value="90">90%</option>
+					</select><a href="/pandemic-trade-offs-detail/#effectiveness" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div><div class="toggle-box">
+					<div class="name">Phase 2 Transmission Reduction</div>
+					<div class="description">Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.</div><select name="phase-2-transmission-reduction" id="select-PMSLT-prob-phase-2-transmission-reduction">
+						<option value="50">50%</option>
+<option value="75">75%</option>
+<option value="90">90%</option>
+					</select><a href="/pandemic-trade-offs-detail/#effectiveness" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a></div>
+				</div>
+			</div>
+				</div>
+			</aside>
+			<div class="graph">
+				<div id="graph-container-PMSLT-prob" class="graph-container"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			graphs.push("PMSLT-prob")
+		</script>
 <h4>Thorny Questions</h4>
 <ul>
 <li>What monetary value should be placed on a HALY?</li>
@@ -269,6 +381,8 @@
 				container: `#graph-container-${key}`,  // parent DOM container
 				hover: true       				// enable hover processing
 			});
+
+			vegaTooltip.default(views[key]);
 			
 			// Initialise Choices.js on toggles.
 			// if (spec.hasOwnProperty('uom-toggles')) {

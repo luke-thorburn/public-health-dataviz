@@ -1,0 +1,1081 @@
+"v1trans","v2trans","vUptake","strategy","relax","effect","HALY"
+50,50,60,"Loose Suppression","Yes","COVID-19",-740.750031033531
+75,50,60,"Loose Suppression","Yes","COVID-19",-591.900491341949
+90,50,60,"Loose Suppression","Yes","COVID-19",24.1894850507378
+50,75,60,"Loose Suppression","Yes","COVID-19",-115.897390944883
+75,75,60,"Loose Suppression","Yes","COVID-19",134.402921935543
+90,75,60,"Loose Suppression","Yes","COVID-19",-727.028081612661
+50,90,60,"Loose Suppression","Yes","COVID-19",176.963026449084
+75,90,60,"Loose Suppression","Yes","COVID-19",-254.765419010073
+90,90,60,"Loose Suppression","Yes","COVID-19",-165.929950494319
+50,50,75,"Loose Suppression","Yes","COVID-19",-277.199766552076
+75,50,75,"Loose Suppression","Yes","COVID-19",154.231722280383
+90,50,75,"Loose Suppression","Yes","COVID-19",-448.650019429624
+50,75,75,"Loose Suppression","Yes","COVID-19",-50.213114079088
+75,75,75,"Loose Suppression","Yes","COVID-19",-381.327071646228
+90,75,75,"Loose Suppression","Yes","COVID-19",-607.860349537805
+50,90,75,"Loose Suppression","Yes","COVID-19",-794.730543810874
+75,90,75,"Loose Suppression","Yes","COVID-19",-282.778384583071
+90,90,75,"Loose Suppression","Yes","COVID-19",-224.122160300613
+50,50,90,"Loose Suppression","Yes","COVID-19",-149.900201894343
+75,50,90,"Loose Suppression","Yes","COVID-19",-713.492092629895
+90,50,90,"Loose Suppression","Yes","COVID-19",-159.580797841772
+50,75,90,"Loose Suppression","Yes","COVID-19",-754.657525289804
+75,75,90,"Loose Suppression","Yes","COVID-19",-218.109564576298
+90,75,90,"Loose Suppression","Yes","COVID-19",58.9937470387667
+50,90,90,"Loose Suppression","Yes","COVID-19",140.989679424092
+75,90,90,"Loose Suppression","Yes","COVID-19",-2.25470303557818
+90,90,90,"Loose Suppression","Yes","COVID-19",190.540669765323
+50,50,60,"Tight Suppression","Yes","COVID-19",-733.426743838936
+75,50,60,"Tight Suppression","Yes","COVID-19",-566.921546543017
+90,50,60,"Tight Suppression","Yes","COVID-19",-126.506151119247
+50,75,60,"Tight Suppression","Yes","COVID-19",-417.997792316601
+75,75,60,"Tight Suppression","Yes","COVID-19",65.8675441984087
+90,75,60,"Tight Suppression","Yes","COVID-19",-301.21610169299
+50,90,60,"Tight Suppression","Yes","COVID-19",-9.35809472575788
+75,90,60,"Tight Suppression","Yes","COVID-19",-796.319747529924
+90,90,60,"Tight Suppression","Yes","COVID-19",-1.70610793866222
+50,50,75,"Tight Suppression","Yes","COVID-19",-467.499126633629
+75,50,75,"Tight Suppression","Yes","COVID-19",-42.2827982809395
+90,50,75,"Tight Suppression","Yes","COVID-19",-385.615521995351
+50,75,75,"Tight Suppression","Yes","COVID-19",-276.509898668155
+75,75,75,"Tight Suppression","Yes","COVID-19",-448.90981442295
+90,75,75,"Tight Suppression","Yes","COVID-19",-436.705557117239
+50,90,75,"Tight Suppression","Yes","COVID-19",-12.0365677401424
+75,90,75,"Tight Suppression","Yes","COVID-19",-292.191973375157
+90,90,75,"Tight Suppression","Yes","COVID-19",-634.446066524833
+50,50,90,"Tight Suppression","Yes","COVID-19",-785.556546831504
+75,50,90,"Tight Suppression","Yes","COVID-19",-60.5925262905658
+90,50,90,"Tight Suppression","Yes","COVID-19",-319.086795859039
+50,75,90,"Tight Suppression","Yes","COVID-19",-440.902948332951
+75,75,90,"Tight Suppression","Yes","COVID-19",-266.767027741298
+90,75,90,"Tight Suppression","Yes","COVID-19",9.4835239462554
+50,90,90,"Tight Suppression","Yes","COVID-19",-691.770234331489
+75,90,90,"Tight Suppression","Yes","COVID-19",-763.307476136833
+90,90,90,"Tight Suppression","Yes","COVID-19",-737.880317214876
+50,50,60,"Moderate Elimination","Yes","COVID-19",-603.055954631418
+75,50,60,"Moderate Elimination","Yes","COVID-19",-172.635731706396
+90,50,60,"Moderate Elimination","Yes","COVID-19",-770.243686810136
+50,75,60,"Moderate Elimination","Yes","COVID-19",-241.1915615201
+75,75,60,"Moderate Elimination","Yes","COVID-19",-401.001821924001
+90,75,60,"Moderate Elimination","Yes","COVID-19",-324.422879796475
+50,90,60,"Moderate Elimination","Yes","COVID-19",-702.797376736999
+75,90,60,"Moderate Elimination","Yes","COVID-19",-48.8429620862008
+90,90,60,"Moderate Elimination","Yes","COVID-19",-343.324642581865
+50,50,75,"Moderate Elimination","Yes","COVID-19",-0.0284581445157972
+75,50,75,"Moderate Elimination","Yes","COVID-19",-539.668102236465
+90,50,75,"Moderate Elimination","Yes","COVID-19",-744.086611969396
+50,75,75,"Moderate Elimination","Yes","COVID-19",-462.043778691441
+75,75,75,"Moderate Elimination","Yes","COVID-19",98.3100005425512
+90,75,75,"Moderate Elimination","Yes","COVID-19",-73.6425569746644
+50,90,75,"Moderate Elimination","Yes","COVID-19",12.7450600732117
+75,90,75,"Moderate Elimination","Yes","COVID-19",-365.063926624134
+90,90,75,"Moderate Elimination","Yes","COVID-19",-784.941720729694
+50,50,90,"Moderate Elimination","Yes","COVID-19",-478.360871504992
+75,50,90,"Moderate Elimination","Yes","COVID-19",-309.82041307725
+90,50,90,"Moderate Elimination","Yes","COVID-19",110.937714390457
+50,75,90,"Moderate Elimination","Yes","COVID-19",57.9685485456138
+75,75,90,"Moderate Elimination","Yes","COVID-19",-604.10333443433
+90,75,90,"Moderate Elimination","Yes","COVID-19",-597.792830271646
+50,90,90,"Moderate Elimination","Yes","COVID-19",-741.770653007552
+75,90,90,"Moderate Elimination","Yes","COVID-19",-154.552924400196
+90,90,90,"Moderate Elimination","Yes","COVID-19",-369.008218124509
+50,50,60,"Aggressive Elimination","Yes","COVID-19",-529.154212865978
+75,50,60,"Aggressive Elimination","Yes","COVID-19",-478.28439315781
+90,50,60,"Aggressive Elimination","Yes","COVID-19",-389.557713828981
+50,75,60,"Aggressive Elimination","Yes","COVID-19",79.2376595083624
+75,75,60,"Aggressive Elimination","Yes","COVID-19",49.0908036474138
+90,75,60,"Aggressive Elimination","Yes","COVID-19",-388.458576006815
+50,90,60,"Aggressive Elimination","Yes","COVID-19",13.1215574685484
+75,90,60,"Aggressive Elimination","Yes","COVID-19",-432.969649974257
+90,90,60,"Aggressive Elimination","Yes","COVID-19",-511.626457050443
+50,50,75,"Aggressive Elimination","Yes","COVID-19",-188.990898616612
+75,50,75,"Aggressive Elimination","Yes","COVID-19",-214.061545860022
+90,50,75,"Aggressive Elimination","Yes","COVID-19",-25.2497377339751
+50,75,75,"Aggressive Elimination","Yes","COVID-19",-282.147686416283
+75,75,75,"Aggressive Elimination","Yes","COVID-19",57.3873036075383
+90,75,75,"Aggressive Elimination","Yes","COVID-19",-608.950238162652
+50,90,75,"Aggressive Elimination","Yes","COVID-19",-776.130385184661
+75,90,75,"Aggressive Elimination","Yes","COVID-19",19.7494137566536
+90,90,75,"Aggressive Elimination","Yes","COVID-19",63.9283112715929
+50,50,90,"Aggressive Elimination","Yes","COVID-19",-290.194603102282
+75,50,90,"Aggressive Elimination","Yes","COVID-19",-641.743679251522
+90,50,90,"Aggressive Elimination","Yes","COVID-19",148.436882114038
+50,75,90,"Aggressive Elimination","Yes","COVID-19",-560.541753610596
+75,75,90,"Aggressive Elimination","Yes","COVID-19",5.93015975318845
+90,75,90,"Aggressive Elimination","Yes","COVID-19",195.795446215197
+50,90,90,"Aggressive Elimination","Yes","COVID-19",-653.139523416758
+75,90,90,"Aggressive Elimination","Yes","COVID-19",-208.027508063242
+90,90,90,"Aggressive Elimination","Yes","COVID-19",-108.401769027114
+50,50,60,"Loose Suppression","No","COVID-19",77.6113481726497
+75,50,60,"Loose Suppression","No","COVID-19",-212.100948626176
+90,50,60,"Loose Suppression","No","COVID-19",-573.098508827388
+50,75,60,"Loose Suppression","No","COVID-19",-230.930016562343
+75,75,60,"Loose Suppression","No","COVID-19",-732.980004930869
+90,75,60,"Loose Suppression","No","COVID-19",-381.086660036817
+50,90,60,"Loose Suppression","No","COVID-19",-561.510090669617
+75,90,60,"Loose Suppression","No","COVID-19",2.22940584644671
+90,90,60,"Loose Suppression","No","COVID-19",-513.98806408979
+50,50,75,"Loose Suppression","No","COVID-19",-390.639240574092
+75,50,75,"Loose Suppression","No","COVID-19",-381.511095631868
+90,50,75,"Loose Suppression","No","COVID-19",-455.247665941715
+50,75,75,"Loose Suppression","No","COVID-19",-59.2026882339269
+75,75,75,"Loose Suppression","No","COVID-19",-428.053545719013
+90,75,75,"Loose Suppression","No","COVID-19",-409.407645184547
+50,90,75,"Loose Suppression","No","COVID-19",0.145395798608616
+75,90,75,"Loose Suppression","No","COVID-19",31.2202347442507
+90,90,75,"Loose Suppression","No","COVID-19",-465.385990869254
+50,50,90,"Loose Suppression","No","COVID-19",-50.3208036068827
+75,50,90,"Loose Suppression","No","COVID-19",-606.082051014528
+90,50,90,"Loose Suppression","No","COVID-19",-631.220573978499
+50,75,90,"Loose Suppression","No","COVID-19",199.814942944795
+75,75,90,"Loose Suppression","No","COVID-19",-228.601580904797
+90,75,90,"Loose Suppression","No","COVID-19",-632.406694535166
+50,90,90,"Loose Suppression","No","COVID-19",-465.174389258027
+75,90,90,"Loose Suppression","No","COVID-19",28.5181163810193
+90,90,90,"Loose Suppression","No","COVID-19",-620.712095592171
+50,50,60,"Tight Suppression","No","COVID-19",-129.146979609504
+75,50,60,"Tight Suppression","No","COVID-19",-212.089242599905
+90,50,60,"Tight Suppression","No","COVID-19",-117.829251056537
+50,75,60,"Tight Suppression","No","COVID-19",-357.170295156539
+75,75,60,"Tight Suppression","No","COVID-19",-489.482532441616
+90,75,60,"Tight Suppression","No","COVID-19",-87.6680514309556
+50,90,60,"Tight Suppression","No","COVID-19",-593.205101508647
+75,90,60,"Tight Suppression","No","COVID-19",-202.682853862643
+90,90,60,"Tight Suppression","No","COVID-19",-44.1041399724782
+50,50,75,"Tight Suppression","No","COVID-19",-217.301281355321
+75,50,75,"Tight Suppression","No","COVID-19",-591.154253995046
+90,50,75,"Tight Suppression","No","COVID-19",-288.94020030275
+50,75,75,"Tight Suppression","No","COVID-19",-30.0805156119168
+75,75,75,"Tight Suppression","No","COVID-19",-155.695070233196
+90,75,75,"Tight Suppression","No","COVID-19",-615.119281644002
+50,90,75,"Tight Suppression","No","COVID-19",-509.054191363975
+75,90,75,"Tight Suppression","No","COVID-19",-107.245726231486
+90,90,75,"Tight Suppression","No","COVID-19",-679.858138971031
+50,50,90,"Tight Suppression","No","COVID-19",131.331173749641
+75,50,90,"Tight Suppression","No","COVID-19",-150.54862475954
+90,50,90,"Tight Suppression","No","COVID-19",-311.141106951982
+50,75,90,"Tight Suppression","No","COVID-19",44.7337285615503
+75,75,90,"Tight Suppression","No","COVID-19",-250.884625082836
+90,75,90,"Tight Suppression","No","COVID-19",-709.331796690822
+50,90,90,"Tight Suppression","No","COVID-19",-88.6968837119639
+75,90,90,"Tight Suppression","No","COVID-19",-349.063839716837
+90,90,90,"Tight Suppression","No","COVID-19",-661.899238079786
+50,50,60,"Moderate Elimination","No","COVID-19",-463.625143934041
+75,50,60,"Moderate Elimination","No","COVID-19",-750.267913052812
+90,50,60,"Moderate Elimination","No","COVID-19",-261.522262310609
+50,75,60,"Moderate Elimination","No","COVID-19",-693.441487569362
+75,75,60,"Moderate Elimination","No","COVID-19",-442.362589249387
+90,75,60,"Moderate Elimination","No","COVID-19",103.540801024064
+50,90,60,"Moderate Elimination","No","COVID-19",-51.4494881033898
+75,90,60,"Moderate Elimination","No","COVID-19",56.955689843744
+90,90,60,"Moderate Elimination","No","COVID-19",-490.722917206585
+50,50,75,"Moderate Elimination","No","COVID-19",-389.844384929165
+75,50,75,"Moderate Elimination","No","COVID-19",37.3463419266045
+90,50,75,"Moderate Elimination","No","COVID-19",-292.776693077758
+50,75,75,"Moderate Elimination","No","COVID-19",-761.791071575135
+75,75,75,"Moderate Elimination","No","COVID-19",-179.935962613672
+90,75,75,"Moderate Elimination","No","COVID-19",-774.557447945699
+50,90,75,"Moderate Elimination","No","COVID-19",-206.872305087745
+75,90,75,"Moderate Elimination","No","COVID-19",-324.877002462745
+90,90,75,"Moderate Elimination","No","COVID-19",-552.456294605508
+50,50,90,"Moderate Elimination","No","COVID-19",-371.538988966495
+75,50,90,"Moderate Elimination","No","COVID-19",-749.837507214397
+90,50,90,"Moderate Elimination","No","COVID-19",-746.474199648947
+50,75,90,"Moderate Elimination","No","COVID-19",-43.6706437729299
+75,75,90,"Moderate Elimination","No","COVID-19",-485.134584316984
+90,75,90,"Moderate Elimination","No","COVID-19",-732.343669468537
+50,90,90,"Moderate Elimination","No","COVID-19",-294.11872215569
+75,90,90,"Moderate Elimination","No","COVID-19",66.0086258314549
+90,90,90,"Moderate Elimination","No","COVID-19",-10.2428430225701
+50,50,60,"Aggressive Elimination","No","COVID-19",-86.0910294111819
+75,50,60,"Aggressive Elimination","No","COVID-19",-340.709277614951
+90,50,60,"Aggressive Elimination","No","COVID-19",-637.188772857189
+50,75,60,"Aggressive Elimination","No","COVID-19",-211.453701090068
+75,75,60,"Aggressive Elimination","No","COVID-19",-158.240173663944
+90,75,60,"Aggressive Elimination","No","COVID-19",-198.567940341309
+50,90,60,"Aggressive Elimination","No","COVID-19",-617.017310298979
+75,90,60,"Aggressive Elimination","No","COVID-19",180.057021835819
+90,90,60,"Aggressive Elimination","No","COVID-19",-160.729437554255
+50,50,75,"Aggressive Elimination","No","COVID-19",-93.2402018923313
+75,50,75,"Aggressive Elimination","No","COVID-19",-399.493011832237
+90,50,75,"Aggressive Elimination","No","COVID-19",-665.690277889371
+50,75,75,"Aggressive Elimination","No","COVID-19",31.5680541563779
+75,75,75,"Aggressive Elimination","No","COVID-19",-613.237539026886
+90,75,75,"Aggressive Elimination","No","COVID-19",-780.437135789543
+50,90,75,"Aggressive Elimination","No","COVID-19",-232.643648702651
+75,90,75,"Aggressive Elimination","No","COVID-19",-660.512731829658
+90,90,75,"Aggressive Elimination","No","COVID-19",147.752529056743
+50,50,90,"Aggressive Elimination","No","COVID-19",-227.16059461236
+75,50,90,"Aggressive Elimination","No","COVID-19",174.862220464274
+90,50,90,"Aggressive Elimination","No","COVID-19",-452.306163450703
+50,75,90,"Aggressive Elimination","No","COVID-19",-482.320458581671
+75,75,90,"Aggressive Elimination","No","COVID-19",-520.129015622661
+90,75,90,"Aggressive Elimination","No","COVID-19",-105.5075914599
+50,90,90,"Aggressive Elimination","No","COVID-19",-457.885530730709
+75,90,90,"Aggressive Elimination","No","COVID-19",-411.674360232428
+90,90,90,"Aggressive Elimination","No","COVID-19",-179.638905171305
+50,50,60,"Loose Suppression","Yes","Road Traffic Crash",-680.625494290143
+75,50,60,"Loose Suppression","Yes","Road Traffic Crash",-257.378306658939
+90,50,60,"Loose Suppression","Yes","Road Traffic Crash",-677.394670154899
+50,75,60,"Loose Suppression","Yes","Road Traffic Crash",-146.876254770905
+75,75,60,"Loose Suppression","Yes","Road Traffic Crash",138.24000377208
+90,75,60,"Loose Suppression","Yes","Road Traffic Crash",160.950782056898
+50,90,60,"Loose Suppression","Yes","Road Traffic Crash",-105.890583898872
+75,90,60,"Loose Suppression","Yes","Road Traffic Crash",-790.025038598105
+90,90,60,"Loose Suppression","Yes","Road Traffic Crash",-63.7688291724772
+50,50,75,"Loose Suppression","Yes","Road Traffic Crash",-406.058572884649
+75,50,75,"Loose Suppression","Yes","Road Traffic Crash",-497.323950007558
+90,50,75,"Loose Suppression","Yes","Road Traffic Crash",-271.672031097114
+50,75,75,"Loose Suppression","Yes","Road Traffic Crash",-364.478707499802
+75,75,75,"Loose Suppression","Yes","Road Traffic Crash",43.1306139100343
+90,75,75,"Loose Suppression","Yes","Road Traffic Crash",-736.029577627778
+50,90,75,"Loose Suppression","Yes","Road Traffic Crash",40.2631555218249
+75,90,75,"Loose Suppression","Yes","Road Traffic Crash",-274.605886498466
+90,90,75,"Loose Suppression","Yes","Road Traffic Crash",99.4025473948568
+50,50,90,"Loose Suppression","Yes","Road Traffic Crash",-457.531823962927
+75,50,90,"Loose Suppression","Yes","Road Traffic Crash",-10.1750513538719
+90,50,90,"Loose Suppression","Yes","Road Traffic Crash",-46.2728212121875
+50,75,90,"Loose Suppression","Yes","Road Traffic Crash",-103.181122755632
+75,75,90,"Loose Suppression","Yes","Road Traffic Crash",-758.184687886387
+90,75,90,"Loose Suppression","Yes","Road Traffic Crash",-202.073571458459
+50,90,90,"Loose Suppression","Yes","Road Traffic Crash",-585.545091144741
+75,90,90,"Loose Suppression","Yes","Road Traffic Crash",-35.4692395310849
+90,90,90,"Loose Suppression","Yes","Road Traffic Crash",-318.907823832706
+50,50,60,"Tight Suppression","Yes","Road Traffic Crash",151.05041586794
+75,50,60,"Tight Suppression","Yes","Road Traffic Crash",-423.406302649528
+90,50,60,"Tight Suppression","Yes","Road Traffic Crash",-774.025945411995
+50,75,60,"Tight Suppression","Yes","Road Traffic Crash",-104.475309094414
+75,75,60,"Tight Suppression","Yes","Road Traffic Crash",137.063245801255
+90,75,60,"Tight Suppression","Yes","Road Traffic Crash",-533.246297342703
+50,90,60,"Tight Suppression","Yes","Road Traffic Crash",-523.079635994509
+75,90,60,"Tight Suppression","Yes","Road Traffic Crash",-56.0596163384617
+90,90,60,"Tight Suppression","Yes","Road Traffic Crash",-552.058631042019
+50,50,75,"Tight Suppression","Yes","Road Traffic Crash",-780.233683483675
+75,50,75,"Tight Suppression","Yes","Road Traffic Crash",-497.69164477475
+90,50,75,"Tight Suppression","Yes","Road Traffic Crash",-565.182011993602
+50,75,75,"Tight Suppression","Yes","Road Traffic Crash",-66.9977128971369
+75,75,75,"Tight Suppression","Yes","Road Traffic Crash",-338.84574235417
+90,75,75,"Tight Suppression","Yes","Road Traffic Crash",-709.102395642549
+50,90,75,"Tight Suppression","Yes","Road Traffic Crash",82.6660830527544
+75,90,75,"Tight Suppression","Yes","Road Traffic Crash",176.490035187453
+90,90,75,"Tight Suppression","Yes","Road Traffic Crash",-746.170948212966
+50,50,90,"Tight Suppression","Yes","Road Traffic Crash",-727.044566953555
+75,50,90,"Tight Suppression","Yes","Road Traffic Crash",-602.130909403786
+90,50,90,"Tight Suppression","Yes","Road Traffic Crash",-341.526272427291
+50,75,90,"Tight Suppression","Yes","Road Traffic Crash",-171.050175977871
+75,75,90,"Tight Suppression","Yes","Road Traffic Crash",99.0520490333437
+90,75,90,"Tight Suppression","Yes","Road Traffic Crash",-760.063277278095
+50,90,90,"Tight Suppression","Yes","Road Traffic Crash",-130.846001859754
+75,90,90,"Tight Suppression","Yes","Road Traffic Crash",-645.907081151381
+90,90,90,"Tight Suppression","Yes","Road Traffic Crash",-762.949100183323
+50,50,60,"Moderate Elimination","Yes","Road Traffic Crash",-543.502099765465
+75,50,60,"Moderate Elimination","Yes","Road Traffic Crash",-699.609106592834
+90,50,60,"Moderate Elimination","Yes","Road Traffic Crash",167.895808396861
+50,75,60,"Moderate Elimination","Yes","Road Traffic Crash",119.742272468284
+75,75,60,"Moderate Elimination","Yes","Road Traffic Crash",-454.766634572297
+90,75,60,"Moderate Elimination","Yes","Road Traffic Crash",-58.9469330850989
+50,90,60,"Moderate Elimination","Yes","Road Traffic Crash",-634.514838410541
+75,90,60,"Moderate Elimination","Yes","Road Traffic Crash",-542.010065820068
+90,90,60,"Moderate Elimination","Yes","Road Traffic Crash",160.670713568106
+50,50,75,"Moderate Elimination","Yes","Road Traffic Crash",-555.795832257718
+75,50,75,"Moderate Elimination","Yes","Road Traffic Crash",-577.715242467821
+90,50,75,"Moderate Elimination","Yes","Road Traffic Crash",-96.0929495748133
+50,75,75,"Moderate Elimination","Yes","Road Traffic Crash",-315.164633980021
+75,75,75,"Moderate Elimination","Yes","Road Traffic Crash",125.925173098221
+90,75,75,"Moderate Elimination","Yes","Road Traffic Crash",-30.4682421963662
+50,90,75,"Moderate Elimination","Yes","Road Traffic Crash",-344.858609791845
+75,90,75,"Moderate Elimination","Yes","Road Traffic Crash",124.947338644415
+90,90,75,"Moderate Elimination","Yes","Road Traffic Crash",-695.10844880715
+50,50,90,"Moderate Elimination","Yes","Road Traffic Crash",-353.476401371881
+75,50,90,"Moderate Elimination","Yes","Road Traffic Crash",44.7883853223174
+90,50,90,"Moderate Elimination","Yes","Road Traffic Crash",-685.990421287715
+50,75,90,"Moderate Elimination","Yes","Road Traffic Crash",15.0173251051455
+75,75,90,"Moderate Elimination","Yes","Road Traffic Crash",18.666469771415
+90,75,90,"Moderate Elimination","Yes","Road Traffic Crash",76.2044024188071
+50,90,90,"Moderate Elimination","Yes","Road Traffic Crash",-101.739879650995
+75,90,90,"Moderate Elimination","Yes","Road Traffic Crash",-359.8851791583
+90,90,90,"Moderate Elimination","Yes","Road Traffic Crash",-511.957412771881
+50,50,60,"Aggressive Elimination","Yes","Road Traffic Crash",189.10036473535
+75,50,60,"Aggressive Elimination","Yes","Road Traffic Crash",-182.931304629892
+90,50,60,"Aggressive Elimination","Yes","Road Traffic Crash",112.198418518528
+50,75,60,"Aggressive Elimination","Yes","Road Traffic Crash",-719.608702417463
+75,75,60,"Aggressive Elimination","Yes","Road Traffic Crash",39.8469155654311
+90,75,60,"Aggressive Elimination","Yes","Road Traffic Crash",-243.649779073894
+50,90,60,"Aggressive Elimination","Yes","Road Traffic Crash",138.72402375564
+75,90,60,"Aggressive Elimination","Yes","Road Traffic Crash",-447.748178802431
+90,90,60,"Aggressive Elimination","Yes","Road Traffic Crash",-788.558175275102
+50,50,75,"Aggressive Elimination","Yes","Road Traffic Crash",-521.811764873564
+75,50,75,"Aggressive Elimination","Yes","Road Traffic Crash",-206.141558894888
+90,50,75,"Aggressive Elimination","Yes","Road Traffic Crash",97.5892013404518
+50,75,75,"Aggressive Elimination","Yes","Road Traffic Crash",-90.7810371834785
+75,75,75,"Aggressive Elimination","Yes","Road Traffic Crash",-698.728505475447
+90,75,75,"Aggressive Elimination","Yes","Road Traffic Crash",-475.96311843954
+50,90,75,"Aggressive Elimination","Yes","Road Traffic Crash",-444.173881970346
+75,90,75,"Aggressive Elimination","Yes","Road Traffic Crash",-2.54395296797161
+90,90,75,"Aggressive Elimination","Yes","Road Traffic Crash",-462.494668038562
+50,50,90,"Aggressive Elimination","Yes","Road Traffic Crash",24.0884074475616
+75,50,90,"Aggressive Elimination","Yes","Road Traffic Crash",-491.054248251021
+90,50,90,"Aggressive Elimination","Yes","Road Traffic Crash",196.899602701887
+50,75,90,"Aggressive Elimination","Yes","Road Traffic Crash",-204.738568002358
+75,75,90,"Aggressive Elimination","Yes","Road Traffic Crash",-46.5226647909731
+90,75,90,"Aggressive Elimination","Yes","Road Traffic Crash",-463.810209836811
+50,90,90,"Aggressive Elimination","Yes","Road Traffic Crash",-515.751976240426
+75,90,90,"Aggressive Elimination","Yes","Road Traffic Crash",-630.907203955576
+90,90,90,"Aggressive Elimination","Yes","Road Traffic Crash",-281.030385009944
+50,50,60,"Loose Suppression","No","Road Traffic Crash",-110.482728062198
+75,50,60,"Loose Suppression","No","Road Traffic Crash",-268.354654265568
+90,50,60,"Loose Suppression","No","Road Traffic Crash",151.687466818839
+50,75,60,"Loose Suppression","No","Road Traffic Crash",15.1449623983353
+75,75,60,"Loose Suppression","No","Road Traffic Crash",-75.6737479940057
+90,75,60,"Loose Suppression","No","Road Traffic Crash",-347.089879168198
+50,90,60,"Loose Suppression","No","Road Traffic Crash",-23.9740195218474
+75,90,60,"Loose Suppression","No","Road Traffic Crash",-257.421620842069
+90,90,60,"Loose Suppression","No","Road Traffic Crash",-528.699762839824
+50,50,75,"Loose Suppression","No","Road Traffic Crash",199.644480645657
+75,50,75,"Loose Suppression","No","Road Traffic Crash",-628.857242362574
+90,50,75,"Loose Suppression","No","Road Traffic Crash",-779.738196823746
+50,75,75,"Loose Suppression","No","Road Traffic Crash",-127.770462492481
+75,75,75,"Loose Suppression","No","Road Traffic Crash",-298.821302317083
+90,75,75,"Loose Suppression","No","Road Traffic Crash",-53.4270726609976
+50,90,75,"Loose Suppression","No","Road Traffic Crash",-758.62067816779
+75,90,75,"Loose Suppression","No","Road Traffic Crash",140.209362888709
+90,90,75,"Loose Suppression","No","Road Traffic Crash",182.930090045556
+50,50,90,"Loose Suppression","No","Road Traffic Crash",-729.231424350291
+75,50,90,"Loose Suppression","No","Road Traffic Crash",-112.255971133709
+90,50,90,"Loose Suppression","No","Road Traffic Crash",-550.087000895292
+50,75,90,"Loose Suppression","No","Road Traffic Crash",-255.782228382304
+75,75,90,"Loose Suppression","No","Road Traffic Crash",-96.1151446215809
+90,75,90,"Loose Suppression","No","Road Traffic Crash",-493.31031688489
+50,90,90,"Loose Suppression","No","Road Traffic Crash",-147.156150033698
+75,90,90,"Loose Suppression","No","Road Traffic Crash",-61.2982268910855
+90,90,90,"Loose Suppression","No","Road Traffic Crash",-685.037438711151
+50,50,60,"Tight Suppression","No","Road Traffic Crash",-421.364078018814
+75,50,60,"Tight Suppression","No","Road Traffic Crash",-458.687572227791
+90,50,60,"Tight Suppression","No","Road Traffic Crash",-445.687152864412
+50,75,60,"Tight Suppression","No","Road Traffic Crash",-183.519210154191
+75,75,60,"Tight Suppression","No","Road Traffic Crash",-680.512709496543
+90,75,60,"Tight Suppression","No","Road Traffic Crash",-194.324862165377
+50,90,60,"Tight Suppression","No","Road Traffic Crash",153.329145675525
+75,90,60,"Tight Suppression","No","Road Traffic Crash",-579.667907627299
+90,90,60,"Tight Suppression","No","Road Traffic Crash",-534.215447911993
+50,50,75,"Tight Suppression","No","Road Traffic Crash",-137.227551965043
+75,50,75,"Tight Suppression","No","Road Traffic Crash",-710.937484586611
+90,50,75,"Tight Suppression","No","Road Traffic Crash",-482.068293448538
+50,75,75,"Tight Suppression","No","Road Traffic Crash",126.462806994095
+75,75,75,"Tight Suppression","No","Road Traffic Crash",-711.755349952728
+90,75,75,"Tight Suppression","No","Road Traffic Crash",-541.48037401028
+50,90,75,"Tight Suppression","No","Road Traffic Crash",-325.58812033385
+75,90,75,"Tight Suppression","No","Road Traffic Crash",-6.43446454778318
+90,90,75,"Tight Suppression","No","Road Traffic Crash",-211.398187745363
+50,50,90,"Tight Suppression","No","Road Traffic Crash",-505.681215971708
+75,50,90,"Tight Suppression","No","Road Traffic Crash",-643.834961298853
+90,50,90,"Tight Suppression","No","Road Traffic Crash",-362.258317135274
+50,75,90,"Tight Suppression","No","Road Traffic Crash",176.373906712979
+75,75,90,"Tight Suppression","No","Road Traffic Crash",-290.175687242299
+90,75,90,"Tight Suppression","No","Road Traffic Crash",-776.717510726303
+50,90,90,"Tight Suppression","No","Road Traffic Crash",-553.184475703165
+75,90,90,"Tight Suppression","No","Road Traffic Crash",-492.277488298714
+90,90,90,"Tight Suppression","No","Road Traffic Crash",-628.894188860431
+50,50,60,"Moderate Elimination","No","Road Traffic Crash",-448.241747636348
+75,50,60,"Moderate Elimination","No","Road Traffic Crash",-306.632596021518
+90,50,60,"Moderate Elimination","No","Road Traffic Crash",128.891082759947
+50,75,60,"Moderate Elimination","No","Road Traffic Crash",-545.661013992503
+75,75,60,"Moderate Elimination","No","Road Traffic Crash",-431.254637381062
+90,75,60,"Moderate Elimination","No","Road Traffic Crash",-268.39004335925
+50,90,60,"Moderate Elimination","No","Road Traffic Crash",50.9190795011818
+75,90,60,"Moderate Elimination","No","Road Traffic Crash",-542.910684319213
+90,90,60,"Moderate Elimination","No","Road Traffic Crash",-307.707475218922
+50,50,75,"Moderate Elimination","No","Road Traffic Crash",-315.130556654185
+75,50,75,"Moderate Elimination","No","Road Traffic Crash",45.0878683943301
+90,50,75,"Moderate Elimination","No","Road Traffic Crash",37.2355843894183
+50,75,75,"Moderate Elimination","No","Road Traffic Crash",-68.1422522291542
+75,75,75,"Moderate Elimination","No","Road Traffic Crash",-747.869456373155
+90,75,75,"Moderate Elimination","No","Road Traffic Crash",-6.7794869653881
+50,90,75,"Moderate Elimination","No","Road Traffic Crash",180.513273039833
+75,90,75,"Moderate Elimination","No","Road Traffic Crash",-710.296346759424
+90,90,75,"Moderate Elimination","No","Road Traffic Crash",-238.265038421378
+50,50,90,"Moderate Elimination","No","Road Traffic Crash",165.858100214973
+75,50,90,"Moderate Elimination","No","Road Traffic Crash",-281.807947158814
+90,50,90,"Moderate Elimination","No","Road Traffic Crash",-543.425996508449
+50,75,90,"Moderate Elimination","No","Road Traffic Crash",-714.90099998191
+75,75,90,"Moderate Elimination","No","Road Traffic Crash",-270.201283227652
+90,75,90,"Moderate Elimination","No","Road Traffic Crash",20.51382958889
+50,90,90,"Moderate Elimination","No","Road Traffic Crash",-122.346119442955
+75,90,90,"Moderate Elimination","No","Road Traffic Crash",-458.857438480482
+90,90,90,"Moderate Elimination","No","Road Traffic Crash",122.292922623455
+50,50,60,"Aggressive Elimination","No","Road Traffic Crash",-532.932103797793
+75,50,60,"Aggressive Elimination","No","Road Traffic Crash",-367.485648440197
+90,50,60,"Aggressive Elimination","No","Road Traffic Crash",-214.369806647301
+50,75,60,"Aggressive Elimination","No","Road Traffic Crash",-129.537478508428
+75,75,60,"Aggressive Elimination","No","Road Traffic Crash",-69.5167297497392
+90,75,60,"Aggressive Elimination","No","Road Traffic Crash",-515.115090832114
+50,90,60,"Aggressive Elimination","No","Road Traffic Crash",-84.2631249222905
+75,90,60,"Aggressive Elimination","No","Road Traffic Crash",163.005777215585
+90,90,60,"Aggressive Elimination","No","Road Traffic Crash",-424.813201604411
+50,50,75,"Aggressive Elimination","No","Road Traffic Crash",-751.423676218837
+75,50,75,"Aggressive Elimination","No","Road Traffic Crash",43.9035909250378
+90,50,75,"Aggressive Elimination","No","Road Traffic Crash",9.37101272866125
+50,75,75,"Aggressive Elimination","No","Road Traffic Crash",-449.920841213316
+75,75,75,"Aggressive Elimination","No","Road Traffic Crash",-460.628160927445
+90,75,75,"Aggressive Elimination","No","Road Traffic Crash",-346.449603280053
+50,90,75,"Aggressive Elimination","No","Road Traffic Crash",-234.024868300185
+75,90,75,"Aggressive Elimination","No","Road Traffic Crash",-58.0279125832022
+90,90,75,"Aggressive Elimination","No","Road Traffic Crash",-66.0053316503764
+50,50,90,"Aggressive Elimination","No","Road Traffic Crash",-678.336812136695
+75,50,90,"Aggressive Elimination","No","Road Traffic Crash",-519.859833596274
+90,50,90,"Aggressive Elimination","No","Road Traffic Crash",-9.35079199261968
+50,75,90,"Aggressive Elimination","No","Road Traffic Crash",-408.282025204971
+75,75,90,"Aggressive Elimination","No","Road Traffic Crash",-384.857375128195
+90,75,90,"Aggressive Elimination","No","Road Traffic Crash",-606.056265020743
+50,90,90,"Aggressive Elimination","No","Road Traffic Crash",-171.330633293837
+75,90,90,"Aggressive Elimination","No","Road Traffic Crash",-246.334706153721
+90,90,90,"Aggressive Elimination","No","Road Traffic Crash",-348.025620635599
+50,50,60,"Loose Suppression","Yes","Anxiety",100.396646000445
+75,50,60,"Loose Suppression","Yes","Anxiety",-705.850285664201
+90,50,60,"Loose Suppression","Yes","Anxiety",-252.872396912426
+50,75,60,"Loose Suppression","Yes","Anxiety",93.295950256288
+75,75,60,"Loose Suppression","Yes","Anxiety",183.033175114542
+90,75,60,"Loose Suppression","Yes","Anxiety",-263.559895753861
+50,90,60,"Loose Suppression","Yes","Anxiety",107.210713950917
+75,90,60,"Loose Suppression","Yes","Anxiety",-720.481412904337
+90,90,60,"Loose Suppression","Yes","Anxiety",-675.248746946454
+50,50,75,"Loose Suppression","Yes","Anxiety",-745.048623485491
+75,50,75,"Loose Suppression","Yes","Anxiety",195.597072411328
+90,50,75,"Loose Suppression","Yes","Anxiety",-548.57092811726
+50,75,75,"Loose Suppression","Yes","Anxiety",108.860859228298
+75,75,75,"Loose Suppression","Yes","Anxiety",-589.103334769607
+90,75,75,"Loose Suppression","Yes","Anxiety",183.270824188366
+50,90,75,"Loose Suppression","Yes","Anxiety",-124.210156686604
+75,90,75,"Loose Suppression","Yes","Anxiety",-695.116916624829
+90,90,75,"Loose Suppression","Yes","Anxiety",-254.149673925713
+50,50,90,"Loose Suppression","Yes","Anxiety",-434.142755996436
+75,50,90,"Loose Suppression","Yes","Anxiety",-157.107283081859
+90,50,90,"Loose Suppression","Yes","Anxiety",-751.64090115577
+50,75,90,"Loose Suppression","Yes","Anxiety",-544.369256542996
+75,75,90,"Loose Suppression","Yes","Anxiety",-91.4922218769789
+90,75,90,"Loose Suppression","Yes","Anxiety",-476.851737080142
+50,90,90,"Loose Suppression","Yes","Anxiety",-278.8945002947
+75,90,90,"Loose Suppression","Yes","Anxiety",-297.64871201478
+90,90,90,"Loose Suppression","Yes","Anxiety",49.2779042571783
+50,50,60,"Tight Suppression","Yes","Anxiety",-358.946134988219
+75,50,60,"Tight Suppression","Yes","Anxiety",-66.4963989518583
+90,50,60,"Tight Suppression","Yes","Anxiety",-368.49444960244
+50,75,60,"Tight Suppression","Yes","Anxiety",-467.296512285248
+75,75,60,"Tight Suppression","Yes","Anxiety",-186.911561246961
+90,75,60,"Tight Suppression","Yes","Anxiety",-558.290469180793
+50,90,60,"Tight Suppression","Yes","Anxiety",-339.037871407345
+75,90,60,"Tight Suppression","Yes","Anxiety",-457.13496459648
+90,90,60,"Tight Suppression","Yes","Anxiety",-432.431811885908
+50,50,75,"Tight Suppression","Yes","Anxiety",-338.430050481111
+75,50,75,"Tight Suppression","Yes","Anxiety",-363.680925406516
+90,50,75,"Tight Suppression","Yes","Anxiety",-386.514042923227
+50,75,75,"Tight Suppression","Yes","Anxiety",-349.95267582126
+75,75,75,"Tight Suppression","Yes","Anxiety",-784.309201361611
+90,75,75,"Tight Suppression","Yes","Anxiety",-236.932057375088
+50,90,75,"Tight Suppression","Yes","Anxiety",-315.987686580047
+75,90,75,"Tight Suppression","Yes","Anxiety",71.3753039482981
+90,90,75,"Tight Suppression","Yes","Anxiety",-770.34614533186
+50,50,90,"Tight Suppression","Yes","Anxiety",-726.044309511781
+75,50,90,"Tight Suppression","Yes","Anxiety",-307.546406472102
+90,50,90,"Tight Suppression","Yes","Anxiety",-581.812904635444
+50,75,90,"Tight Suppression","Yes","Anxiety",-491.640924662352
+75,75,90,"Tight Suppression","Yes","Anxiety",-414.876735955477
+90,75,90,"Tight Suppression","Yes","Anxiety",-485.229360125959
+50,90,90,"Tight Suppression","Yes","Anxiety",-611.91641674377
+75,90,90,"Tight Suppression","Yes","Anxiety",-69.3983551580459
+90,90,90,"Tight Suppression","Yes","Anxiety",-739.774017315358
+50,50,60,"Moderate Elimination","Yes","Anxiety",-475.910862162709
+75,50,60,"Moderate Elimination","Yes","Anxiety",-182.430654717609
+90,50,60,"Moderate Elimination","Yes","Anxiety",160.016775643453
+50,75,60,"Moderate Elimination","Yes","Anxiety",132.573746656999
+75,75,60,"Moderate Elimination","Yes","Anxiety",-479.070911137387
+90,75,60,"Moderate Elimination","Yes","Anxiety",-70.4508434981108
+50,90,60,"Moderate Elimination","Yes","Anxiety",107.145528122783
+75,90,60,"Moderate Elimination","Yes","Anxiety",-356.360724149272
+90,90,60,"Moderate Elimination","Yes","Anxiety",26.8097827676683
+50,50,75,"Moderate Elimination","Yes","Anxiety",-663.453431986272
+75,50,75,"Moderate Elimination","Yes","Anxiety",34.9580366630107
+90,50,75,"Moderate Elimination","Yes","Anxiety",-522.995547577739
+50,75,75,"Moderate Elimination","Yes","Anxiety",-449.450000142679
+75,75,75,"Moderate Elimination","Yes","Anxiety",-76.0329591110349
+90,75,75,"Moderate Elimination","Yes","Anxiety",-729.758722428232
+50,90,75,"Moderate Elimination","Yes","Anxiety",-453.021826175973
+75,90,75,"Moderate Elimination","Yes","Anxiety",-454.552302090451
+90,90,75,"Moderate Elimination","Yes","Anxiety",108.859534887597
+50,50,90,"Moderate Elimination","Yes","Anxiety",-155.029005091637
+75,50,90,"Moderate Elimination","Yes","Anxiety",-349.726867116988
+90,50,90,"Moderate Elimination","Yes","Anxiety",-351.013235934079
+50,75,90,"Moderate Elimination","Yes","Anxiety",174.640293978155
+75,75,90,"Moderate Elimination","Yes","Anxiety",-488.978726044297
+90,75,90,"Moderate Elimination","Yes","Anxiety",-370.541095919907
+50,90,90,"Moderate Elimination","Yes","Anxiety",-628.085509361699
+75,90,90,"Moderate Elimination","Yes","Anxiety",172.921526758
+90,90,90,"Moderate Elimination","Yes","Anxiety",-172.687800321728
+50,50,60,"Aggressive Elimination","Yes","Anxiety",-505.325953429565
+75,50,60,"Aggressive Elimination","Yes","Anxiety",-741.234077326953
+90,50,60,"Aggressive Elimination","Yes","Anxiety",-650.235920166597
+50,75,60,"Aggressive Elimination","Yes","Anxiety",-749.806075543165
+75,75,60,"Aggressive Elimination","Yes","Anxiety",-212.691379431635
+90,75,60,"Aggressive Elimination","Yes","Anxiety",-240.123555017635
+50,90,60,"Aggressive Elimination","Yes","Anxiety",-490.236509777606
+75,90,60,"Aggressive Elimination","Yes","Anxiety",-580.21974931471
+90,90,60,"Aggressive Elimination","Yes","Anxiety",-59.991125902161
+50,50,75,"Aggressive Elimination","Yes","Anxiety",-590.180949727073
+75,50,75,"Aggressive Elimination","Yes","Anxiety",-289.871577592567
+90,50,75,"Aggressive Elimination","Yes","Anxiety",74.1204882971942
+50,75,75,"Aggressive Elimination","Yes","Anxiety",-342.274081613869
+75,75,75,"Aggressive Elimination","Yes","Anxiety",-360.516777448356
+90,75,75,"Aggressive Elimination","Yes","Anxiety",96.110042463988
+50,90,75,"Aggressive Elimination","Yes","Anxiety",-507.029000390321
+75,90,75,"Aggressive Elimination","Yes","Anxiety",-516.241617454216
+90,90,75,"Aggressive Elimination","Yes","Anxiety",-536.481808824465
+50,50,90,"Aggressive Elimination","Yes","Anxiety",-267.211240436882
+75,50,90,"Aggressive Elimination","Yes","Anxiety",-745.340516977012
+90,50,90,"Aggressive Elimination","Yes","Anxiety",-494.386472925544
+50,75,90,"Aggressive Elimination","Yes","Anxiety",-212.050769431517
+75,75,90,"Aggressive Elimination","Yes","Anxiety",-392.958020744845
+90,75,90,"Aggressive Elimination","Yes","Anxiety",-185.105517925695
+50,90,90,"Aggressive Elimination","Yes","Anxiety",171.048765582964
+75,90,90,"Aggressive Elimination","Yes","Anxiety",25.0811018515378
+90,90,90,"Aggressive Elimination","Yes","Anxiety",-243.84490721859
+50,50,60,"Loose Suppression","No","Anxiety",166.425138758495
+75,50,60,"Loose Suppression","No","Anxiety",-764.485807344317
+90,50,60,"Loose Suppression","No","Anxiety",-177.667551860213
+50,75,60,"Loose Suppression","No","Anxiety",-110.533751966432
+75,75,60,"Loose Suppression","No","Anxiety",-38.4594562463463
+90,75,60,"Loose Suppression","No","Anxiety",-563.48409592174
+50,90,60,"Loose Suppression","No","Anxiety",-1.2087926268578
+75,90,60,"Loose Suppression","No","Anxiety",87.6402110327035
+90,90,60,"Loose Suppression","No","Anxiety",-797.728420654312
+50,50,75,"Loose Suppression","No","Anxiety",161.71964937821
+75,50,75,"Loose Suppression","No","Anxiety",-250.107146520168
+90,50,75,"Loose Suppression","No","Anxiety",-241.402774769813
+50,75,75,"Loose Suppression","No","Anxiety",-224.316519172862
+75,75,75,"Loose Suppression","No","Anxiety",-452.34013274312
+90,75,75,"Loose Suppression","No","Anxiety",-21.6443817596883
+50,90,75,"Loose Suppression","No","Anxiety",106.491251895204
+75,90,75,"Loose Suppression","No","Anxiety",-195.555120427162
+90,90,75,"Loose Suppression","No","Anxiety",132.3008665815
+50,50,90,"Loose Suppression","No","Anxiety",76.9885720685124
+75,50,90,"Loose Suppression","No","Anxiety",-513.659134227782
+90,50,90,"Loose Suppression","No","Anxiety",-292.575984215364
+50,75,90,"Loose Suppression","No","Anxiety",-233.418459026143
+75,75,90,"Loose Suppression","No","Anxiety",-328.553384356201
+90,75,90,"Loose Suppression","No","Anxiety",21.4438864961266
+50,90,90,"Loose Suppression","No","Anxiety",-752.663362259045
+75,90,90,"Loose Suppression","No","Anxiety",-292.511184420437
+90,90,90,"Loose Suppression","No","Anxiety",83.2446478772908
+50,50,60,"Tight Suppression","No","Anxiety",84.0972806792706
+75,50,60,"Tight Suppression","No","Anxiety",-280.653819162399
+90,50,60,"Tight Suppression","No","Anxiety",99.1042182315141
+50,75,60,"Tight Suppression","No","Anxiety",25.3825604915618
+75,75,60,"Tight Suppression","No","Anxiety",-253.045715810731
+90,75,60,"Tight Suppression","No","Anxiety",-590.02721933648
+50,90,60,"Tight Suppression","No","Anxiety",-727.249224390835
+75,90,60,"Tight Suppression","No","Anxiety",164.414397953078
+90,90,60,"Tight Suppression","No","Anxiety",-425.941441161558
+50,50,75,"Tight Suppression","No","Anxiety",-245.348812267184
+75,50,75,"Tight Suppression","No","Anxiety",-16.9208645354957
+90,50,75,"Tight Suppression","No","Anxiety",-111.984169529751
+50,75,75,"Tight Suppression","No","Anxiety",-622.854906320572
+75,75,75,"Tight Suppression","No","Anxiety",76.7621703445911
+90,75,75,"Tight Suppression","No","Anxiety",-228.889078320935
+50,90,75,"Tight Suppression","No","Anxiety",-558.624195354059
+75,90,75,"Tight Suppression","No","Anxiety",-12.8647565841675
+90,90,75,"Tight Suppression","No","Anxiety",-403.466328931972
+50,50,90,"Tight Suppression","No","Anxiety",-467.747490340844
+75,50,90,"Tight Suppression","No","Anxiety",-475.27333390899
+90,50,90,"Tight Suppression","No","Anxiety",63.5112990159541
+50,75,90,"Tight Suppression","No","Anxiety",-508.795309998095
+75,75,90,"Tight Suppression","No","Anxiety",-186.3182249479
+90,75,90,"Tight Suppression","No","Anxiety",-474.498312408105
+50,90,90,"Tight Suppression","No","Anxiety",-37.6789650879801
+75,90,90,"Tight Suppression","No","Anxiety",-741.241770749912
+90,90,90,"Tight Suppression","No","Anxiety",-720.023524668068
+50,50,60,"Moderate Elimination","No","Anxiety",3.23176435194905
+75,50,60,"Moderate Elimination","No","Anxiety",-795.185036445037
+90,50,60,"Moderate Elimination","No","Anxiety",-259.318006644026
+50,75,60,"Moderate Elimination","No","Anxiety",-647.660013707355
+75,75,60,"Moderate Elimination","No","Anxiety",-138.340083369985
+90,75,60,"Moderate Elimination","No","Anxiety",-739.225207315758
+50,90,60,"Moderate Elimination","No","Anxiety",-369.790607551113
+75,90,60,"Moderate Elimination","No","Anxiety",-409.618559712544
+90,90,60,"Moderate Elimination","No","Anxiety",-503.205631813034
+50,50,75,"Moderate Elimination","No","Anxiety",-131.045086262748
+75,50,75,"Moderate Elimination","No","Anxiety",-11.0019833780826
+90,50,75,"Moderate Elimination","No","Anxiety",-417.197213228792
+50,75,75,"Moderate Elimination","No","Anxiety",-388.390371296555
+75,75,75,"Moderate Elimination","No","Anxiety",-322.701661102474
+90,75,75,"Moderate Elimination","No","Anxiety",-123.637349298224
+50,90,75,"Moderate Elimination","No","Anxiety",140.919105894864
+75,90,75,"Moderate Elimination","No","Anxiety",-703.814443852752
+90,90,75,"Moderate Elimination","No","Anxiety",-602.387396106496
+50,50,90,"Moderate Elimination","No","Anxiety",-236.618531821296
+75,50,90,"Moderate Elimination","No","Anxiety",183.190818922594
+90,50,90,"Moderate Elimination","No","Anxiety",-421.788670541719
+50,75,90,"Moderate Elimination","No","Anxiety",-157.676097657532
+75,75,90,"Moderate Elimination","No","Anxiety",-433.084904402494
+90,75,90,"Moderate Elimination","No","Anxiety",-771.65010124445
+50,90,90,"Moderate Elimination","No","Anxiety",94.5323445368558
+75,90,90,"Moderate Elimination","No","Anxiety",-153.060645749793
+90,90,90,"Moderate Elimination","No","Anxiety",-248.850063607097
+50,50,60,"Aggressive Elimination","No","Anxiety",-204.828306287527
+75,50,60,"Aggressive Elimination","No","Anxiety",-686.901970952749
+90,50,60,"Aggressive Elimination","No","Anxiety",-277.279636543244
+50,75,60,"Aggressive Elimination","No","Anxiety",-717.806208832189
+75,75,60,"Aggressive Elimination","No","Anxiety",186.853803740814
+90,75,60,"Aggressive Elimination","No","Anxiety",-548.340778751299
+50,90,60,"Aggressive Elimination","No","Anxiety",-503.498635673896
+75,90,60,"Aggressive Elimination","No","Anxiety",37.3948989901691
+90,90,60,"Aggressive Elimination","No","Anxiety",-332.428612466902
+50,50,75,"Aggressive Elimination","No","Anxiety",131.499952683225
+75,50,75,"Aggressive Elimination","No","Anxiety",125.269035622477
+90,50,75,"Aggressive Elimination","No","Anxiety",-111.538856010884
+50,75,75,"Aggressive Elimination","No","Anxiety",-158.141864417121
+75,75,75,"Aggressive Elimination","No","Anxiety",-94.3280676845462
+90,75,75,"Aggressive Elimination","No","Anxiety",-323.303891764954
+50,90,75,"Aggressive Elimination","No","Anxiety",48.3398186508566
+75,90,75,"Aggressive Elimination","No","Anxiety",-732.906744303182
+90,90,75,"Aggressive Elimination","No","Anxiety",-422.158852638677
+50,50,90,"Aggressive Elimination","No","Anxiety",-397.039259737358
+75,50,90,"Aggressive Elimination","No","Anxiety",-271.379119437188
+90,50,90,"Aggressive Elimination","No","Anxiety",-285.755171161145
+50,75,90,"Aggressive Elimination","No","Anxiety",-284.182239277288
+75,75,90,"Aggressive Elimination","No","Anxiety",-599.730790546164
+90,75,90,"Aggressive Elimination","No","Anxiety",-91.6138996370137
+50,90,90,"Aggressive Elimination","No","Anxiety",-554.613787401468
+75,90,90,"Aggressive Elimination","No","Anxiety",-457.410415122286
+90,90,90,"Aggressive Elimination","No","Anxiety",-679.09581605345
+50,50,60,"Loose Suppression","Yes","Depression",-469.091256335378
+75,50,60,"Loose Suppression","Yes","Depression",-27.2868275176734
+90,50,60,"Loose Suppression","Yes","Depression",-535.496511217207
+50,75,60,"Loose Suppression","Yes","Depression",153.027066774666
+75,75,60,"Loose Suppression","Yes","Depression",-444.686490064487
+90,75,60,"Loose Suppression","Yes","Depression",-173.081974219531
+50,90,60,"Loose Suppression","Yes","Depression",-188.858220539987
+75,90,60,"Loose Suppression","Yes","Depression",-522.482030512765
+90,90,60,"Loose Suppression","Yes","Depression",167.062286101282
+50,50,75,"Loose Suppression","Yes","Depression",-650.243470398709
+75,50,75,"Loose Suppression","Yes","Depression",-234.985398780555
+90,50,75,"Loose Suppression","Yes","Depression",-712.635317770764
+50,75,75,"Loose Suppression","Yes","Depression",53.6920452024787
+75,75,75,"Loose Suppression","Yes","Depression",-463.659883663058
+90,75,75,"Loose Suppression","Yes","Depression",-379.205255955458
+50,90,75,"Loose Suppression","Yes","Depression",-583.218960510567
+75,90,75,"Loose Suppression","Yes","Depression",-609.642005711794
+90,90,75,"Loose Suppression","Yes","Depression",-73.8529425114394
+50,50,90,"Loose Suppression","Yes","Depression",-221.056755352765
+75,50,90,"Loose Suppression","Yes","Depression",-797.93531675823
+90,50,90,"Loose Suppression","Yes","Depression",-82.5950998812914
+50,75,90,"Loose Suppression","Yes","Depression",-680.999158602208
+75,75,90,"Loose Suppression","Yes","Depression",-559.687701705843
+90,75,90,"Loose Suppression","Yes","Depression",-529.937372263521
+50,90,90,"Loose Suppression","Yes","Depression",175.182700436562
+75,90,90,"Loose Suppression","Yes","Depression",188.88027574867
+90,90,90,"Loose Suppression","Yes","Depression",-394.546691514552
+50,50,60,"Tight Suppression","Yes","Depression",190.280711324885
+75,50,60,"Tight Suppression","Yes","Depression",-88.1849156692625
+90,50,60,"Tight Suppression","Yes","Depression",-54.9078674055636
+50,75,60,"Tight Suppression","Yes","Depression",-160.100158955902
+75,75,60,"Tight Suppression","Yes","Depression",-15.4700553510339
+90,75,60,"Tight Suppression","Yes","Depression",151.931721298024
+50,90,60,"Tight Suppression","Yes","Depression",26.5418233349919
+75,90,60,"Tight Suppression","Yes","Depression",-48.21962765418
+90,90,60,"Tight Suppression","Yes","Depression",-201.892872527242
+50,50,75,"Tight Suppression","Yes","Depression",-462.298153620213
+75,50,75,"Tight Suppression","Yes","Depression",-325.648174341768
+90,50,75,"Tight Suppression","Yes","Depression",-689.777484117076
+50,75,75,"Tight Suppression","Yes","Depression",-30.8000642806292
+75,75,75,"Tight Suppression","Yes","Depression",-798.666007304564
+90,75,75,"Tight Suppression","Yes","Depression",-494.743285421282
+50,90,75,"Tight Suppression","Yes","Depression",-742.139465827495
+75,90,75,"Tight Suppression","Yes","Depression",-556.737200776115
+90,90,75,"Tight Suppression","Yes","Depression",-557.386520272121
+50,50,90,"Tight Suppression","Yes","Depression",-191.896513523534
+75,50,90,"Tight Suppression","Yes","Depression",-791.659740451723
+90,50,90,"Tight Suppression","Yes","Depression",44.7372592054307
+50,75,90,"Tight Suppression","Yes","Depression",114.564486593008
+75,75,90,"Tight Suppression","Yes","Depression",-749.439511401579
+90,75,90,"Tight Suppression","Yes","Depression",-484.203000506386
+50,90,90,"Tight Suppression","Yes","Depression",153.150626504794
+75,90,90,"Tight Suppression","Yes","Depression",-789.220971008763
+90,90,90,"Tight Suppression","Yes","Depression",39.7106716874986
+50,50,60,"Moderate Elimination","Yes","Depression",-361.271038139239
+75,50,60,"Moderate Elimination","Yes","Depression",153.543967567384
+90,50,60,"Moderate Elimination","Yes","Depression",-746.99513586238
+50,75,60,"Moderate Elimination","Yes","Depression",-8.1677801907063
+75,75,60,"Moderate Elimination","Yes","Depression",-146.350238425657
+90,75,60,"Moderate Elimination","Yes","Depression",-107.198045775294
+50,90,60,"Moderate Elimination","Yes","Depression",105.291208531707
+75,90,60,"Moderate Elimination","Yes","Depression",-72.2750459797681
+90,90,60,"Moderate Elimination","Yes","Depression",-681.708996137604
+50,50,75,"Moderate Elimination","Yes","Depression",-762.853671051562
+75,50,75,"Moderate Elimination","Yes","Depression",-787.536437343806
+90,50,75,"Moderate Elimination","Yes","Depression",-736.53654656373
+50,75,75,"Moderate Elimination","Yes","Depression",-464.083735086024
+75,75,75,"Moderate Elimination","Yes","Depression",-512.688989937305
+90,75,75,"Moderate Elimination","Yes","Depression",-196.183343371376
+50,90,75,"Moderate Elimination","Yes","Depression",-737.546625500545
+75,90,75,"Moderate Elimination","Yes","Depression",-655.171701172367
+90,90,75,"Moderate Elimination","Yes","Depression",-311.158635141328
+50,50,90,"Moderate Elimination","Yes","Depression",-206.784452497959
+75,50,90,"Moderate Elimination","Yes","Depression",-571.28863055259
+90,50,90,"Moderate Elimination","Yes","Depression",-140.20580467768
+50,75,90,"Moderate Elimination","Yes","Depression",13.0246174987405
+75,75,90,"Moderate Elimination","Yes","Depression",-479.331209510565
+90,75,90,"Moderate Elimination","Yes","Depression",-702.365774614736
+50,90,90,"Moderate Elimination","Yes","Depression",-184.478915249929
+75,90,90,"Moderate Elimination","Yes","Depression",-244.38565755263
+90,90,90,"Moderate Elimination","Yes","Depression",-709.043317660689
+50,50,60,"Aggressive Elimination","Yes","Depression",-626.541798189282
+75,50,60,"Aggressive Elimination","Yes","Depression",-729.920483147725
+90,50,60,"Aggressive Elimination","Yes","Depression",144.612996419892
+50,75,60,"Aggressive Elimination","Yes","Depression",39.1978773288428
+75,75,60,"Aggressive Elimination","Yes","Depression",-152.380528347567
+90,75,60,"Aggressive Elimination","Yes","Depression",-502.352678403258
+50,90,60,"Aggressive Elimination","Yes","Depression",-148.755893995985
+75,90,60,"Aggressive Elimination","Yes","Depression",35.057565011084
+90,90,60,"Aggressive Elimination","Yes","Depression",-56.7170751281083
+50,50,75,"Aggressive Elimination","Yes","Depression",10.6634391006082
+75,50,75,"Aggressive Elimination","Yes","Depression",143.549762712792
+90,50,75,"Aggressive Elimination","Yes","Depression",-786.232283758
+50,75,75,"Aggressive Elimination","Yes","Depression",-261.75147080794
+75,75,75,"Aggressive Elimination","Yes","Depression",-406.354086659849
+90,75,75,"Aggressive Elimination","Yes","Depression",-576.343210833147
+50,90,75,"Aggressive Elimination","Yes","Depression",-417.847868707031
+75,90,75,"Aggressive Elimination","Yes","Depression",-709.529849188402
+90,90,75,"Aggressive Elimination","Yes","Depression",-563.960393611342
+50,50,90,"Aggressive Elimination","Yes","Depression",-210.861211363226
+75,50,90,"Aggressive Elimination","Yes","Depression",98.7183785066008
+90,50,90,"Aggressive Elimination","Yes","Depression",-366.789446165785
+50,75,90,"Aggressive Elimination","Yes","Depression",-329.632592573762
+75,75,90,"Aggressive Elimination","Yes","Depression",-317.574492609128
+90,75,90,"Aggressive Elimination","Yes","Depression",-225.51596229896
+50,90,90,"Aggressive Elimination","Yes","Depression",119.560529058799
+75,90,90,"Aggressive Elimination","Yes","Depression",-237.750634970143
+90,90,90,"Aggressive Elimination","Yes","Depression",-87.2525544371456
+50,50,60,"Loose Suppression","No","Depression",-110.169305186719
+75,50,60,"Loose Suppression","No","Depression",-76.2774324510247
+90,50,60,"Loose Suppression","No","Depression",-266.789821395651
+50,75,60,"Loose Suppression","No","Depression",-227.128966897726
+75,75,60,"Loose Suppression","No","Depression",-140.247449930757
+90,75,60,"Loose Suppression","No","Depression",-140.65295686014
+50,90,60,"Loose Suppression","No","Depression",158.278481382877
+75,90,60,"Loose Suppression","No","Depression",17.7738334052264
+90,90,60,"Loose Suppression","No","Depression",-68.9323390368373
+50,50,75,"Loose Suppression","No","Depression",0.907650962471918
+75,50,75,"Loose Suppression","No","Depression",-606.820488302037
+90,50,75,"Loose Suppression","No","Depression",-411.223266692832
+50,75,75,"Loose Suppression","No","Depression",-505.038424115628
+75,75,75,"Loose Suppression","No","Depression",-724.326769541949
+90,75,75,"Loose Suppression","No","Depression",-280.095069622621
+50,90,75,"Loose Suppression","No","Depression",-311.87814376317
+75,90,75,"Loose Suppression","No","Depression",-665.287818014622
+90,90,75,"Loose Suppression","No","Depression",-198.044129600748
+50,50,90,"Loose Suppression","No","Depression",-45.733950752765
+75,50,90,"Loose Suppression","No","Depression",-484.095921227709
+90,50,90,"Loose Suppression","No","Depression",-212.779140053317
+50,75,90,"Loose Suppression","No","Depression",130.949569446966
+75,75,90,"Loose Suppression","No","Depression",-478.222200833261
+90,75,90,"Loose Suppression","No","Depression",-311.14022359252
+50,90,90,"Loose Suppression","No","Depression",-106.64714705199
+75,90,90,"Loose Suppression","No","Depression",-507.30675267987
+90,90,90,"Loose Suppression","No","Depression",-630.909308046103
+50,50,60,"Tight Suppression","No","Depression",182.835996430367
+75,50,60,"Tight Suppression","No","Depression",-33.2311742939055
+90,50,60,"Tight Suppression","No","Depression",-47.2819713875652
+50,75,60,"Tight Suppression","No","Depression",102.860131114721
+75,75,60,"Tight Suppression","No","Depression",-491.66931300424
+90,75,60,"Tight Suppression","No","Depression",-122.760056937113
+50,90,60,"Tight Suppression","No","Depression",-56.3860872760416
+75,90,60,"Tight Suppression","No","Depression",-281.109793297947
+90,90,60,"Tight Suppression","No","Depression",111.547408206388
+50,50,75,"Tight Suppression","No","Depression",-184.328806539998
+75,50,75,"Tight Suppression","No","Depression",-701.266235625371
+90,50,75,"Tight Suppression","No","Depression",-335.755628021434
+50,75,75,"Tight Suppression","No","Depression",-407.614765642211
+75,75,75,"Tight Suppression","No","Depression",10.2082428522408
+90,75,75,"Tight Suppression","No","Depression",-656.777252396569
+50,90,75,"Tight Suppression","No","Depression",162.190869264305
+75,90,75,"Tight Suppression","No","Depression",-64.6892208140344
+90,90,75,"Tight Suppression","No","Depression",91.6575023904442
+50,50,90,"Tight Suppression","No","Depression",-393.331294832751
+75,50,90,"Tight Suppression","No","Depression",-228.583628032357
+90,50,90,"Tight Suppression","No","Depression",-750.634174747393
+50,75,90,"Tight Suppression","No","Depression",-524.689476191998
+75,75,90,"Tight Suppression","No","Depression",-592.066472116858
+90,75,90,"Tight Suppression","No","Depression",-563.32403998822
+50,90,90,"Tight Suppression","No","Depression",21.2471795268356
+75,90,90,"Tight Suppression","No","Depression",-39.1555341891945
+90,90,90,"Tight Suppression","No","Depression",-606.457767728716
+50,50,60,"Moderate Elimination","No","Depression",-356.473622331396
+75,50,60,"Moderate Elimination","No","Depression",111.532372934744
+90,50,60,"Moderate Elimination","No","Depression",-87.1679323725403
+50,75,60,"Moderate Elimination","No","Depression",-259.598758956417
+75,75,60,"Moderate Elimination","No","Depression",-287.573910271749
+90,75,60,"Moderate Elimination","No","Depression",111.549921380356
+50,90,60,"Moderate Elimination","No","Depression",-322.569647291675
+75,90,60,"Moderate Elimination","No","Depression",87.922968249768
+90,90,60,"Moderate Elimination","No","Depression",-386.564689408988
+50,50,75,"Moderate Elimination","No","Depression",-515.489965165034
+75,50,75,"Moderate Elimination","No","Depression",132.802121387795
+90,50,75,"Moderate Elimination","No","Depression",82.7890700194984
+50,75,75,"Moderate Elimination","No","Depression",-79.6944377478213
+75,75,75,"Moderate Elimination","No","Depression",-550.313988188282
+90,75,75,"Moderate Elimination","No","Depression",-698.169809253886
+50,90,75,"Moderate Elimination","No","Depression",96.8472799751907
+75,90,75,"Moderate Elimination","No","Depression",-636.690526455641
+90,90,75,"Moderate Elimination","No","Depression",-738.797076232731
+50,50,90,"Moderate Elimination","No","Depression",150.327479280531
+75,50,90,"Moderate Elimination","No","Depression",-115.224366961047
+90,50,90,"Moderate Elimination","No","Depression",-497.089746128768
+50,75,90,"Moderate Elimination","No","Depression",-99.6716804336757
+75,75,90,"Moderate Elimination","No","Depression",-257.851176382974
+90,75,90,"Moderate Elimination","No","Depression",-243.549148039892
+50,90,90,"Moderate Elimination","No","Depression",-673.623339226469
+75,90,90,"Moderate Elimination","No","Depression",-720.465961797163
+90,90,90,"Moderate Elimination","No","Depression",-293.273387430236
+50,50,60,"Aggressive Elimination","No","Depression",-118.350633606315
+75,50,60,"Aggressive Elimination","No","Depression",-255.532567575574
+90,50,60,"Aggressive Elimination","No","Depression",-310.059477994219
+50,75,60,"Aggressive Elimination","No","Depression",-95.2683153562248
+75,75,60,"Aggressive Elimination","No","Depression",-43.7187377363444
+90,75,60,"Aggressive Elimination","No","Depression",-79.031285783276
+50,90,60,"Aggressive Elimination","No","Depression",-718.299075914547
+75,90,60,"Aggressive Elimination","No","Depression",-760.131222847849
+90,90,60,"Aggressive Elimination","No","Depression",-547.318071080372
+50,50,75,"Aggressive Elimination","No","Depression",-63.4864547289908
+75,50,75,"Aggressive Elimination","No","Depression",-97.7898397948593
+90,50,75,"Aggressive Elimination","No","Depression",-58.9870961382986
+50,75,75,"Aggressive Elimination","No","Depression",69.2806409671902
+75,75,75,"Aggressive Elimination","No","Depression",107.838988583535
+90,75,75,"Aggressive Elimination","No","Depression",-77.6474645361305
+50,90,75,"Aggressive Elimination","No","Depression",45.5871264450252
+75,90,75,"Aggressive Elimination","No","Depression",-276.91214340739
+90,90,75,"Aggressive Elimination","No","Depression",172.83282969147
+50,50,90,"Aggressive Elimination","No","Depression",154.176890663803
+75,50,90,"Aggressive Elimination","No","Depression",118.536584591493
+90,50,90,"Aggressive Elimination","No","Depression",-496.1276861839
+50,75,90,"Aggressive Elimination","No","Depression",-108.734188321978
+75,75,90,"Aggressive Elimination","No","Depression",-139.223482180387
+90,75,90,"Aggressive Elimination","No","Depression",-648.365168785676
+50,90,90,"Aggressive Elimination","No","Depression",-633.025918342173
+75,90,90,"Aggressive Elimination","No","Depression",-702.29986095801
+90,90,90,"Aggressive Elimination","No","Depression",-636.594706168398
+50,50,60,"Loose Suppression","Yes","Alcohol-related diseases",-289.266722928733
+75,50,60,"Loose Suppression","Yes","Alcohol-related diseases",-326.579715078697
+90,50,60,"Loose Suppression","Yes","Alcohol-related diseases",-364.839917235076
+50,75,60,"Loose Suppression","Yes","Alcohol-related diseases",187.659033387899
+75,75,60,"Loose Suppression","Yes","Alcohol-related diseases",-335.021557472646
+90,75,60,"Loose Suppression","Yes","Alcohol-related diseases",62.9739098250866
+50,90,60,"Loose Suppression","Yes","Alcohol-related diseases",-584.069312736392
+75,90,60,"Loose Suppression","Yes","Alcohol-related diseases",-12.7601159736515
+90,90,60,"Loose Suppression","Yes","Alcohol-related diseases",-497.752183768898
+50,50,75,"Loose Suppression","Yes","Alcohol-related diseases",-384.01691657491
+75,50,75,"Loose Suppression","Yes","Alcohol-related diseases",-613.370957039297
+90,50,75,"Loose Suppression","Yes","Alcohol-related diseases",-147.563409013674
+50,75,75,"Loose Suppression","Yes","Alcohol-related diseases",-506.743771210313
+75,75,75,"Loose Suppression","Yes","Alcohol-related diseases",-574.576655589044
+90,75,75,"Loose Suppression","Yes","Alcohol-related diseases",-765.104275383055
+50,90,75,"Loose Suppression","Yes","Alcohol-related diseases",-581.581162242219
+75,90,75,"Loose Suppression","Yes","Alcohol-related diseases",-473.729141475633
+90,90,75,"Loose Suppression","Yes","Alcohol-related diseases",-478.718057228252
+50,50,90,"Loose Suppression","Yes","Alcohol-related diseases",-321.777476649731
+75,50,90,"Loose Suppression","Yes","Alcohol-related diseases",-755.270423321053
+90,50,90,"Loose Suppression","Yes","Alcohol-related diseases",-117.650377750397
+50,75,90,"Loose Suppression","Yes","Alcohol-related diseases",-624.390279361978
+75,75,90,"Loose Suppression","Yes","Alcohol-related diseases",-339.42429763265
+90,75,90,"Loose Suppression","Yes","Alcohol-related diseases",-521.855813870206
+50,90,90,"Loose Suppression","Yes","Alcohol-related diseases",-290.645310841501
+75,90,90,"Loose Suppression","Yes","Alcohol-related diseases",-1.05210808105771
+90,90,90,"Loose Suppression","Yes","Alcohol-related diseases",161.968237766996
+50,50,60,"Tight Suppression","Yes","Alcohol-related diseases",-789.19245088473
+75,50,60,"Tight Suppression","Yes","Alcohol-related diseases",-257.059692358598
+90,50,60,"Tight Suppression","Yes","Alcohol-related diseases",-279.770931880921
+50,75,60,"Tight Suppression","Yes","Alcohol-related diseases",-536.489833798259
+75,75,60,"Tight Suppression","Yes","Alcohol-related diseases",-501.570141129196
+90,75,60,"Tight Suppression","Yes","Alcohol-related diseases",-521.205600304529
+50,90,60,"Tight Suppression","Yes","Alcohol-related diseases",74.2157274391502
+75,90,60,"Tight Suppression","Yes","Alcohol-related diseases",94.560266751796
+90,90,60,"Tight Suppression","Yes","Alcohol-related diseases",117.956945719197
+50,50,75,"Tight Suppression","Yes","Alcohol-related diseases",-176.730592455715
+75,50,75,"Tight Suppression","Yes","Alcohol-related diseases",133.089244179428
+90,50,75,"Tight Suppression","Yes","Alcohol-related diseases",-192.008843598887
+50,75,75,"Tight Suppression","Yes","Alcohol-related diseases",-661.6512643639
+75,75,75,"Tight Suppression","Yes","Alcohol-related diseases",139.504799898714
+90,75,75,"Tight Suppression","Yes","Alcohol-related diseases",190.990213118494
+50,90,75,"Tight Suppression","Yes","Alcohol-related diseases",-721.231189509854
+75,90,75,"Tight Suppression","Yes","Alcohol-related diseases",61.5321663673967
+90,90,75,"Tight Suppression","Yes","Alcohol-related diseases",-118.236524937674
+50,50,90,"Tight Suppression","Yes","Alcohol-related diseases",-504.773471457884
+75,50,90,"Tight Suppression","Yes","Alcohol-related diseases",-654.167736368254
+90,50,90,"Tight Suppression","Yes","Alcohol-related diseases",-444.244766794145
+50,75,90,"Tight Suppression","Yes","Alcohol-related diseases",126.001429790631
+75,75,90,"Tight Suppression","Yes","Alcohol-related diseases",-185.386384557933
+90,75,90,"Tight Suppression","Yes","Alcohol-related diseases",11.512493295595
+50,90,90,"Tight Suppression","Yes","Alcohol-related diseases",56.8068027961999
+75,90,90,"Tight Suppression","Yes","Alcohol-related diseases",-136.681669810787
+90,90,90,"Tight Suppression","Yes","Alcohol-related diseases",-500.342460069805
+50,50,60,"Moderate Elimination","Yes","Alcohol-related diseases",-79.1189206764102
+75,50,60,"Moderate Elimination","Yes","Alcohol-related diseases",-99.9788862653077
+90,50,60,"Moderate Elimination","Yes","Alcohol-related diseases",-287.02754615806
+50,75,60,"Moderate Elimination","Yes","Alcohol-related diseases",109.847810398787
+75,75,60,"Moderate Elimination","Yes","Alcohol-related diseases",-31.3059514854104
+90,75,60,"Moderate Elimination","Yes","Alcohol-related diseases",178.577902307734
+50,90,60,"Moderate Elimination","Yes","Alcohol-related diseases",-23.2154272496701
+75,90,60,"Moderate Elimination","Yes","Alcohol-related diseases",-192.463965108618
+90,90,60,"Moderate Elimination","Yes","Alcohol-related diseases",-714.853238966316
+50,50,75,"Moderate Elimination","Yes","Alcohol-related diseases",-376.052338117734
+75,50,75,"Moderate Elimination","Yes","Alcohol-related diseases",179.415052570403
+90,50,75,"Moderate Elimination","Yes","Alcohol-related diseases",-34.8249251954258
+50,75,75,"Moderate Elimination","Yes","Alcohol-related diseases",-166.081302519888
+75,75,75,"Moderate Elimination","Yes","Alcohol-related diseases",-139.664897648618
+90,75,75,"Moderate Elimination","Yes","Alcohol-related diseases",-126.999326702207
+50,90,75,"Moderate Elimination","Yes","Alcohol-related diseases",-145.71420471184
+75,90,75,"Moderate Elimination","Yes","Alcohol-related diseases",-570.6974435132
+90,90,75,"Moderate Elimination","Yes","Alcohol-related diseases",-304.870737437159
+50,50,90,"Moderate Elimination","Yes","Alcohol-related diseases",-795.777947828174
+75,50,90,"Moderate Elimination","Yes","Alcohol-related diseases",-418.758444674313
+90,50,90,"Moderate Elimination","Yes","Alcohol-related diseases",-471.604343457148
+50,75,90,"Moderate Elimination","Yes","Alcohol-related diseases",30.8197350706905
+75,75,90,"Moderate Elimination","Yes","Alcohol-related diseases",-105.275383172557
+90,75,90,"Moderate Elimination","Yes","Alcohol-related diseases",-596.198380412534
+50,90,90,"Moderate Elimination","Yes","Alcohol-related diseases",-368.954868009314
+75,90,90,"Moderate Elimination","Yes","Alcohol-related diseases",-138.20528886281
+90,90,90,"Moderate Elimination","Yes","Alcohol-related diseases",-720.865565538406
+50,50,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-28.8620790932328
+75,50,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-678.434636397287
+90,50,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-92.8744803648442
+50,75,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-244.124590605497
+75,75,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-382.34503143467
+90,75,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-286.808249959722
+50,90,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-328.034854214639
+75,90,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-639.19732272625
+90,90,60,"Aggressive Elimination","Yes","Alcohol-related diseases",-171.900957776234
+50,50,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-334.693353343755
+75,50,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-63.0527541041375
+90,50,75,"Aggressive Elimination","Yes","Alcohol-related diseases",127.036669338122
+50,75,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-637.891807546839
+75,75,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-206.790229957551
+90,75,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-155.004076613113
+50,90,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-670.41581608355
+75,90,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-217.630291776732
+90,90,75,"Aggressive Elimination","Yes","Alcohol-related diseases",-399.508511135355
+50,50,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-727.430127048865
+75,50,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-11.2055851612241
+90,50,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-533.538631815463
+50,75,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-46.1488896515221
+75,75,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-624.90504020825
+90,75,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-72.6894582156092
+50,90,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-254.400988062844
+75,90,90,"Aggressive Elimination","Yes","Alcohol-related diseases",-792.537975776941
+90,90,90,"Aggressive Elimination","Yes","Alcohol-related diseases",97.6056026294827
+50,50,60,"Loose Suppression","No","Alcohol-related diseases",-339.929611608386
+75,50,60,"Loose Suppression","No","Alcohol-related diseases",-515.943099930882
+90,50,60,"Loose Suppression","No","Alcohol-related diseases",-508.923107944429
+50,75,60,"Loose Suppression","No","Alcohol-related diseases",-783.185796299949
+75,75,60,"Loose Suppression","No","Alcohol-related diseases",-566.486942302436
+90,75,60,"Loose Suppression","No","Alcohol-related diseases",-181.271390477195
+50,90,60,"Loose Suppression","No","Alcohol-related diseases",-243.890430498868
+75,90,60,"Loose Suppression","No","Alcohol-related diseases",71.0129333194345
+90,90,60,"Loose Suppression","No","Alcohol-related diseases",-80.2491982001812
+50,50,75,"Loose Suppression","No","Alcohol-related diseases",15.1207906194031
+75,50,75,"Loose Suppression","No","Alcohol-related diseases",-593.718644184992
+90,50,75,"Loose Suppression","No","Alcohol-related diseases",-221.236738562584
+50,75,75,"Loose Suppression","No","Alcohol-related diseases",-426.048773759976
+75,75,75,"Loose Suppression","No","Alcohol-related diseases",-536.689851386473
+90,75,75,"Loose Suppression","No","Alcohol-related diseases",-671.118263807148
+50,90,75,"Loose Suppression","No","Alcohol-related diseases",-214.399931905791
+75,90,75,"Loose Suppression","No","Alcohol-related diseases",-314.623319497332
+90,90,75,"Loose Suppression","No","Alcohol-related diseases",-775.338357035071
+50,50,90,"Loose Suppression","No","Alcohol-related diseases",-730.68147613667
+75,50,90,"Loose Suppression","No","Alcohol-related diseases",-70.275458926335
+90,50,90,"Loose Suppression","No","Alcohol-related diseases",-18.8836289569736
+50,75,90,"Loose Suppression","No","Alcohol-related diseases",-575.29080864042
+75,75,90,"Loose Suppression","No","Alcohol-related diseases",-128.890993492678
+90,75,90,"Loose Suppression","No","Alcohol-related diseases",107.147287391126
+50,90,90,"Loose Suppression","No","Alcohol-related diseases",-602.879408467561
+75,90,90,"Loose Suppression","No","Alcohol-related diseases",-40.1782041415573
+90,90,90,"Loose Suppression","No","Alcohol-related diseases",-455.871069058776
+50,50,60,"Tight Suppression","No","Alcohol-related diseases",-170.636109495536
+75,50,60,"Tight Suppression","No","Alcohol-related diseases",-177.080421661958
+90,50,60,"Tight Suppression","No","Alcohol-related diseases",-127.989146346226
+50,75,60,"Tight Suppression","No","Alcohol-related diseases",-629.472862184048
+75,75,60,"Tight Suppression","No","Alcohol-related diseases",139.932129345834
+90,75,60,"Tight Suppression","No","Alcohol-related diseases",-372.930297581479
+50,90,60,"Tight Suppression","No","Alcohol-related diseases",3.97652275860305
+75,90,60,"Tight Suppression","No","Alcohol-related diseases",-369.26698749885
+90,90,60,"Tight Suppression","No","Alcohol-related diseases",-327.524913428351
+50,50,75,"Tight Suppression","No","Alcohol-related diseases",-134.860952571034
+75,50,75,"Tight Suppression","No","Alcohol-related diseases",-284.157172264531
+90,50,75,"Tight Suppression","No","Alcohol-related diseases",-615.324364928529
+50,75,75,"Tight Suppression","No","Alcohol-related diseases",146.846672333777
+75,75,75,"Tight Suppression","No","Alcohol-related diseases",-302.212442690507
+90,75,75,"Tight Suppression","No","Alcohol-related diseases",9.72464452497657
+50,90,75,"Tight Suppression","No","Alcohol-related diseases",-22.2159253433347
+75,90,75,"Tight Suppression","No","Alcohol-related diseases",-30.0533941015602
+90,90,75,"Tight Suppression","No","Alcohol-related diseases",-132.276521949098
+50,50,90,"Tight Suppression","No","Alcohol-related diseases",-606.634538341314
+75,50,90,"Tight Suppression","No","Alcohol-related diseases",-285.298009589315
+90,50,90,"Tight Suppression","No","Alcohol-related diseases",-652.698995033279
+50,75,90,"Tight Suppression","No","Alcohol-related diseases",-785.244256211445
+75,75,90,"Tight Suppression","No","Alcohol-related diseases",64.0786039177328
+90,75,90,"Tight Suppression","No","Alcohol-related diseases",-188.295385753736
+50,90,90,"Tight Suppression","No","Alcohol-related diseases",-722.706593060866
+75,90,90,"Tight Suppression","No","Alcohol-related diseases",60.8879975508898
+90,90,90,"Tight Suppression","No","Alcohol-related diseases",-214.112776052207
+50,50,60,"Moderate Elimination","No","Alcohol-related diseases",-740.623842878267
+75,50,60,"Moderate Elimination","No","Alcohol-related diseases",-715.525543270633
+90,50,60,"Moderate Elimination","No","Alcohol-related diseases",-292.384888231754
+50,75,60,"Moderate Elimination","No","Alcohol-related diseases",-225.359816290438
+75,75,60,"Moderate Elimination","No","Alcohol-related diseases",116.636735666543
+90,75,60,"Moderate Elimination","No","Alcohol-related diseases",-346.928228577599
+50,90,60,"Moderate Elimination","No","Alcohol-related diseases",-385.634672315791
+75,90,60,"Moderate Elimination","No","Alcohol-related diseases",-239.050423214212
+90,90,60,"Moderate Elimination","No","Alcohol-related diseases",-565.007949667051
+50,50,75,"Moderate Elimination","No","Alcohol-related diseases",182.123806839809
+75,50,75,"Moderate Elimination","No","Alcohol-related diseases",-267.17169159092
+90,50,75,"Moderate Elimination","No","Alcohol-related diseases",-254.458451364189
+50,75,75,"Moderate Elimination","No","Alcohol-related diseases",-131.210331525654
+75,75,75,"Moderate Elimination","No","Alcohol-related diseases",-488.678508391604
+90,75,75,"Moderate Elimination","No","Alcohol-related diseases",143.790988065302
+50,90,75,"Moderate Elimination","No","Alcohol-related diseases",-169.075723690912
+75,90,75,"Moderate Elimination","No","Alcohol-related diseases",-264.382437523454
+90,90,75,"Moderate Elimination","No","Alcohol-related diseases",-552.433426678181
+50,50,90,"Moderate Elimination","No","Alcohol-related diseases",-462.432332290337
+75,50,90,"Moderate Elimination","No","Alcohol-related diseases",30.1856755279004
+90,50,90,"Moderate Elimination","No","Alcohol-related diseases",-177.652317285538
+50,75,90,"Moderate Elimination","No","Alcohol-related diseases",48.3286425471305
+75,75,90,"Moderate Elimination","No","Alcohol-related diseases",-541.398002253845
+90,75,90,"Moderate Elimination","No","Alcohol-related diseases",-484.8742547445
+50,90,90,"Moderate Elimination","No","Alcohol-related diseases",-103.689972730354
+75,90,90,"Moderate Elimination","No","Alcohol-related diseases",-699.473370518535
+90,90,90,"Moderate Elimination","No","Alcohol-related diseases",-508.820927655324
+50,50,60,"Aggressive Elimination","No","Alcohol-related diseases",-610.14152476564
+75,50,60,"Aggressive Elimination","No","Alcohol-related diseases",-721.694511780515
+90,50,60,"Aggressive Elimination","No","Alcohol-related diseases",-795.550950057805
+50,75,60,"Aggressive Elimination","No","Alcohol-related diseases",-641.594052966684
+75,75,60,"Aggressive Elimination","No","Alcohol-related diseases",-441.282459255308
+90,75,60,"Aggressive Elimination","No","Alcohol-related diseases",-353.376754745841
+50,90,60,"Aggressive Elimination","No","Alcohol-related diseases",-444.070677924901
+75,90,60,"Aggressive Elimination","No","Alcohol-related diseases",56.9796988740563
+90,90,60,"Aggressive Elimination","No","Alcohol-related diseases",-571.888240007684
+50,50,75,"Aggressive Elimination","No","Alcohol-related diseases",21.5846412349492
+75,50,75,"Aggressive Elimination","No","Alcohol-related diseases",-551.109110424295
+90,50,75,"Aggressive Elimination","No","Alcohol-related diseases",32.671703537926
+50,75,75,"Aggressive Elimination","No","Alcohol-related diseases",-172.274501714855
+75,75,75,"Aggressive Elimination","No","Alcohol-related diseases",-577.053442085162
+90,75,75,"Aggressive Elimination","No","Alcohol-related diseases",-731.382723152637
+50,90,75,"Aggressive Elimination","No","Alcohol-related diseases",126.182222319767
+75,90,75,"Aggressive Elimination","No","Alcohol-related diseases",187.575605278835
+90,90,75,"Aggressive Elimination","No","Alcohol-related diseases",-687.229323619977
+50,50,90,"Aggressive Elimination","No","Alcohol-related diseases",-49.6616190765053
+75,50,90,"Aggressive Elimination","No","Alcohol-related diseases",86.0062670428305
+90,50,90,"Aggressive Elimination","No","Alcohol-related diseases",-630.562973162159
+50,75,90,"Aggressive Elimination","No","Alcohol-related diseases",160.13388899155
+75,75,90,"Aggressive Elimination","No","Alcohol-related diseases",-272.633636789396
+90,75,90,"Aggressive Elimination","No","Alcohol-related diseases",-146.061670454219
+50,90,90,"Aggressive Elimination","No","Alcohol-related diseases",-214.335428038612
+75,90,90,"Aggressive Elimination","No","Alcohol-related diseases",-630.184242455289
+90,90,90,"Aggressive Elimination","No","Alcohol-related diseases",-629.540458042175
