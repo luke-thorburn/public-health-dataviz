@@ -47,7 +47,7 @@
 
 	"title": {
 		"text": "Simulated COVID-19 case numbers",
-		"subtitle": "100 runs of the model, using the selected parameters."
+		"subtitle": "~20 runs of the model, using the selected parameters."
 	},
 	"description": "New cases from ABM.",
 
@@ -61,7 +61,8 @@
 				{ "type": "filter", "expr": "datum.v1_transmission_effectiveness === PfizerTransmissionReduction" },
 				{ "type": "filter", "expr": "datum.v2_transmission_effectiveness === AstraZenecaTransmissionReduction" },
 				{ "type": "filter", "expr": "datum.strategy === Strategy" },
-				{ "type": "filter", "expr": "datum.relax_triggers === StrategyRelaxation" }
+				{ "type": "filter", "expr": "datum.relax_triggers === StrategyRelaxation" },
+				{ "type": "filter", "expr": "datum.R0 === R0" }
 			]
 		},
 		{
@@ -148,6 +149,19 @@
 						"type": "change"
 					},
 					"update": "event.target.value"
+				}
+			]
+		},
+		{
+			"name": "R0",
+			"update": "2.5",
+			"on": [
+				{
+					"events": {
+						"source": "#select-ABM-underlying-infectivity",
+						"type": "change"
+					},
+					"update": "toNumber(event.target.value)"
 				}
 			]
 		},
@@ -323,11 +337,21 @@
 				]
 			},
 			{
-				"name": "Vaccine Effectiveness",
+				"name": "Infectivity",
 				"toggles": [
 					{
+						"name": "Underlying infectivity",
+						"description": "Average number of people each infected person infects, in the absence of a vaccine (R<sub>0</sub>).",
+						"type": "select",
+						"options": [
+							{ "value": 2.5 },
+							{ "value": 3.125 },
+							{ "value": 3.75 }
+						]
+					},
+					{
 						"name": "Phase 1 Transmission Reduction",
-						"description": "Percentage by which the vaccines administered in Phase 1 reduce transmission.",
+						"description": "Percentage by which the vaccines administered in Phase 1 reduce infectivity.",
 						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
 						"type": "select",
 						"options": [
@@ -338,7 +362,7 @@
 					},
 					{
 						"name": "Phase 2 Transmission Reduction",
-						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.",
+						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce infectivity.",
 						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
 						"type": "select",
 						"options": [

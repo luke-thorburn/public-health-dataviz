@@ -65,7 +65,9 @@ List side-effects of restrictions, to make concrete. Both negative and positive.
 
 Add vaccine phases to graph.
 
-{% import_graph "ABM", slug %}
+[NEW ABM GRAPH WILL GO HERE]
+
+<a href="/pandemic-trade-offs-ABM/" class="button-small with-arrow" target="_blank" rel="noopener noreferrer">Explore all 100 simulations</a>
 
 
 ---
