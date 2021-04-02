@@ -52,6 +52,25 @@ nav.strategies > div .button-description {
 	color: #000;
 	font-weight: 400;
 	line-height: 1.1rem;
+	margin-bottom: 5px;
+}
+
+nav.strategies > div .button-examples {
+	color: #000;
+	font-weight: 300;
+	line-height: 1.1rem;
+	font-style: italic;
+	margin: 0;
+}
+
+nav.strategies > div .button-examples::before {
+	color: var(--c1-darker);
+	font-weight: 600;
+	line-height: 1.1rem;
+	content: 'EG';
+	font-size: .8rem;
+	font-style: normal;
+	padding-right: 5px;
 	margin: 0;
 }
 

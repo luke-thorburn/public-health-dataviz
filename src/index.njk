@@ -37,7 +37,7 @@
 
 
 
-	{% for section in collections.post | removeHiddenPostsAndPages | groupBySection %}
+	{% for section in collections.post | addExternalLinks | removeHiddenPostsAndPages | groupBySection %}
 	
 		<hr class="spacer" />
 		
@@ -48,13 +48,23 @@
 			<div class="bside">
 				<ul class="filtered-listing-grid">
 					{% for post in section.posts %}
-						<li class="filtered-listing-item" data-tag="type-{{ post.data.type | slug }}">
-							<a href="/{{ post.data.slug }}">
-								<strong>{{ post.data.title }}</strong>
-								<span class="date">{{ post.data.date_updated | readable_date | safe }}</span>
-								{# {{ post.data.description }} #}
-							</a>
-						</li>
+						{% if post.data.slug %}
+							<li class="filtered-listing-item" data-tag="type-{{ post.data.type | slug }}">
+								<a href="/{{ post.data.slug }}">
+									<strong>{{ post.data.title }}</strong>
+									<span class="date">{{ post.data.date_updated | readable_date | safe }}</span>
+									{# {{ post.data.description }} #}
+								</a>
+							</li>
+						{% else %}
+							<li class="filtered-listing-item" data-tag="type-{{ post.data.type | slug }}">
+								<a href="{{ post.data.url }}" target="_blank" rel="noopener noreferrer">
+									<strong>{{ post.data.title }}</strong>
+									<span class="date">{{ post.data.date_updated | readable_date | safe }}</span>
+									{# {{ post.data.description }} #}
+								</a>
+							</li>
+						{% endif %}
 					{% endfor %}
 				</ul>
 			</div>

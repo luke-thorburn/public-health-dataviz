@@ -1,6 +1,7 @@
 {
 	"$schema": "https://vega.github.io/schema/vega/v5.json",
-	"autosize": { "type": "fit", "contains": "padding" },
+	"autosize": { "signal": "windowSize()[0] <= 1400 ? { type: 'pad', contains: 'padding', resize: true } : { type: 'fit', contains: 'padding', resize: true }"},
+	"background": "#ffffff",
 	"padding": 0,
 	"config": {
 		"axis": {
@@ -24,9 +25,7 @@
 			"offset": 20,
 			"titleFontWeight": 400,
 			"layout": {
-				"right": {
-					"anchor": "start"
-				}
+				"margin": 60
 			}
 		},
 		"title": {
@@ -46,8 +45,8 @@
 	},
 
 	"title": {
-		"text": "Which strategy minimises harms?",
-		"subtitle": "Probability that each strategy minimises costs."
+		"text": "Which strategy is optimal?",
+		"subtitle": "Probability that each strategy is optimal, by willingness to pay."
 	},
 	"description": "Probability that each strategy is optimal.",
 
@@ -61,12 +60,7 @@
 				{ "type": "filter", "expr": "datum.v1trans === PfizerTransmissionReduction" },
 				{ "type": "filter", "expr": "datum.v2trans === AstraZenecaTransmissionReduction" },
 				{ "type": "filter", "expr": "datum.relax === StrategyRelaxation" },
-				{
-					"type": "stack",
-					"groupby": ["HALYprice"],
-					"field": "p",
-					"offset": "normalize"
-				}
+				{ "type": "filter", "expr": "datum.R0 === R0" }
 			]
 		}
 	],
@@ -74,21 +68,21 @@
 	"signals": [
 		{
 			"name": "width",
-			"init": "containerSize()[0]",
-			"on": [{ "events": "window:resize", "update": "containerSize()[0]" }]
+			"init": "windowSize()[0] <= 1400 ? max(600, containerSize()[0]) : containerSize()[0]",
+			"on": [{ "events": "window:resize", "update": "windowSize()[0] <= 1400 ? max(600, containerSize()[0]) : containerSize()[0]" }]
 		},
 		{
 			"name": "height",
-			"init": "containerSize()[1]",
-			"on": [{ "events": "window:resize", "update": "containerSize()[1]" }]
+			"init": "windowSize()[0] <= 1400 ? 400 : containerSize()[1]",
+			"on": [{ "events": "window:resize", "update": "windowSize()[0] <= 1400 ? 400 : containerSize()[1]" }]
 		},
 		{
 			"name": "PfizerTransmissionReduction",
-			"update": "50",
+			"update": "75",
 			"on": [
 				{
 					"events": {
-						"source": "#select-PMSLT-prob-phase-1-transmission-reduction",
+						"source": "#select-PMSLT-prob-phase-1-vaccine-efficacy",
 						"type": "change"
 					},
 					"update": "toNumber(event.target.value)"
@@ -97,11 +91,11 @@
 		},
 		{
 			"name": "AstraZenecaTransmissionReduction",
-			"update": "50",
+			"update": "75",
 			"on": [
 				{
 					"events": {
-						"source": "#select-PMSLT-prob-phase-2-transmission-reduction",
+						"source": "#select-PMSLT-prob-phase-2-and-3-vaccine-efficacy",
 						"type": "change"
 					},
 					"update": "toNumber(event.target.value)"
@@ -110,7 +104,7 @@
 		},
 		{
 			"name": "VaccineUptake",
-			"update": "60",
+			"update": "75",
 			"on": [
 				{
 					"events": {
@@ -123,14 +117,27 @@
 		},
 		{
 			"name": "StrategyRelaxation",
-			"update": "'No'",
+			"update": "0",
 			"on": [
 				{
 					"events": {
 						"source": "#select-PMSLT-prob-strategy-relaxation",
 						"type": "change"
 					},
-					"update": "event.target.value"
+					"update": "toNumber(event.target.value)"
+				}
+			]
+		},
+		{
+			"name": "R0",
+			"update": "3.125",
+			"on": [
+				{
+					"events": {
+						"source": "#select-PMSLT-prob-unmitigated-reproduction-rate",
+						"type": "change"
+					},
+					"update": "toNumber(event.target.value)"
 				}
 			]
 		}
@@ -139,9 +146,9 @@
 	"scales": [
 		{
 			"name": "x",
-			"type": "band",
+			"type": "linear",
 			"range": "width",
-			"domain": {"data": "main", "field": "HALYprice"}
+			"domain": [0, 25000]
 		},
 		{
 			"name": "y",
@@ -154,6 +161,13 @@
 			"type": "ordinal",
 			"range": {"scheme": "viridis"},
 			"domain": {"data": "main", "field": "strategy"}
+		},
+		{
+			"name": "parameters",
+			"type": "ordinal",
+			"domain": ["Input 1", "Input 2", "Input 3"],
+			"domain": { "signal": "['Vaccine Uptake: ' + VaccineUptake, 'Strategy Relaxation: ' + StrategyRelaxation, 'Vaccine Efficacy (1): ' + PfizerTransmissionReduction, 'Vaccine Efficacy (2): ' + AstraZenecaTransmissionReduction, 'R_0: ' + R0]"},
+			"range": ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"]
 		}
 	],
 
@@ -161,7 +175,29 @@
 		{
 			"direction": "vertical",
 			"fill": "colour",
-			"title": "Strategies"
+			"title": "Strategies",
+			"labelLimit": 200
+		},
+		{
+			"fill": "parameters",
+			"labelLimit": 200,
+			"title": "Parameters",
+			"titleFontSize": 18,
+			"titlePadding": 10,
+			"symbolSize": 0,
+			"rowPadding": 3,
+			"padding": 15,
+			"fillColor": "#f2f5f9",
+			"cornerRadius": 5,
+			"encode": {
+				"labels": {
+					"enter": {
+						"dx": {"value": -24},
+						"fontSize": {"value": 14},
+						"font": {"value": "monospace"}
+					}
+				}
+			}
 		}
 	],
 
@@ -184,81 +220,98 @@
 
 	"marks": [
 		{
-			"type": "rect",
-			"from": {"data": "main"},
-			"encode": {
-				"enter": {
-					"x": {"scale": "x", "field": "HALYprice"},
-					"width": {"scale": "x", "band": 1, "offset": -1},
-					"y": {"scale": "y", "field": "y0"},
-					"y2": {"scale": "y", "field": "y1"},
-					"fill": {"scale": "colour", "field": "strategy"}
-				},
-				"update": {
-					"fillOpacity": {"value": 1}
-				},
-				"hover": {
-					"fillOpacity": {"value": 0.5}
+			"type": "group",
+			"from": {
+				"facet": {
+					"name": "series",
+					"data": "main",
+					"groupby": ["strategy"]
 				}
-			}
+			},
+			"marks": [
+				{
+					"type": "line",
+					"from": {"data": "series"},
+					"zindex": 1,
+					"encode": {
+						"enter": {
+							"x": {"scale": "x", "field": "HALYprice"},
+							"y": {"scale": "y", "field": "p"},
+							"stroke": {"scale": "colour", "field": "strategy"},
+							"strokeWidth": {"value": 2}
+						},
+						"update": {
+							"y": {"scale": "y", "field": "p"}
+						}
+					}
+				}
+			]
 		}
 	],
 
-	"uom-toggles": {
+	"uom": {
+		"coming-soon": true,
 		"toggle-groups": [
 			{
-				"name": "Government Response",
-				"toggles": [
-					{
-						"name": "Strategy Relaxation",
-						"description": "Relax the triggers for each strategy as vaccinations progress?",
-						"detailLink": "/pandemic-trade-offs-detail/#strategy-relaxation",
-						"type": "select",
-						"options": [
-							{ "value": "No", "label": "Off" },
-							{ "value": "Yes", "label": "On" }
-						]
-					}
-				]
-			},
-			{
-				"name": "Public Response",
+				"name": "Government & Public Response",
 				"toggles": [
 					{
 						"name": "Vaccine Uptake",
 						"description": "Percentage of people who accept vaccination when they are offered it.",
+						"detailLink": "/pandemic-trade-offs-detail/#uptake",
 						"type": "select",
 						"options": [
 							{ "value": 60, "label": "60%" },
-							{ "value": 75, "label": "75%" },
+							{ "value": 75, "label": "75%", "default": true },
 							{ "value": 90, "label": "90%" }
+						]
+					},
+					{
+						"name": "Strategy Relaxation",
+						"description": "Whether to relax stage triggers as vaccination progresses.",
+						"detailLink": "/pandemic-trade-offs-detail/#strategy-relaxation",
+						"type": "select",
+						"options": [
+							{ "value": 0, "label": "Off", "default": true },
+							{ "value": 1, "label": "On" }
 						]
 					}
 				]
 			},
 			{
-				"name": "Vaccine Effectiveness",
+				"name": "Infectivity",
 				"toggles": [
 					{
-						"name": "Phase 1 Transmission Reduction",
-						"description": "Percentage by which the vaccines administered in Phase 1 reduce transmission.",
+						"name": "Phase 1 Vaccine Efficacy",
+						"description": "Percentage by which the vaccine administered in phase 1 would reduce transmission in a fully vaccinated population.",
 						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
 						"type": "select",
 						"options": [
 							{ "value": 50, "label": "50%" },
-							{ "value": 75, "label": "75%" },
+							{ "value": 75, "label": "75%", "default": true },
 							{ "value": 90, "label": "90%" }
 						]
 					},
 					{
-						"name": "Phase 2 Transmission Reduction",
-						"description": "Percentage by which the vaccines administered in Phase 2 and beyond reduce transmission.",
+						"name": "Phase 2 & 3 Vaccine Efficacy",
+						"description": "Percentage by which the vaccine administered in phases 2 and beyond would reduce transmission in a fully vaccinated population.",
 						"detailLink": "/pandemic-trade-offs-detail/#effectiveness",
 						"type": "select",
 						"options": [
 							{ "value": 50, "label": "50%" },
-							{ "value": 75, "label": "75%" },
+							{ "value": 75, "label": "75%", "default": true },
 							{ "value": 90, "label": "90%" }
+						]
+					},
+					{
+						"name": "Unmitigated Reproduction Rate",
+						"description": "Average number of people each infected person infects with no interventions, such as masks, physical distancing, case isolation, and vaccination.",
+						"detailLink": "/pandemic-trade-offs-detail/#reproduction",
+						"type": "select",
+						"options": [
+							{ "value": 2.5 },
+							{ "value": 3.125, "default": true },
+							{ "value": 3.75 }
 						]
 					}
 				]

@@ -22,12 +22,19 @@
 
 	<!-- Styling -->
 	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T7QD9R9ZDF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-T7QD9R9ZDF');
+	</script>
 	
 
 	
-
-	<meta name="robots" content="noindex">
-	<meta name="googlebot" content="noindex">
 
 </head>
 
@@ -67,12 +74,18 @@
 					<input checked="checked" class="checkbox" data-tag="all" id="c0" name="f[degree_type]" type="checkbox" /><label for="c0"><span>All</span></label>
 				</div>
 				
+					<div class="filtered-listing-tag">
+						<input class="checkbox" data-color="green" data-tag="type-interactive" id="c1" name="f[course_type]" type="checkbox" /><label for="c1"><span>Interactive</span></label>
+					</div>
+				
 			</fieldset>
 			<fieldset class="right">
 				<label for="f-select2">Filter by section</label>
 				<div>
 					<select class="clear" id="f-select2" name="f[select2]">
 						<option value="-1">All sections</option>
+						
+							<option value="section-covid-19-pandemic">COVID-19 Pandemic</option>
 						
 					</select>
 				</div>
@@ -83,6 +96,56 @@
 
 
 	
+	
+		<hr class="spacer" />
+		
+		<div class="filtered-listing-section clearfix" data-section="section-covid-19-pandemic">
+			<div class="aside">
+				<h2>COVID-19 Pandemic</h2>
+			</div>
+			<div class="bside">
+				<ul class="filtered-listing-grid">
+					
+						
+							<li class="filtered-listing-item" data-tag="type-interactive">
+								<a href="/pandemic-trade-offs">
+									<strong>COVID-19 Pandemic Trade-offs</strong>
+									<span class="date">31&nbsp;Mar&nbsp;2021</span>
+									
+								</a>
+							</li>
+						
+					
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<hr class="spacer" />
+		
+		<div class="filtered-listing-section clearfix" data-section="section-public-health-interventions">
+			<div class="aside">
+				<h2>Public Health Interventions</h2>
+			</div>
+			<div class="bside">
+				<ul class="filtered-listing-grid">
+					
+						
+							<li class="filtered-listing-item" data-tag="type-interactive">
+								<a href="https://league-table.shinyapps.io/bode3/" target="_blank" rel="noopener noreferrer">
+									<strong>Australia New Zealand Health Intervention League Table (ANZ-HILT)</strong>
+									<span class="date">5&nbsp;Aug&nbsp;2019</span>
+									
+								</a>
+							</li>
+						
+					
+				</ul>
+			</div>
+		</div>
+
+	
 
 
 			</div>
@@ -90,6 +153,19 @@
 			<div id="sitemap" role="navigation">
 				<h2>Home</h2>
 				<ul>
+					
+						<li>
+							<a href="/">COVID-19 Pandemic</a>
+							<div class="inner">
+								<ul>
+									
+										<li>
+											<a href="/pandemic-trade-offs">COVID-19 Pandemic Trade-offs</a>
+										</li>
+									
+								</ul>
+							</div>
+						</li>
 					
 					<li>
 						<a href="https://mspgh.unimelb.edu.au/research-groups/centre-for-epidemiology-and-biostatistics-research/population-interventions" target="_blank" rel="noopener noreferrer">About the Population Interventions Unit</a>

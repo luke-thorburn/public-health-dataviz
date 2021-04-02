@@ -7,6 +7,7 @@ var strategies = {
 		"Aggressive Elimination": {
 			name: "Aggressive Elimination",
 			description: "Aim for no community transmission, quickly.",
+			examples: "Victoria (Australia); New Zealand",
 			transitions: [
 				{ from: "1",		to: "4", 	trigger: "7-day average > 7.5" },
 				{ from: "1b",		to: "4", 	trigger: "7-day average > 7.5" },
@@ -32,6 +33,7 @@ var strategies = {
 		"Moderate Elimination": {
 			name: "Moderate Elimination",
 			description: "Aim for no community transmission, less quickly.",
+			examples: "New South Wales (Australia)",
 			transitions: [
 				{ from: "1",		to: "4", 	trigger: "7-day average > 30" },
 				{ from: "1b",		to: "4", 	trigger: "7-day average > 30" },
@@ -57,6 +59,7 @@ var strategies = {
 		"Tight Suppression": {
 			name: "Tight Suppression",
 			description: "Aim for 1-5 new cases per million people per day.",
+			examples: "South Korea, Singapore",
 			transitions: [
 				{ from: "1",		to: "4", 	trigger: "7-day average > 20/mill." },
 				{ from: "1b",		to: "4", 	trigger: "7-day average > 20/mill." },
@@ -82,6 +85,7 @@ var strategies = {
 		"Loose Suppression": {
 			name: "Loose Suppression",
 			description: "Aim for 5-25 new cases per million people per day.",
+			examples: "Continental Europe during 2020",
 			transitions: [
 				{ from: "1",		to: "4", 	trigger: "7-day average > 100/mill." },
 				{ from: "1b",		to: "4", 	trigger: "7-day average > 100/mill." },
@@ -980,11 +984,32 @@ function update(currentFromChanged = false) {
 
 	// Update triggers and annotations.
 
+	// Pad transitions.
+	let nTransitions = transitions.length,
+		paddedTransitions = JSON.parse(JSON.stringify(transitions));
+	for (k = 0; k < 5 - nTransitions; k++) {
+		paddedTransitions.push({
+			direction: "none",
+			from: "",
+			to: "",
+			id: "",
+			trigger: ""
+		})
+	}
+
 	triggers = svg.selectAll("g.triggers text");
 	triggers
-		.data(transitions)
+		.data(paddedTransitions)
 		.transition()
-		.attr("x", d => xScale(d.id) + bw/2)
+		// .attr("x", d => xScale(d.id) + bw/2)
+		.attr("x", function(d) {
+			if (xScale.domain().includes(d.id)) {
+				return xScale(d.id) + bw/2;
+			} else {
+				return xScale.range()[1];
+			}
+		})
+		.attr("opacity", d => xScale.domain().includes(d.id) ? 1 : 0)
 		.text(d => d.trigger)
 		.attr("class", d => {
 			let ids = transitions.map(t => t.id);
@@ -996,6 +1021,18 @@ function update(currentFromChanged = false) {
 					return 'alt-view';
 				}
 		});
+
+		// .attr("class", d => {
+		// 	let ids = transitions.map(t => t.id);
+		// 	if (ids.indexOf(d.id) < ids.indexOf(`${currentFrom}-${currentTo}`)) {
+		// 		return 'alt-view false';
+		// 	} else if (ids.indexOf(d.id) > ids.indexOf(`${currentFrom}-${currentTo}`)) {
+		// 		return 'alt-view upcoming';
+		// 	} else {
+		// 		return 'alt-view';
+		// 	}
+		// })
+		// .attr("x", d => xScale(d.id) + bw/2)
 
 	logic = svg.selectAll("g.logic text");
 	logic

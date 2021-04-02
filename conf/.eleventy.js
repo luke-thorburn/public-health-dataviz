@@ -1,3 +1,5 @@
+var external_links = require('../src/_data/external_links.js').content;
+
 module.exports = function(eleventyConfig) {
 
 	// Add stringify filter.
@@ -18,9 +20,13 @@ module.exports = function(eleventyConfig) {
 		let html = `<ul class="jump-navigation fixed headless skip-to">` +
 			`<li>Skip to</li>`;
 
-
 		for (let link of post.data.skipToLinks) {
-			html += `<li><a href="#` + link.targetID + `">` +
+			let attrs = '';
+			if (link.hasOwnProperty('external') & link.external) {
+				attrs = `target="_blank" rel="noopener noreferrer"`;
+				link.text = `<span class="external-link">${link.text}</span>`;
+			}
+			html += `<li><a href="` + link.href + `" ${attrs}>` +
 				`<div class="img-wrap"><img src="/posts/` + post.data.slug + `/` + link.image + `" /></div>` +
 				link.text +
 			`</a></li>`;
@@ -35,15 +41,14 @@ module.exports = function(eleventyConfig) {
 	// Add filter to extract toggle specification from graph specification.
 	
 	const fs = require('fs');
-	eleventyConfig.addFilter("get_graph_toggles", function(name, slug) {
+	eleventyConfig.addFilter("get_graph_spec", function(name, slug) {
 
 		let spec = fs.readFileSync(`../src/posts/${slug}/graph-${name}.json`).toString(),
-			toggles = JSON.parse(spec)['uom-toggles']['toggle-groups'];
+			uom = JSON.parse(spec)['uom'];
 
-		return toggles;
+		return uom;
 
 	})
-
 
 	// Add shortcode to import custom elements (d3 graphs, tables etc.).
 	eleventyConfig.addShortcode("import_content", function(name, slug) {
@@ -80,8 +85,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addShortcode("import_graph", function(name, slug) {
 		
 
-		let toggle_specs = eleventyConfig.getFilter("get_graph_toggles")(name, slug),
+		let uom = eleventyConfig.getFilter("get_graph_spec")(name, slug),
+			toggle_specs = [],
 			toggles = ``;
+
+		if (uom.hasOwnProperty('toggle-groups')) {
+			toggle_specs = uom['toggle-groups'];
+		}
 
 		for (let toggle_group of toggle_specs) {
 			
@@ -89,31 +99,34 @@ module.exports = function(eleventyConfig) {
 			for (let toggle of toggle_group.toggles) {
 
 				toggle_group_contents += `<div class="toggle-box">
+				<div>
 					<div class="name">${ toggle.name }</div>
-					<div class="description">${ toggle.description }</div>`;
+					<div class="description">${ toggle.description }</div>
+				</div>
+				<div>`;
 
 							
 				if (toggle.type == "range") {
 					
-					toggle_group_contents += `<input type="range" name="a" id="a" min="1" max="3" step="1" value="2">`;
+					toggle_group_contents += `<input type="range" name="a" id="a" min="1" max="3" step="1" value="2" autocomplete=off>`;
 					// custom input slider: https://codepen.io/trevanhetzel/pen/rOVrGK
 
 				} else if (toggle.type == "select") {
 					
 					let slug = eleventyConfig.getFilter('slug');
 
-					toggle_group_contents += `<select name="${ slug(toggle.name) }" id="select-${name}-${ slug(toggle.name) }">
-						${toggle.options.map(option => `<option value="${option.value}">${option.label ? option.label : option.value}</option>`).join('\n')}
+					toggle_group_contents += `<select name="${ slug(toggle.name) }" id="select-${name}-${ slug(toggle.name) }" autocomplete=off>
+						${toggle.options.map(option => `<option value="${option.value}" ${option.default ? 'selected' : ''}>${option.label ? option.label : option.value}</option>`).join('\n')}
 					</select>`
 					// https://joshuajohnson.co.uk/Choices/
 
 				}
 				
 				if (toggle.hasOwnProperty('detailLink')) {
-					toggle_group_contents += `<a href="` + toggle.detailLink + `" class="detail-link" target="_blank" rel="noopener noreferrer">&#128712; <span>Details</span></a>`;
+					toggle_group_contents += `<a href="` + toggle.detailLink + `" class="detail-link" target="_blank" rel="noopener noreferrer"><span data-icon="info-outline" class="smaller"></span> <span>Details</span></a>`;
 				}
 
-				toggle_group_contents += `</div>`;
+				toggle_group_contents += `</div></div>`;
 
 			}
 
@@ -127,12 +140,22 @@ module.exports = function(eleventyConfig) {
 			</div>`;
 		}
 
-		return `<div class="graph-with-toggles" id="graph-` + name + `">
-			<aside>
+		let downloadLink = '';
+		if (uom.hasOwnProperty('data-download')) {
+			downloadLink = `<a href="${uom['data-download'].href}" class="download-link"><strong>Download data</strong> (${uom['data-download'].size})</a>`
+		}
+
+		let html = `<div class="graph-with-toggles ${toggle_specs.length == 0 ? 'no-toggles' : ''}" id="graph-` + name + `">`;
+		if (toggle_specs.length > 0) {
+			html = html + `<aside>
 				<div class="toggles">
 					${toggles}
-				</div>
-			</aside>
+				</div>${downloadLink}
+			</aside>`;
+		}
+
+		return html + `
+			<div id="graph-settings-${name}" class="graph-settings"></div>
 			<div class="graph">
 				<div id="graph-container-${name}" class="graph-container"></div>
 			</div>
@@ -174,6 +197,17 @@ module.exports = function(eleventyConfig) {
 	
 	eleventyConfig.addFilter("markdown", function(rawString) {
 		return md.render(rawString);
+	});
+
+	// Add filter to add external links to collections.post (for display on the homepage).
+	eleventyConfig.addFilter("addExternalLinks", function(collection) {
+		let rval = [...collection];
+		for (let link of external_links) {
+			rval.push({
+				data: link
+			})
+		}
+		return rval;
 	});
 
 	// Add filter to remove hidden posts from collections.post.
@@ -414,6 +448,7 @@ module.exports = function(eleventyConfig) {
 			"json",
 			"pdf",
 			"txt",
+			"zip",
 			"htaccess"
 		]
 

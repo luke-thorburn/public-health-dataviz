@@ -22,17 +22,28 @@
 
 	<!-- Styling -->
 	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T7QD9R9ZDF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-T7QD9R9ZDF');
+	</script>
 	
 
 	
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"></script>
 
 	<meta charset="utf-8">
 	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vega-tooltip@latest"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 	
 
@@ -53,12 +64,9 @@
 	
 		<meta name="robots" content="noindex">
 		<meta name="googlebot" content="noindex">
-	
+	    
 
 
-
-	<meta name="robots" content="noindex">
-	<meta name="googlebot" content="noindex">
 
 </head>
 
@@ -98,12 +106,6 @@
 				
 
 	
-		<div class="flash flash--warning flash--center">
-			<p>
-				<strong>This page is a draft.</strong> All content is provisional.
-			</p>
-		</div>
-	
 
 	<div class="jumpnav"></div>
 	
@@ -126,20 +128,22 @@
 	<section class="endmatter">
 		
 
-		<h4>Media Enquiries</h4>
-		<p><a href="https://about.unimelb.edu.au/newsroom">University of Melbourne Newsroom</a></p>
-		<dl>
-			<dt>Phone</dt>
-			<dd>+61 3 8344 4123</dd>
-			
+		
+
+		
+
+		<h4>Contact Details</h4>
+		<p>Please direct media or other enquiries about this research to the <a href="https://mspgh.unimelb.edu.au/research-groups/centre-for-epidemiology-and-biostatistics-research/population-interventions">Population Interventions Unit</a> at the following address.</p>
+		<dl class="PI-contact">
 			<dt>Email</dt>
-			<dd><a href="mailto:news@media.unimelb.edu.au?subject=covid19forecast.science.unimelb.edu.au">news@media.unimelb.edu.au</a></dd>
+			<dd><a href="mailto:population-interventions@unimelb.edu.au">population-interventions@unimelb.edu.au</a></dd>
 		</dl>
 	</section>
 
 	<script type="text/javascript">
 
 		var views = {},
+			tooltipHandlers = {},
 			choices = {};
 
 		function slugify(text) {
@@ -153,13 +157,78 @@
 
 		function render(key, spec) {
 			
-			views[key] = new vega.View(vega.parse(spec), {
-				renderer: 'svg',  			// renderer (canvas or svg)
-				container: `#graph-container-${key}`,  // parent DOM container
-				hover: true       				// enable hover processing
-			});
+			// Blank out if 'coming soon'.
+			if (spec.uom.hasOwnProperty('coming-soon') & spec.uom['coming-soon']) {
+				spec.data.push({
+					name: "shades",
+					values: [ { "label": "Coming Soon" } ]
+				})
 
-			vegaTooltip.default(views[key]);
+				spec.marks = [
+					{
+						type: "rect",
+						from: { data: "shades" },
+						encode: {
+							enter: {
+								x: { signal: "range('x')[0]" },
+								x2: { signal: "range('x')[1]" },
+								y: { signal: "range('y')[0]" },
+								y2: { signal: "range('y')[1]" },
+								strokeWidth: { value: 0 },
+								fill: { value: '#f2f5f9' }
+							}
+						}
+
+					},
+					{
+						type: "text",
+						from: { data: "shades" },
+						encode: {
+							enter: {
+								x: { signal: "(range('x')[0] + range('x')[1]) / 2" },
+								y: { signal: "(range('y')[0] + range('y')[1]) / 2" },
+								text: { signal: "datum.label" },
+								baseline: { value: "middle" },
+								align: { value: "center" },
+								fill: { value: "#012a58" },
+								fontSize: { value: 20 },
+								fontWeight: { value: 'bold' }
+								
+							}
+						}
+					}
+				]
+			}
+
+			// tooltipHandlers[key] = new vegaTooltip.Handler();
+
+			// views[key] = new vega.View(vega.parse(spec), {
+			// 	tooltip: tooltipHandlers[key].call,
+			// 	renderer: 'svg',  			// renderer (canvas or svg)
+			// 	container: `#graph-container-${key}`,  // parent DOM container
+			// 	hover: true       				// enable hover processing
+			// });
+
+			vegaEmbed(
+				`#graph-container-${key}`,
+				spec,
+				opt = {
+					renderer: 'svg',
+					actions: key == 'PMSLT-HALY' ? false : {export: true, source: false, editor: false}
+				}
+			).then(function(result) {
+				views[key] = result.view;
+
+				// // If there is a set of SVG definitions, import them into the svg element of the graph.
+				// let defs = document.querySelector(`#svg-definitions-${key} defs`);
+				// if (defs !== null) {
+				// 	document.querySelector(`#graph-container-${key} div.chart-wrapper > svg`)
+				// 		.appendChild(defs);
+				// }
+
+			}).catch(console.error);
+
+			// vegaTooltip.default(views[key]);
 			
 			// Initialise Choices.js on toggles.
 			// if (spec.hasOwnProperty('uom-toggles')) {
@@ -180,7 +249,10 @@
 			// 	}
 			// }
 
-			return views[key].runAsync();
+			// views[key].logLevel(vega.Warn);
+
+			// return views[key].runAsync();
+			return views[key];
 
 		}
 
@@ -192,7 +264,25 @@
 				.catch(err => console.error(err));
 
 		}
-	
+
+		// Reset select fields on page load.
+		$( document ).ready(function() {
+			$('select').each( function() {
+				$(this).val( $(this).find("option[selected]").val() );
+			});
+		});
+
+
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				]
+			});
+		});
+
 	</script>
 
 	
@@ -203,6 +293,19 @@
 			<div id="sitemap" role="navigation">
 				<h2>Home</h2>
 				<ul>
+					
+						<li>
+							<a href="/">COVID-19 Pandemic</a>
+							<div class="inner">
+								<ul>
+									
+										<li>
+											<a href="/pandemic-trade-offs">COVID-19 Pandemic Trade-offs</a>
+										</li>
+									
+								</ul>
+							</div>
+						</li>
 					
 					<li>
 						<a href="https://mspgh.unimelb.edu.au/research-groups/centre-for-epidemiology-and-biostatistics-research/population-interventions" target="_blank" rel="noopener noreferrer">About the Population Interventions Unit</a>
